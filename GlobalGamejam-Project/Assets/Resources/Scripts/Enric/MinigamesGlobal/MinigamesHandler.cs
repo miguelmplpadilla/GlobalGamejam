@@ -15,20 +15,31 @@ public class MinigamesHandler : MonoBehaviour
         instance = this;
     }
 
-    public void StartMinigame(int idLevel)
+    public void StartMinigame(string levelName)
     {
-        if(idLevel >= minigames.Length || idLevel < 0)
+        GameObject gameToSpawn = null;
+        foreach(GameObject game in minigames)
         {
-            Debug.LogError("idLevel out of bounds: " + idLevel);
+            if(game.name == levelName)
+            {
+                gameToSpawn = game;
+            }
+        }
+        if (!gameToSpawn)
+        {
+            Debug.LogError("Level not found");
             return;
         }
-        currentGame = Instantiate(minigames[idLevel], minigameParent);
+        currentGame = Instantiate(gameToSpawn, minigameParent);
     }
 
-    public void EndMinigame(string nextDecision)
+    public void EndMinigame()
+    {
+        CardController.instance.EndGame();
+    }
+    public void DestroyGame()
     {
         Destroy(currentGame);
         currentGame = null;
     }
-
 }
