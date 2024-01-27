@@ -1,94 +1,62 @@
 {
   "passages": [
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"Kojima\",\n    \"leftDecisionText\": \"Si\",\n    \"rightDecisionText\": \"No\"\n  },\n  \"textCard\": \"Kojima te da un porro, lo aceptas?\",\n  \"tipeCard\": 1\n}\n\n[[Si]]\n[[No]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"Juego\",\n    \"leftDecisionText\": \"Felt pens\",\n    \"rightDecisionText\": \"Matches\"\n  },\n  \"textCard\": \"What do you want to play with?\",\n  \"tipeCard\": 1\n}\n\n[[Pintar]]\n[[CasaQuemar]]",
       "links": [
         {
-          "name": "Si",
-          "link": "Si",
+          "name": "Pintar",
+          "link": "Pintar",
           "pid": "2"
         },
         {
-          "name": "No",
-          "link": "No",
+          "name": "CasaQuemar",
+          "link": "CasaQuemar",
           "pid": "3"
         }
       ],
-      "name": "Kojima",
+      "name": "Inicio",
       "pid": "1",
       "position": {
-        "x": "623",
-        "y": "113.5"
+        "x": "668",
+        "y": "245.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"Kojima_Quieres\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Fumar]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"Pintar\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"What do you want to play with?\",\n  \"tipeCard\": 2\n}\n\n[[Inicio]]",
       "links": [
         {
-          "name": "Fumar",
-          "link": "Fumar",
-          "pid": "4"
+          "name": "Inicio",
+          "link": "Inicio",
+          "pid": "1"
         }
       ],
-      "name": "Si",
+      "name": "Pintar",
       "pid": "2",
       "position": {
-        "x": "270",
-        "y": "156.5"
+        "x": "505",
+        "y": "363.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"Kojima_Triste\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[CorrerKojima]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"CasaQuemar\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Inicio]]",
       "links": [
         {
-          "name": "CorrerKojima",
-          "link": "CorrerKojima",
-          "pid": "5"
+          "name": "Inicio",
+          "link": "Inicio",
+          "pid": "1"
         }
       ],
-      "name": "No",
+      "name": "CasaQuemar",
       "pid": "3",
       "position": {
-        "x": "838",
-        "y": "237.5"
-      }
-    },
-    {
-      "text": "{\n  \"keys\": {\n    \"key\": \"PitiAnimation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[Kojima]]",
-      "links": [
-        {
-          "name": "Kojima",
-          "link": "Kojima",
-          "pid": "1"
-        }
-      ],
-      "name": "Fumar",
-      "pid": "4",
-      "position": {
-        "x": "425",
-        "y": "352.5"
-      }
-    },
-    {
-      "text": "{\n  \"keys\": {\n    \"key\": \"KojimaPersigue\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[Kojima]]",
-      "links": [
-        {
-          "name": "Kojima",
-          "link": "Kojima",
-          "pid": "1"
-        }
-      ],
-      "name": "CorrerKojima",
-      "pid": "5",
-      "position": {
-        "x": "650",
-        "y": "425.5"
+        "x": "743",
+        "y": "397.5"
       }
     }
   ],
-  "name": "HistoriaPrueba",
+  "name": "Test",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.2.0",
-  "ifid": "4D7EDC81-E0A8-4EAB-99F2-407D694C470E"
+  "ifid": "70343731-08AB-4721-90A8-65D315F676A9"
 }
