@@ -11,14 +11,14 @@ public class Baby : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic;
-        rb.centerOfMass = new Vector2(.5f, 0);
+        //rb.centerOfMass = new Vector2(.5f, 0);
         isThrown = false;
     }
 
     // Update is called once per frame
     public void ThrowBaby(float totalForce)
     {
-        Vector2 direction = new Vector2(1f, 0.25f);
+        Vector2 direction = new Vector2(1f, 0.1f);
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.AddForce(direction.normalized * totalForce, ForceMode2D.Impulse);
         rb.angularVelocity = totalForce;
