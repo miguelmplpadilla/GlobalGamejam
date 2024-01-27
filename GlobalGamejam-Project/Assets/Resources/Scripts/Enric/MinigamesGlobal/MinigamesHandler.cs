@@ -35,7 +35,7 @@ public class MinigamesHandler : MonoBehaviour
 
     public void EndMinigame()
     {
-
+        CardController.instance.EndGame();
     }
     public void DestroyGame()
     {
