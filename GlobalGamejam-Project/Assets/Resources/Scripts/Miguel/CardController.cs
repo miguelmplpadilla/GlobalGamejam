@@ -1,14 +1,14 @@
 using System;
-using System.Security.Cryptography;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
+    public static CardController instance;
+    
     private RectTransform rtParent;
     
     private Vector2 initialPosition;
@@ -20,6 +20,8 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
     public Image imageCard;
     public Image imageDiapositiva;
     public Image imageBackgroundDiapositiva;
+    
+    public Image imageForeground;
     
     public GameObject animationPanel;
     public Image imageBackgroundAnimation;
@@ -48,12 +50,14 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
 
     private void Awake()
     {
+        instance = this;
+        
         rtParent = transform.parent.GetComponent<RectTransform>();
 
         story = new Story();
         JsonUtility.FromJsonOverwrite(jsonStory.text, story);
 
-        Debug.Log(JsonUtility.ToJson(new Card()));
+        //Debug.Log(JsonUtility.ToJson(new Card()));
     }
 
     private void Start()
@@ -162,6 +166,16 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         });
     }
 
+    public void EndGame()
+    {
+        FadeInOutForegorund(callbackMidle: () =>
+        {
+            Camera.main.enabled = true;
+            Debug.Log("Game destruido"); // Destruir juego
+            SetScene(GetPassage(nextPassageKey));
+        });
+    }
+
     private void FadeImage(GameObject imageObj, float time, float alpha, Action callback = null, bool onlyObj = false)
     {
         Image image = imageObj.GetComponent<Image>();
@@ -170,6 +184,8 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         colorImage.a = alpha;
         
         image.DOColor(colorImage, time).OnComplete(() => { callback?.Invoke(); });
+
+        if (onlyObj) return;
 
         if (imageObj.transform.childCount == 0) return;
 
@@ -213,11 +229,12 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
     {
         nextPassageKey = passage.links[0].name;
         
-        Debug.Log("Juego cargado: "+card.keys.key);
-        /*PlayerPrefs.SetString("Minijuego", card.keys.key);
-        SceneManager.LoadScene("Minijuego");*/
-        
-        SetScene(GetPassage(nextPassageKey));
+        FadeInOutForegorund(callbackMidle: () =>
+        {
+            Camera.main.enabled = false;
+            //MinigamesHandler.instance.StartMinigame(0);
+            Debug.Log("Juego cargado: "+card.keys.key);
+        });
     }
 
     private Passage GetPassage(string cardName)
@@ -234,6 +251,16 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         
         transform.parent.DOScale(0.95f, 0.2f);
         initialPosition = eventData.position;
+    }
+
+    private void FadeInOutForegorund(Action callbackMidle = null, Action callbackEnd = null)
+    {
+        Color colorForeground = imageForeground.color;
+        colorForeground.a = 1;
+
+        imageForeground.DOColor(colorForeground, 0.8f);
+        colorForeground.a = 0;
+        imageForeground.DOColor(colorForeground, 0.8f);
     }
     
     public void OnDrag(PointerEventData eventData)
