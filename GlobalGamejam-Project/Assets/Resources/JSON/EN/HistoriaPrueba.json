@@ -1,0 +1,62 @@
+{
+  "passages": [
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"Juego\",\n    \"leftDecisionText\": \"Felt pens\",\n    \"rightDecisionText\": \"Matches\"\n  },\n  \"textCard\": \"What do you want to play with?\",\n  \"tipeCard\": 1\n}\n\n[[Pintar]]\n[[CasaQuemar]]",
+      "links": [
+        {
+          "name": "Pintar",
+          "link": "Pintar",
+          "pid": "2"
+        },
+        {
+          "name": "CasaQuemar",
+          "link": "CasaQuemar",
+          "pid": "3"
+        }
+      ],
+      "name": "Inicio",
+      "pid": "1",
+      "position": {
+        "x": "668",
+        "y": "245.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"Pintar\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"What do you want to play with?\",\n  \"tipeCard\": 2\n}\n\n[[Inicio]]",
+      "links": [
+        {
+          "name": "Inicio",
+          "link": "Inicio",
+          "pid": "1"
+        }
+      ],
+      "name": "Pintar",
+      "pid": "2",
+      "position": {
+        "x": "505",
+        "y": "363.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"CasaQuemar\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Inicio]]",
+      "links": [
+        {
+          "name": "Inicio",
+          "link": "Inicio",
+          "pid": "1"
+        }
+      ],
+      "name": "CasaQuemar",
+      "pid": "3",
+      "position": {
+        "x": "743",
+        "y": "397.5"
+      }
+    }
+  ],
+  "name": "Test",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.0",
+  "ifid": "70343731-08AB-4721-90A8-65D315F676A9"
+}
