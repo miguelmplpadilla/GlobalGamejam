@@ -618,6 +618,7 @@ GameObject:
   - component: {fileID: 1343729463}
   - component: {fileID: 1343729465}
   - component: {fileID: 1343729464}
+  - component: {fileID: 1343729466}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -685,6 +686,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343729462}
   m_CullTransparentMesh: 1
+--- !u!114 &1343729466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343729462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ad5ffe050d76246b343b9cfba7d723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: {fileID: 1314750783}
+  doorClosed: {fileID: 1098476837}
 --- !u!1 &1424635672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &2406771417616557098
 CanvasRenderer:
   m_ObjectHideFlags: 0
