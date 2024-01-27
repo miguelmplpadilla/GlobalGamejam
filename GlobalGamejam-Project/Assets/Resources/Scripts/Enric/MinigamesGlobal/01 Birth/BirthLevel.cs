@@ -20,7 +20,7 @@ public class BirthLevel : Level, IPointerClickHandler
 
     void Awake()
     {
-        totalForce = 0;
+        totalForce = 2f;
         instance = this;
         isTimerOn = false;
     }
