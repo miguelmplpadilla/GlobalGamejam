@@ -43,8 +43,8 @@ public class TimerBirth : MonoBehaviour
 
     private void endTimer()
     {
-        titleText.SetActive(false);
         timerText.enabled = false;
+        titleText.SetActive(false);
         BirthLevel.instance.timerEnded();
     }
 
