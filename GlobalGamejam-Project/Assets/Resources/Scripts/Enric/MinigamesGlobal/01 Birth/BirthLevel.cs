@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.EventSystems;
 
-public class BirthLevel : MonoBehaviour, IPointerClickHandler
+public class BirthLevel : Level, IPointerClickHandler
 {
     public static BirthLevel instance;
     [SerializeField] private bool isTimerOn = false;

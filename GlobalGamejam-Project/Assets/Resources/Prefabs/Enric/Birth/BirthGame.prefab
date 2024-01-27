@@ -1097,6 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04dd310f9475bc849baa8105b0321574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelCamera: {fileID: 1795695686475078548}
   isTimerOn: 0
   totalForce: 0
   cameraConstraint: {fileID: 8308650894513492856}
@@ -1502,7 +1503,7 @@ GameObject:
   - component: {fileID: 2216338929472060468}
   - component: {fileID: 8308650894513492856}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Level Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
