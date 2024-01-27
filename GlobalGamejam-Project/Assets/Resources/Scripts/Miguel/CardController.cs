@@ -88,7 +88,7 @@ public class CardController : MonoBehaviour
 
         Card card = new Card();
         
-        JsonUtility.FromJsonOverwrite(info[0], card);
+        JsonUtility.FromJsonOverwrite(info[0].Replace("\n", "").Replace("\t", ""), card);
 
         switch (card.tipeCard)
         {
@@ -176,9 +176,11 @@ public class CardController : MonoBehaviour
 
     public void EndGame()
     {
+        Debug.Log("EndGame");
+        
         Passage passage = GetPassage(nextPassageKey);
 
-        bool sceneSeted = false;
+        bool sceneSeted = passage.links.Count < 2;
         
         FadeInOutForegorund(callbackMidle: () =>
         {
@@ -186,11 +188,8 @@ public class CardController : MonoBehaviour
             camera.SetActive(true);
             MinigamesHandler.instance.DestroyGame();
             
-            if (passage.links.Count > 1)
-            {
+            if (sceneSeted)
                 SetScene(passage);
-                sceneSeted = true;
-            }
         });
         
         if (!sceneSeted)
@@ -271,16 +270,23 @@ public class CardController : MonoBehaviour
         imageForeground.transform.parent.gameObject.SetActive(true);
         
         Color colorForeground = imageForeground.color;
+        colorForeground.a = 0;
+
+        imageForeground.color = colorForeground;
+
         colorForeground.a = 1;
 
-        await imageForeground.DOColor(colorForeground, 0.8f).AsyncWaitForCompletion();;
-        colorForeground.a = 0;
+        await imageForeground.DOColor(colorForeground, 1).AsyncWaitForCompletion();
         
         callbackMidle?.Invoke();
 
         imageForeground.DOKill();
         
-        await imageForeground.DOColor(colorForeground, 0.8f).AsyncWaitForCompletion();
+        colorForeground.a = 1;
+        imageForeground.color = colorForeground;
+        
+        colorForeground.a = 0;
+        await imageForeground.DOColor(colorForeground, 1).AsyncWaitForCompletion();
         
         callbackEnd?.Invoke();
         
