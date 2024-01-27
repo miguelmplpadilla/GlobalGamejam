@@ -3,6 +3,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
@@ -58,6 +59,8 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         JsonUtility.FromJsonOverwrite(jsonStory.text, story);
 
         //Debug.Log(JsonUtility.ToJson(new Card()));
+        
+        SceneManager.LoadScene("Minigames", LoadSceneMode.Additive);
     }
 
     private void Start()
@@ -168,12 +171,24 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
 
     public void EndGame()
     {
+        Passage passage = GetPassage(nextPassageKey);
+
+        bool sceneSeted = false;
+        
         FadeInOutForegorund(callbackMidle: () =>
         {
             Camera.main.enabled = true;
             Debug.Log("Game destruido"); // Destruir juego
-            SetScene(GetPassage(nextPassageKey));
+            
+            if (passage.links.Count > 1)
+            {
+                SetScene(passage);
+                sceneSeted = true;
+            }
         });
+        
+        if (!sceneSeted)
+            SetScene(passage);
     }
 
     private void FadeImage(GameObject imageObj, float time, float alpha, Action callback = null, bool onlyObj = false)
@@ -233,7 +248,6 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         {
             Camera.main.enabled = false;
             //MinigamesHandler.instance.StartMinigame(0);
-            Debug.Log("Juego cargado: "+card.keys.key);
         });
     }
 
