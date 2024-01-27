@@ -6,9 +6,12 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class CardController : MonoBehaviour
 {
     public static CardController instance;
+
+    public GameObject cardObj;
+    public GameObject canvasCard;
     
     private RectTransform rtParent;
     
@@ -49,11 +52,13 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
 
     private bool leftRight;
 
+    private GameObject camera;
+
     private void Awake()
     {
         instance = this;
         
-        rtParent = transform.parent.GetComponent<RectTransform>();
+        rtParent = cardObj.transform.parent.GetComponent<RectTransform>();
 
         story = new Story();
         JsonUtility.FromJsonOverwrite(jsonStory.text, story);
@@ -65,6 +70,7 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
 
     private void Start()
     {
+        camera = GameObject.Find("MainCamera");
         originalPositionPanel = rtParent.anchoredPosition;
         originalColorPanel = imagePanelLeft.color;
         
@@ -76,7 +82,7 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         ChangeColorPanel();
     }
 
-    private void SetScene(Passage passage)
+    public void SetScene(Passage passage)
     {
         string[] info = passage.text.Split("\n\n");
 
@@ -130,10 +136,9 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         Sprite[] sprites = Resources.LoadAll<Sprite>("Sprites/Diapositivas");
 
         foreach (var sprite in sprites)
-            if (sprite.name.Equals(nameSprite))
-                return sprite;
-
-        return null;
+            if (sprite.name.Equals(nameSprite)) return sprite;
+        
+        return GetSprite("Kojima_Quieres");
     }
 
     public async void HideDiapositiva()
@@ -177,8 +182,9 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         
         FadeInOutForegorund(callbackMidle: () =>
         {
-            Camera.main.enabled = true;
-            Debug.Log("Game destruido"); // Destruir juego
+            canvasCard.SetActive(true);
+            camera.SetActive(true);
+            MinigamesHandler.instance.DestroyGame();
             
             if (passage.links.Count > 1)
             {
@@ -237,7 +243,7 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
             if (prefab.name.Equals(namePrefab))
                 return prefab;
 
-        return null;
+        return GetPrefab("PitiAnimation");
     }
 
     private void SetGame(Card card, Passage passage)
@@ -246,12 +252,13 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         
         FadeInOutForegorund(callbackMidle: () =>
         {
-            Camera.main.enabled = false;
-            //MinigamesHandler.instance.StartMinigame(0);
+            canvasCard.SetActive(false);
+            camera.SetActive(false);
+            MinigamesHandler.instance.StartMinigame(card.keys.key);
         });
     }
 
-    private Passage GetPassage(string cardName)
+    public Passage GetPassage(string cardName)
     {
         foreach (var passage in story.passages)
             if (cardName.Equals(passage.name)) return passage;
@@ -259,22 +266,33 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         return null;
     }
 
+    private async void FadeInOutForegorund(Action callbackMidle = null, Action callbackEnd = null)
+    {
+        imageForeground.transform.parent.gameObject.SetActive(true);
+        
+        Color colorForeground = imageForeground.color;
+        colorForeground.a = 1;
+
+        await imageForeground.DOColor(colorForeground, 0.8f).AsyncWaitForCompletion();;
+        colorForeground.a = 0;
+        
+        callbackMidle?.Invoke();
+
+        imageForeground.DOKill();
+        
+        await imageForeground.DOColor(colorForeground, 0.8f).AsyncWaitForCompletion();
+        
+        callbackEnd?.Invoke();
+        
+        imageForeground.transform.parent.gameObject.SetActive(false);
+    }
+    
     public void OnPointerDown(PointerEventData eventData)
     {
         if (returningCenter) return;
         
-        transform.parent.DOScale(0.95f, 0.2f);
+        cardObj.transform.parent.DOScale(0.95f, 0.2f);
         initialPosition = eventData.position;
-    }
-
-    private void FadeInOutForegorund(Action callbackMidle = null, Action callbackEnd = null)
-    {
-        Color colorForeground = imageForeground.color;
-        colorForeground.a = 1;
-
-        imageForeground.DOColor(colorForeground, 0.8f);
-        colorForeground.a = 0;
-        imageForeground.DOColor(colorForeground, 0.8f);
     }
     
     public void OnDrag(PointerEventData eventData)
@@ -286,7 +304,7 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         if (distance < 70) 
         {
             panelPaintColor = 0;
-            transform.DORotate(new Vector3(0, 0, 0), 0.2f);
+            cardObj.transform.DORotate(new Vector3(0, 0, 0), 0.2f);
             rtParent.DOAnchorPos(originalPositionPanel, 0.2f);
             return;
         }
@@ -295,7 +313,7 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
 
         panelPaintColor = leftRight ? 1 : 2;
         
-        transform.DORotate(new Vector3(0, 0, leftRight ? 10 : -10), 0.3f);
+        cardObj.transform.DORotate(new Vector3(0, 0, leftRight ? 10 : -10), 0.3f);
         rtParent.DOAnchorPos(new Vector2(leftRight ? -100 : 100, originalPositionPanel.y), 0.3f);
     }
     
@@ -304,12 +322,12 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         int decision = panelPaintColor;
         panelPaintColor = 0;
 
-        transform.parent.DOKill();
-        transform.DOKill();
+        cardObj.transform.parent.DOKill();
+        cardObj.transform.DOKill();
         rtParent.DOKill();
         
-        transform.parent.DOScale(1, 0.2f);
-        transform.DORotate(new Vector3(0, 0, 0), 0.2f);
+        cardObj.transform.parent.DOScale(1, 0.2f);
+        cardObj.transform.DORotate(new Vector3(0, 0, 0), 0.2f);
         await rtParent.DOAnchorPos(originalPositionPanel, 0.2f).AsyncWaitForCompletion();
         
         if (decision != 0) SetScene(GetPassage(decision == 1 ? leftKey : rightKey));
