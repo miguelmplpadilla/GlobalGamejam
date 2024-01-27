@@ -1,69 +1,89 @@
 {
   "passages": [
     {
-      "text": "{\n  \"keys\": {\n    \"leftDecisionText\": \"Izquierda\",\n    \"rightDecisionText\": \"Derecha\"\n  },\n  \"textCard\": \"Eres un espermatozoide que direccion eligues?\",\n  \"isCard\": true\n}\n\n[[Izquierda]]\n[[Derecha]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"Kojima\",\n    \"leftDecisionText\": \"Si\",\n    \"rightDecisionText\": \"No\"\n  },\n  \"textCard\": \"Kojima te da un porro, lo aceptas?\",\n  \"tipeCard\": 1\n}\n\n[[Si]]\n[[No]]",
       "links": [
         {
-          "name": "Izquierda",
-          "link": "Izquierda",
+          "name": "Si",
+          "link": "Si",
           "pid": "2"
         },
         {
-          "name": "Derecha",
-          "link": "Derecha",
+          "name": "No",
+          "link": "No",
           "pid": "3"
         }
       ],
-      "name": "Inicio",
+      "name": "Kojima",
       "pid": "1",
       "position": {
         "x": "623",
-        "y": "114.5"
+        "y": "113.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"izquierda\",\n  \"isCard\": false\n}\n\n[[Parto]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"Kojima_Quieres\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Fumar]]",
       "links": [
         {
-          "name": "Parto",
-          "link": "Parto",
+          "name": "Fumar",
+          "link": "Fumar",
           "pid": "4"
         }
       ],
-      "name": "Izquierda",
+      "name": "Si",
       "pid": "2",
       "position": {
-        "x": "468",
-        "y": "267.5"
+        "x": "270",
+        "y": "156.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"derecha\",\n  \"isCard\": false\n}\n\n[[Parto]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"Kojima_Triste\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[CorrerKojima]]",
       "links": [
         {
-          "name": "Parto",
-          "link": "Parto",
-          "pid": "4"
+          "name": "CorrerKojima",
+          "link": "CorrerKojima",
+          "pid": "5"
         }
       ],
-      "name": "Derecha",
+      "name": "No",
       "pid": "3",
       "position": {
-        "x": "800",
-        "y": "274.5"
+        "x": "838",
+        "y": "237.5"
       }
     },
     {
-      "text": "",
-      "name": "Parto",
+      "text": "{\n  \"keys\": {\n    \"key\": \"PitiAnimation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[Kojima]]",
+      "links": [
+        {
+          "name": "Kojima",
+          "link": "Kojima",
+          "pid": "1"
+        }
+      ],
+      "name": "Fumar",
       "pid": "4",
       "position": {
-        "x": "621",
-        "y": "441.5"
-      },
-      "tags": [
-        "Game=Parto"
-      ]
+        "x": "425",
+        "y": "352.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"KojimaPersigue\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[Kojima]]",
+      "links": [
+        {
+          "name": "Kojima",
+          "link": "Kojima",
+          "pid": "1"
+        }
+      ],
+      "name": "CorrerKojima",
+      "pid": "5",
+      "position": {
+        "x": "650",
+        "y": "425.5"
+      }
     }
   ],
   "name": "HistoriaPrueba",

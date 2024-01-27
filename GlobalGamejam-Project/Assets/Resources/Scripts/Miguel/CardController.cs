@@ -1,11 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Security.Cryptography;
 using DG.Tweening;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
@@ -18,7 +17,12 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
     public Image imagePanelLeft;
     public Image imagePanelRight;
 
+    public Image imageCard;
     public Image imageDiapositiva;
+    public Image imageBackgroundDiapositiva;
+    
+    public GameObject animationPanel;
+    public Image imageBackgroundAnimation;
 
     public TextMeshProUGUI textCard;
     public TextMeshProUGUI textLeft;
@@ -35,10 +39,10 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
 
     public TextAsset jsonStory;
 
-    public string leftKey;
-    public string rightKey;
+    private string leftKey;
+    private string rightKey;
 
-    public string nextPassageKey;
+    private string nextPassageKey;
 
     private bool leftRight;
 
@@ -48,6 +52,8 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
 
         story = new Story();
         JsonUtility.FromJsonOverwrite(jsonStory.text, story);
+
+        Debug.Log(JsonUtility.ToJson(new Card()));
     }
 
     private void Start()
@@ -55,7 +61,7 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         originalPositionPanel = rtParent.anchoredPosition;
         originalColorPanel = imagePanelLeft.color;
         
-        SetCard(story.passages[0]);
+        SetScene(story.passages[0]);
     }
 
     private void Update()
@@ -63,7 +69,7 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         ChangeColorPanel();
     }
 
-    private void SetCard(Passage passage)
+    private void SetScene(Passage passage)
     {
         string[] info = passage.text.Split("\n\n");
 
@@ -71,39 +77,153 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         
         JsonUtility.FromJsonOverwrite(info[0], card);
 
-        if (!card.isCard)
+        switch (card.tipeCard)
         {
-            imageDiapositiva.transform.localScale = Vector2.one;
-            Debug.Log("Diapositiva Mostrada");
-            return;
+            case 1: SetCard(card, passage);
+                break;
+            case 2: SetDiapositiva(card, passage);
+                break;
+            case 3: SetAnimation(card, passage);
+                break;
+            case 4: SetGame(card, passage);
+                break;
         }
+    }
+
+    private void SetCard(Card card, Passage passage)
+    {
+        imageCard.sprite = GetSprite(card.keys.key);
         
         textCard.text = card.textCard;
         textLeft.text = card.keys.leftDecisionText;
         textRight.text = card.keys.rightDecisionText;
+        
+        leftKey = passage.links[0].name;
+        rightKey = passage.links[1].name;
+    }
 
-        Debug.Log(info[1].Replace(" ", "").Replace("\n", ""));
+    private void SetDiapositiva(Card card, Passage passage)
+    {
+        imageDiapositiva.transform.parent.gameObject.SetActive(true);
         
-        string[] opciones = info[1].Replace(" ", "").Split("]][[");
+        Sprite spriteDiapositiva = GetSprite(card.keys.key);
+        imageDiapositiva.sprite = spriteDiapositiva;
+
+        Color colorBackground = imageBackgroundDiapositiva.color;
+        colorBackground.a = 1;
+
+        imageBackgroundDiapositiva.DOColor(colorBackground, 0.2f);
+        imageDiapositiva.transform.DOScale(1, 0.3f).SetEase(Ease.OutBack);
         
-        if (opciones.Length > 1)
+        nextPassageKey = passage.links[0].name;
+    }
+
+    private Sprite GetSprite(string nameSprite)
+    {
+        Sprite[] sprites = Resources.LoadAll<Sprite>("Sprites/Diapositivas");
+
+        foreach (var sprite in sprites)
+            if (sprite.name.Equals(nameSprite))
+                return sprite;
+
+        return null;
+    }
+
+    public async void HideDiapositiva()
+    {
+        Color colorBackground = imageBackgroundDiapositiva.color;
+        colorBackground.a = 0;
+        
+        imageBackgroundDiapositiva.DOColor(colorBackground, 0.2f);
+        await imageDiapositiva.transform.DOScale(0, 0.2f).SetEase(Ease.InBack).AsyncWaitForCompletion();
+        
+        imageDiapositiva.transform.parent.gameObject.SetActive(false);
+    }
+
+    public async void HideAnimation(Action callback = null)
+    {
+        Color colorBackground = imageBackgroundAnimation.color;
+        colorBackground.a = 0;
+        
+        imageBackgroundAnimation.DOColor(colorBackground, 0.2f);
+        await animationPanel.transform.DOScale(0, 0.2f).SetEase(Ease.InBack).AsyncWaitForCompletion();
+        
+        animationPanel.transform.parent.gameObject.SetActive(false);
+        
+        callback?.Invoke();
+    }
+
+    public void EndAnimation()
+    {
+        SetScene(GetPassage(nextPassageKey));
+        HideAnimation(() =>
         {
-            leftKey = opciones[0].Replace("[[","").Replace("]]","");
-            rightKey = opciones[1].Replace("[[","").Replace("]]","");;
-            
-            return;
-        }
+            Destroy(animationPanel.transform.GetChild(0).gameObject);
+        });
+    }
+
+    private void FadeImage(GameObject imageObj, float time, float alpha, Action callback = null, bool onlyObj = false)
+    {
+        Image image = imageObj.GetComponent<Image>();
         
-        nextPassageKey = opciones[0];
+        Color colorImage = image.color;
+        colorImage.a = alpha;
+        
+        image.DOColor(colorImage, time).OnComplete(() => { callback?.Invoke(); });
+
+        if (imageObj.transform.childCount == 0) return;
+
+        for (int i = 0; i < imageObj.transform.childCount; i++)
+            FadeImage(imageObj.transform.GetChild(i).gameObject, time, alpha);
+    }
+
+    public void SetNext()
+    {
+        SetScene(GetPassage(nextPassageKey));
+    }
+
+     async void SetAnimation(Card card, Passage passage)
+    {
+        nextPassageKey = passage.links[0].name;
+        
+        animationPanel.transform.parent.gameObject.SetActive(true);
+
+        Color colorBackground = imageBackgroundAnimation.color;
+        colorBackground.a = 1;
+
+        await imageBackgroundAnimation.DOColor(colorBackground, 0.2f).AsyncWaitForCompletion();
+
+        Instantiate(GetPrefab(card.keys.key), animationPanel.transform);
+        
+        animationPanel.transform.DOScale(1, 0.2f).SetEase(Ease.OutBack);
+    }
+
+    private GameObject GetPrefab(string namePrefab)
+    {
+        GameObject[] prefabs = Resources.LoadAll<GameObject>("PrefabsMiguel");
+
+        foreach (var prefab in prefabs)
+            if (prefab.name.Equals(namePrefab))
+                return prefab;
+
+        return null;
+    }
+
+    private void SetGame(Card card, Passage passage)
+    {
+        nextPassageKey = passage.links[0].name;
+        
+        Debug.Log("Juego cargado: "+card.keys.key);
+        /*PlayerPrefs.SetString("Minijuego", card.keys.key);
+        SceneManager.LoadScene("Minijuego");*/
+        
+        SetScene(GetPassage(nextPassageKey));
     }
 
     private Passage GetPassage(string cardName)
     {
         foreach (var passage in story.passages)
-        {
-            Debug.Log(passage.name);
             if (cardName.Equals(passage.name)) return passage;
-        }
         
         return null;
     }
@@ -121,6 +241,7 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         if (returningCenter) return;
         
         float distance = Vector2.Distance(new Vector2(initialPosition.x, 0), new Vector2(eventData.position.x, 0));
+        
         if (distance < 70) 
         {
             panelPaintColor = 0;
@@ -139,13 +260,18 @@ public class CardController : MonoBehaviour, IDragHandler, IPointerDownHandler, 
     
     public async void OnPointerUp(PointerEventData eventData)
     {
+        int decision = panelPaintColor;
         panelPaintColor = 0;
+
+        transform.parent.DOKill();
+        transform.DOKill();
+        rtParent.DOKill();
         
         transform.parent.DOScale(1, 0.2f);
         transform.DORotate(new Vector3(0, 0, 0), 0.2f);
         await rtParent.DOAnchorPos(originalPositionPanel, 0.2f).AsyncWaitForCompletion();
         
-        SetCard(GetPassage(leftRight ? leftKey : rightKey));
+        if (decision != 0) SetScene(GetPassage(decision == 1 ? leftKey : rightKey));
 
         returningCenter = false;
     }
