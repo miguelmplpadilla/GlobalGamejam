@@ -30,6 +30,7 @@ public class Baby : MonoBehaviour
         if(isThrown && rb.velocity.magnitude <= 0.5f)
         {
             MinigamesHandler.instance.EndMinigame();
+            isThrown = false;
         }
     }
 }

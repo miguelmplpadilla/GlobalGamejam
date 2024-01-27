@@ -18,7 +18,7 @@ public class ObjectsList : MonoBehaviour
         if(objects.Contains(gameOb))
         {
             objects.Remove(gameOb);
-            if (objects.Count <= 0) Debug.Log("Game Ended");
+            if (objects.Count <= 0) MinigamesHandler.instance.EndMinigame();
         }
     }
 }
