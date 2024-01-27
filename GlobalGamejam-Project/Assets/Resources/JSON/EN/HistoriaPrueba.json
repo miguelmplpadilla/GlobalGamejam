@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"EspermatozoideFecundacion\",\n    \"leftDecisionText\": \"Left\",\n    \"rightDecisionText\": \"Right\"\n  },\n  \"textCard\": \"Choose whether to go left or right?\",\n  \"tipeCard\": 1\n}\n\n[[Birth]]\n[[Birth]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"EspermatozoideFecundacion\",\n    \"leftDecisionText\": \"Left\",\n    \"rightDecisionText\": \"Right\"\n  },\n  \"textCard\": \"You are a sperm, it is very dark and there are two paths, which one are you heading for?\",\n  \"tipeCard\": 1\n}\n\n[[Birth]]\n[[Birth]]",
       "links": [
         {
           "name": "Birth",
@@ -17,8 +17,8 @@
       "name": "Fecundacion",
       "pid": "1",
       "position": {
-        "x": "575",
-        "y": "173.5"
+        "x": "579",
+        "y": "117.5"
       }
     },
     {
@@ -54,7 +54,7 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"DecisionMotherFather\",\n    \"leftDecisionText\": \"Mother\",\n    \"rightDecisionText\": \"Father\"\n  },\n  \"textCard\": \"Your parents have divorced, who are you going with?\",\n  \"tipeCard\": 1\n}\n\n[[Mother]]\n[[Father]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"DecisionMotherFather\",\n    \"leftDecisionText\": \"Go with mom\",\n    \"rightDecisionText\": \"Go with dad\"\n  },\n  \"textCard\": \"Your parents have divorced, who are you staying with?\",\n  \"tipeCard\": 1\n}\n\n[[Mother]]\n[[Father]]",
       "links": [
         {
           "name": "Mother",
@@ -107,7 +107,7 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"KindergartenSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"Who do you want to play with?\",\n  \"tipeCard\": 1\n}\n\n[[PlayChildren]]\n[[PlayHomeless]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"KindergartenSlide\",\n    \"leftDecisionText\": \"Play with other children\",\n    \"rightDecisionText\": \"Play with the homeless\"\n  },\n  \"textCard\": \"There's a homeless man looking through the kindergarten window\nWho are you going to play with?\",\n  \"tipeCard\": 1\n}\n\n[[PlayChildren]]\n[[PlayHomeless]]",
       "links": [
         {
           "name": "PlayChildren",
@@ -160,7 +160,7 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"Pintar\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"What should you play with?\",\n  \"tipeCard\": 1\n}\n\n[[Pintar]]\n[[CasaQuemar]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"JuegoSolo\",\n    \"leftDecisionText\": \"Play with paints\",\n    \"rightDecisionText\": \"Play with matches\"\n  },\n  \"textCard\": \"What should you play with?\",\n  \"tipeCard\": 1\n}\n\n[[Pintar]]\n[[CasaQuemar]]",
       "links": [
         {
           "name": "Pintar",
