@@ -132,7 +132,7 @@ public class CardController : MonoBehaviour
             CalendarScript.instance.StartCalendar();
         });
 
-        await Task.Delay(4000);
+        await Task.Delay(2500);
         
         FadeInForeground(() =>
         {
