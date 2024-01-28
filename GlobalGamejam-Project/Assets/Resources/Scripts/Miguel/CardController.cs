@@ -105,7 +105,15 @@ public class CardController : MonoBehaviour
                 break;
             case 5: SetCalendar(card, passage);
                 break;
+            case 6: VolverMenuInicio();
+                break;
         }
+    }
+
+    private void VolverMenuInicio()
+    {
+        Debug.Log("Cargar escena menu inicio");
+        SetScene(story.passages[0]);
     }
 
     private async void SetCalendar(Card card, Passage passage)
@@ -135,7 +143,7 @@ public class CardController : MonoBehaviour
 
     private void SetCard(Card card, Passage passage)
     {
-        imageCard.sprite = GetSprite(card.keys.key);
+        //imageCard.sprite = GetSprite(card.keys.key);
         
         textCard.text = card.textCard.Replace("/n", "\n");
         textLeft.text = card.keys.leftDecisionText;

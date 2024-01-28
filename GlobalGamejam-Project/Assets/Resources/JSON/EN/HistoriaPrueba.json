@@ -1935,8 +1935,8 @@
       "name": "AceptarTrabajoCard",
       "pid": "114",
       "position": {
-        "x": "418",
-        "y": "9791.5"
+        "x": "430",
+        "y": "9799.5"
       }
     },
     {
@@ -1951,24 +1951,24 @@
       "name": "AceptarTrabajoSlide",
       "pid": "115",
       "position": {
-        "x": "337",
-        "y": "9979.5"
+        "x": "299",
+        "y": "9957.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"NotaDebajoPuerta2Animation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[AceptarTrabajoSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"NotaDebajoPuerta2Animation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[CaraDemacradaSlide]]",
       "links": [
         {
-          "name": "AceptarTrabajoSlide",
-          "link": "AceptarTrabajoSlide",
-          "pid": "115"
+          "name": "CaraDemacradaSlide",
+          "link": "CaraDemacradaSlide",
+          "pid": "161"
         }
       ],
       "name": "RechazarTrabajoSlide",
       "pid": "116",
       "position": {
-        "x": "571",
-        "y": "9950.5"
+        "x": "713",
+        "y": "9917.5"
       }
     },
     {
@@ -1988,7 +1988,7 @@
       "name": "OficinaTrabajoCard",
       "pid": "117",
       "position": {
-        "x": "459",
+        "x": "438",
         "y": "10100.5"
       }
     },
@@ -2259,19 +2259,19 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"SalaArrestoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ArrestoPoliciaCasaCard]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"SalaArrestoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[EleccionAbogadoSlide]]",
       "links": [
         {
-          "name": "ArrestoPoliciaCasaCard",
-          "link": "ArrestoPoliciaCasaCard",
-          "pid": "144"
+          "name": "EleccionAbogadoSlide",
+          "link": "EleccionAbogadoSlide",
+          "pid": "159"
         }
       ],
       "name": "SalaArrestoSlide",
       "pid": "134",
       "position": {
-        "x": "416",
-        "y": "12477.5"
+        "x": "533",
+        "y": "12513.5"
       }
     },
     {
@@ -2318,8 +2318,8 @@
       "name": "BilletesSlide",
       "pid": "137",
       "position": {
-        "x": "268",
-        "y": "11891.5"
+        "x": "248",
+        "y": "11901.5"
       }
     },
     {
@@ -2387,40 +2387,40 @@
       "name": "Calendar38",
       "pid": "141",
       "position": {
-        "x": "177",
-        "y": "12189.5"
+        "x": "172",
+        "y": "12184.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"ChillCasaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[EntraPoliciaCasaSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"ChillCasaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[EntraPoliciaCasaAnimation]]",
       "links": [
         {
-          "name": "EntraPoliciaCasaSlide",
-          "link": "EntraPoliciaCasaSlide",
+          "name": "EntraPoliciaCasaAnimation",
+          "link": "EntraPoliciaCasaAnimation",
           "pid": "143"
         }
       ],
       "name": "ChillCasaSlide",
       "pid": "142",
       "position": {
-        "x": "167",
-        "y": "12334.5"
+        "x": "75",
+        "y": "12331.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"EntraPoliciaCasaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ArrestoPoliciaCasaCard]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"EntraPoliciaCasaAnimation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[EntraPoliciaCasaSlide]]",
       "links": [
         {
-          "name": "ArrestoPoliciaCasaCard",
-          "link": "ArrestoPoliciaCasaCard",
-          "pid": "144"
+          "name": "EntraPoliciaCasaSlide",
+          "link": "EntraPoliciaCasaSlide",
+          "pid": "160"
         }
       ],
-      "name": "EntraPoliciaCasaSlide",
+      "name": "EntraPoliciaCasaAnimation",
       "pid": "143",
       "position": {
-        "x": "169",
-        "y": "12485.5"
+        "x": "233",
+        "y": "12362.5"
       }
     },
     {
@@ -2437,11 +2437,11 @@
           "pid": "145"
         }
       ],
-      "name": "ArrestoPoliciaCasaCard",
+      "name": "EleccionAbogadoCard",
       "pid": "144",
       "position": {
-        "x": "167",
-        "y": "12622.5"
+        "x": "157",
+        "y": "12638.5"
       }
     },
     {
@@ -2456,8 +2456,8 @@
       "name": "JuicioSlide",
       "pid": "145",
       "position": {
-        "x": "342",
-        "y": "12675.5"
+        "x": "365",
+        "y": "12693.5"
       }
     },
     {
@@ -2472,8 +2472,8 @@
       "name": "Calendar39",
       "pid": "146",
       "position": {
-        "x": "327",
-        "y": "12878.5"
+        "x": "329",
+        "y": "12882.5"
       }
     },
     {
@@ -2488,8 +2488,8 @@
       "name": "SentenciaSlide",
       "pid": "147",
       "position": {
-        "x": "152",
-        "y": "12790.5"
+        "x": "155",
+        "y": "12798.5"
       }
     },
     {
@@ -2536,8 +2536,8 @@
       "name": "SentadoCeldaSlide",
       "pid": "150",
       "position": {
-        "x": "190",
-        "y": "13217.5"
+        "x": "186",
+        "y": "13223.5"
       }
     },
     {
@@ -2573,33 +2573,33 @@
       "name": "AceptarRescateCard",
       "pid": "152",
       "position": {
-        "x": "337",
-        "y": "13454.5"
+        "x": "321",
+        "y": "13488.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"AceptarMotinSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[CorrerMotinSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"AceptarMotinSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[CoeteMotinSlide]]",
       "links": [
         {
-          "name": "CorrerMotinSlide",
-          "link": "CorrerMotinSlide",
+          "name": "CoeteMotinSlide",
+          "link": "CoeteMotinSlide",
           "pid": "155"
         }
       ],
       "name": "AceptarMotinSlide",
       "pid": "153",
       "position": {
-        "x": "166",
+        "x": "148",
         "y": "13586.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"RechazarMotinSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[MorirEspacioSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"RechazarMotinSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[MorirEspacioAnimacion]]",
       "links": [
         {
-          "name": "MorirEspacioSlide",
-          "link": "MorirEspacioSlide",
-          "pid": "158"
+          "name": "MorirEspacioAnimacion",
+          "link": "MorirEspacioAnimacion",
+          "pid": "157"
         }
       ],
       "name": "RechazarMotinSlide",
@@ -2610,76 +2610,288 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"CorrerMotinSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[CoeteMotinSlide]]",
-      "links": [
-        {
-          "name": "CoeteMotinSlide",
-          "link": "CoeteMotinSlide",
-          "pid": "156"
-        }
-      ],
-      "name": "CorrerMotinSlide",
-      "pid": "155",
-      "position": {
-        "x": "127",
-        "y": "13720.5"
-      }
-    },
-    {
-      "text": "{\n  \"keys\": {\n    \"key\": \"CorrerMotinSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[SpaceGame]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"CoeteMotinSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[SpaceGame]]",
       "links": [
         {
           "name": "SpaceGame",
           "link": "SpaceGame",
-          "pid": "157"
+          "pid": "156"
         }
       ],
       "name": "CoeteMotinSlide",
-      "pid": "156",
+      "pid": "155",
       "position": {
-        "x": "142",
-        "y": "13872.5"
+        "x": "145",
+        "y": "13757.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"SpaceGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[MorirEspacioSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"CarGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[MorirEspacioAnimacion]]\n[[MorirEspacioAnimacion]]",
       "links": [
         {
-          "name": "MorirEspacioSlide",
-          "link": "MorirEspacioSlide",
-          "pid": "158"
+          "name": "MorirEspacioAnimacion",
+          "link": "MorirEspacioAnimacion",
+          "pid": "157"
+        },
+        {
+          "name": "MorirEspacioAnimacion",
+          "link": "MorirEspacioAnimacion",
+          "pid": "157"
         }
       ],
       "name": "SpaceGame",
-      "pid": "157",
+      "pid": "156",
       "position": {
-        "x": "287",
-        "y": "13916.5"
+        "x": "263",
+        "y": "13910.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"MorirEspacioSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[IrCieloSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"MorirEspacioAnimacion\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[ConocerDiosSlide]]",
       "links": [
         {
-          "name": "IrCieloSlide",
-          "link": "IrCieloSlide",
+          "name": "ConocerDiosSlide",
+          "link": "ConocerDiosSlide",
+          "pid": "158"
+        }
+      ],
+      "name": "MorirEspacioAnimacion",
+      "pid": "157",
+      "position": {
+        "x": "502",
+        "y": "13936.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ConocerDiosCard]]",
+      "links": [
+        {
+          "name": "ConocerDiosCard",
+          "link": "ConocerDiosCard",
+          "pid": "162"
+        }
+      ],
+      "name": "ConocerDiosSlide",
+      "pid": "158",
+      "position": {
+        "x": "420",
+        "y": "14130.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"EleccionAbogadoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[EleccionAbogadoCard]]",
+      "links": [
+        {
+          "name": "EleccionAbogadoCard",
+          "link": "EleccionAbogadoCard",
+          "pid": "144"
+        }
+      ],
+      "name": "EleccionAbogadoSlide",
+      "pid": "159",
+      "position": {
+        "x": "292",
+        "y": "12505.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"EntraPoliciaCasaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[EleccionAbogadoSlide]]",
+      "links": [
+        {
+          "name": "EleccionAbogadoSlide",
+          "link": "EleccionAbogadoSlide",
           "pid": "159"
         }
       ],
-      "name": "MorirEspacioSlide",
-      "pid": "158",
+      "name": "EntraPoliciaCasaSlide",
+      "pid": "160",
       "position": {
-        "x": "476",
-        "y": "13888.5"
+        "x": "394",
+        "y": "12370.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"IrCieloSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}",
-      "name": "IrCieloSlide",
-      "pid": "159",
+      "text": "{\n  \"keys\": {\n    \"key\": \"CaraDemacradaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[AceptarTrabajoSlide]]",
+      "links": [
+        {
+          "name": "AceptarTrabajoSlide",
+          "link": "AceptarTrabajoSlide",
+          "pid": "115"
+        }
+      ],
+      "name": "CaraDemacradaSlide",
+      "pid": "161",
       "position": {
-        "x": "458",
-        "y": "14079.5"
+        "x": "544",
+        "y": "9958.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosCard\",\n    \"leftDecisionText\": \"Spit on god\",\n    \"rightDecisionText\": \"Shake hands with God\"\n  },\n  \"textCard\": \"You have found God, what do you do?\",\n  \"tipeCard\": 1\n}\n\n[[EscupirDiosSlide]]\n[[DarManoSlide]]",
+      "links": [
+        {
+          "name": "EscupirDiosSlide",
+          "link": "EscupirDiosSlide",
+          "pid": "163"
+        },
+        {
+          "name": "DarManoSlide",
+          "link": "DarManoSlide",
+          "pid": "164"
+        }
+      ],
+      "name": "ConocerDiosCard",
+      "pid": "162",
+      "position": {
+        "x": "421",
+        "y": "14280.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"EscupirDiosSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[AgujeroInfiernoSlide]]",
+      "links": [
+        {
+          "name": "AgujeroInfiernoSlide",
+          "link": "AgujeroInfiernoSlide",
+          "pid": "165"
+        }
+      ],
+      "name": "EscupirDiosSlide",
+      "pid": "163",
+      "position": {
+        "x": "262",
+        "y": "14432.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"DarManoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[AgujeroInfiernoSlide]]",
+      "links": [
+        {
+          "name": "AgujeroInfiernoSlide",
+          "link": "AgujeroInfiernoSlide",
+          "pid": "165"
+        }
+      ],
+      "name": "DarManoSlide",
+      "pid": "164",
+      "position": {
+        "x": "568",
+        "y": "14422.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"AgujeroInfiernoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ConocerDiabloSlide]]",
+      "links": [
+        {
+          "name": "ConocerDiabloSlide",
+          "link": "ConocerDiabloSlide",
+          "pid": "166"
+        }
+      ],
+      "name": "AgujeroInfiernoSlide",
+      "pid": "165",
+      "position": {
+        "x": "417",
+        "y": "14451.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiabloSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ConocerDiabloCard]]",
+      "links": [
+        {
+          "name": "ConocerDiabloCard",
+          "link": "ConocerDiabloCard",
+          "pid": "167"
+        }
+      ],
+      "name": "ConocerDiabloSlide",
+      "pid": "166",
+      "position": {
+        "x": "403",
+        "y": "14613.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiabloSlide\",\n    \"leftDecisionText\": \"Spit on devil\",\n    \"rightDecisionText\": \"Shake hands with devil\"\n  },\n  \"textCard\": \"God's thing has not worked, now you are facing the devil, what do you do?\",\n  \"tipeCard\": 1\n}\n\n[[PalHoyoSlide]]\n[[PalHoyoSlide]]",
+      "links": [
+        {
+          "name": "PalHoyoSlide",
+          "link": "PalHoyoSlide",
+          "pid": "168"
+        },
+        {
+          "name": "PalHoyoSlide",
+          "link": "PalHoyoSlide",
+          "pid": "168"
+        }
+      ],
+      "name": "ConocerDiabloCard",
+      "pid": "167",
+      "position": {
+        "x": "403",
+        "y": "14762.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"PalHoyoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ConocerDiosSupremoSlide]]",
+      "links": [
+        {
+          "name": "ConocerDiosSupremoSlide",
+          "link": "ConocerDiosSupremoSlide",
+          "pid": "169"
+        }
+      ],
+      "name": "PalHoyoSlide",
+      "pid": "168",
+      "position": {
+        "x": "403",
+        "y": "14911.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosSupremoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ConocerDiosSupremoCard]]",
+      "links": [
+        {
+          "name": "ConocerDiosSupremoCard",
+          "link": "ConocerDiosSupremoCard",
+          "pid": "170"
+        }
+      ],
+      "name": "ConocerDiosSupremoSlide",
+      "pid": "169",
+      "position": {
+        "x": "281",
+        "y": "15070.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosSupremoCard\",\n    \"leftDecisionText\": \"Reincarnate\",\n    \"rightDecisionText\": \"Return to the start menu\"\n  },\n  \"textCard\": \"You just came across ?????, he offered me to reincarnate or return to the start menu.\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[Inicio]]\n[[VolverMenuInicio]]",
+      "links": [
+        {
+          "name": "Inicio",
+          "link": "Inicio",
+          "pid": "1"
+        },
+        {
+          "name": "VolverMenuInicio",
+          "link": "VolverMenuInicio",
+          "pid": "171"
+        }
+      ],
+      "name": "ConocerDiosSupremoCard",
+      "pid": "170",
+      "position": {
+        "x": "464",
+        "y": "15130.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 6\n}",
+      "name": "VolverMenuInicio",
+      "pid": "171",
+      "position": {
+        "x": "461",
+        "y": "15297.5"
       }
     }
   ],
