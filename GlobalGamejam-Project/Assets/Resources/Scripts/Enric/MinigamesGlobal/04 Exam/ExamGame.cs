@@ -24,6 +24,7 @@ public class ExamGame : MonoBehaviour
 
     public void EndGame()
     {
+        isGameOn = false;
         StartCoroutine(End());
     }
 
