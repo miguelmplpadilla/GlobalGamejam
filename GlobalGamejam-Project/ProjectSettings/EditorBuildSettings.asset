@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Resources/Scenes/GameScenes/StartScene.unity
+    guid: 5b0843e6b6721e549b373a005658c342
+  - enabled: 1
     path: Assets/Resources/Scenes/MiguelSampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Resources/Scenes/Minigames.unity
     guid: ea9da45a125842f4693dd68c6fcf04da
+  - enabled: 1
+    path: Assets/Resources/Scenes/GameScenes/GameScene.unity
+    guid: b831a323b9d8cd54ab79e6e8e7ce57e1
   m_configObjects: {}
