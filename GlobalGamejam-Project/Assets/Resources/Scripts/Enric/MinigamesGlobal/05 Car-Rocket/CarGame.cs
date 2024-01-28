@@ -20,7 +20,7 @@ public class CarGame : MonoBehaviour
     IEnumerator StartCars()
     {
         yield return new WaitForSeconds(4);
-        TimerCar.instance.StartTimer(40);
+        TimerCar.instance.StartTimer(20);
         CarSpawner.instance.StartSpawning();
     }
 

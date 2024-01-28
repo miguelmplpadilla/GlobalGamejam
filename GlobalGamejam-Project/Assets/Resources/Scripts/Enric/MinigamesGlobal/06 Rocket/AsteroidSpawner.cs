@@ -30,7 +30,7 @@ public class AsteroidSpawner : MonoBehaviour
         SpawnCar();
         contador++;
         StartCoroutine(SpawningCars(2f));
-        StartCoroutine(SpawnGiant(25));
+        StartCoroutine(SpawnGiant(17));
     }
 
     IEnumerator SpawningCars(float delay)

@@ -20,7 +20,7 @@ public class SpaceGame : MonoBehaviour
     IEnumerator StartCars()
     {
         yield return new WaitForSeconds(4);
-        TimerSpace.instance.StartTimer(60);
+        TimerSpace.instance.StartTimer(40);
         AsteroidSpawner.instance.StartSpawning();
     }
 
