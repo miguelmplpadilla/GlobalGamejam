@@ -745,17 +745,17 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"StudyGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[Pillado]]\n[[NoPillado]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"StudyGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[NoPillado]]\n[[Pillado]]",
       "links": [
-        {
-          "name": "Pillado",
-          "link": "Pillado",
-          "pid": "46"
-        },
         {
           "name": "NoPillado",
           "link": "NoPillado",
           "pid": "47"
+        },
+        {
+          "name": "Pillado",
+          "link": "Pillado",
+          "pid": "46"
         }
       ],
       "name": "EsconditeGame",
@@ -777,8 +777,8 @@
       "name": "Pillado",
       "pid": "46",
       "position": {
-        "x": "301",
-        "y": "3743.5"
+        "x": "722",
+        "y": "3724.5"
       }
     },
     {
@@ -793,8 +793,8 @@
       "name": "NoPillado",
       "pid": "47",
       "position": {
-        "x": "708",
-        "y": "3799.5"
+        "x": "280",
+        "y": "3723.5"
       }
     },
     {
