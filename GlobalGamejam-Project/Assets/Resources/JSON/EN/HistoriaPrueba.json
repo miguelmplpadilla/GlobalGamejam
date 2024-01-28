@@ -485,8 +485,8 @@
       "name": "DrawDick",
       "pid": "29",
       "position": {
-        "x": "376",
-        "y": "2677.5"
+        "x": "342",
+        "y": "2671.5"
       }
     },
     {
@@ -501,17 +501,17 @@
       "name": "WriteLoveLetter",
       "pid": "30",
       "position": {
-        "x": "636",
-        "y": "2692.5"
+        "x": "689",
+        "y": "2672.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2009\",\n    \"rightDecisionText\": \"2010\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[GoToChurch]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2009\",\n    \"rightDecisionText\": \"2010\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[GoToChurchSlide]]",
       "links": [
         {
-          "name": "GoToChurch",
-          "link": "GoToChurch",
-          "pid": "32"
+          "name": "GoToChurchSlide",
+          "link": "GoToChurchSlide",
+          "pid": "135"
         }
       ],
       "name": "Calendar10",
@@ -522,7 +522,7 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"GoToChurch\",\n    \"leftDecisionText\": \"Love God\",\n    \"rightDecisionText\": \"Hate God\"\n  },\n  \"textCard\": \"Your parents took you to church\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[LoveGod]]\n[[HateGod]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"GoToChurchCard\",\n    \"leftDecisionText\": \"Love God\",\n    \"rightDecisionText\": \"Hate God\"\n  },\n  \"textCard\": \"Your parents took you to church\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[LoveGod]]\n[[HateGod]]",
       "links": [
         {
           "name": "LoveGod",
@@ -535,11 +535,11 @@
           "pid": "34"
         }
       ],
-      "name": "GoToChurch",
+      "name": "GoToChurchCard",
       "pid": "32",
       "position": {
-        "x": "506",
-        "y": "2848.5"
+        "x": "504",
+        "y": "2949.5"
       }
     },
     {
@@ -554,8 +554,8 @@
       "name": "LoveGod",
       "pid": "33",
       "position": {
-        "x": "310",
-        "y": "2972.5"
+        "x": "359",
+        "y": "3101.5"
       }
     },
     {
@@ -570,8 +570,8 @@
       "name": "HateGod",
       "pid": "34",
       "position": {
-        "x": "683",
-        "y": "2992.5"
+        "x": "671",
+        "y": "3129.5"
       }
     },
     {
@@ -586,8 +586,8 @@
       "name": "Calendar12",
       "pid": "35",
       "position": {
-        "x": "508",
-        "y": "2984.5"
+        "x": "513",
+        "y": "3104.5"
       }
     },
     {
@@ -602,8 +602,8 @@
       "name": "FatherNote",
       "pid": "36",
       "position": {
-        "x": "517",
-        "y": "3117.5"
+        "x": "519",
+        "y": "3235.5"
       }
     },
     {
@@ -618,8 +618,8 @@
       "name": "Stores",
       "pid": "37",
       "position": {
-        "x": "519",
-        "y": "3246.5"
+        "x": "364",
+        "y": "3254.5"
       }
     },
     {
@@ -1090,8 +1090,8 @@
       "name": "ExamSlide",
       "pid": "64",
       "position": {
-        "x": "398",
-        "y": "4739.5"
+        "x": "402",
+        "y": "4725.5"
       }
     },
     {
@@ -1467,7 +1467,7 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"PrimerRitoSatanicoCard\",\n    \"leftDecisionText\": \"Sacrifice goat\",\n    \"rightDecisionText\": \"Drink milk\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 1\n}\n\n[[SacrificeGoatSlide]]\n[[DrinkMilkSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"PrimerRitoSatanicoCard\",\n    \"leftDecisionText\": \"Sacrifice goat\",\n    \"rightDecisionText\": \"Drink milk\"\n  },\n  \"textCard\": \"You are in your first satanic rite\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[SacrificeGoatSlide]]\n[[DrinkMilkSlide]]",
       "links": [
         {
           "name": "SacrificeGoatSlide",
@@ -1484,7 +1484,7 @@
       "pid": "87",
       "position": {
         "x": "419",
-        "y": "7089.5"
+        "y": "7088.5"
       }
     },
     {
@@ -1584,8 +1584,8 @@
       "name": "UsarOuijaCard",
       "pid": "93",
       "position": {
-        "x": "420",
-        "y": "7703.5"
+        "x": "419",
+        "y": "7695.5"
       }
     },
     {
@@ -1738,7 +1738,7 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"AdorarCultoGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[Calendar26]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"MinijuegoSecta\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[Calendar26]]",
       "links": [
         {
           "name": "Calendar26",
@@ -1782,7 +1782,7 @@
       "pid": "105",
       "position": {
         "x": "422",
-        "y": "8738.5"
+        "y": "8737.5"
       }
     },
     {
@@ -1839,21 +1839,1059 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"DarPatadaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}",
+      "text": "{\n  \"keys\": {\n    \"key\": \"DarPatadaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar28]]",
+      "links": [
+        {
+          "name": "Calendar28",
+          "link": "Calendar28",
+          "pid": "111"
+        }
+      ],
       "name": "DarPatadaSlide",
       "pid": "109",
       "position": {
-        "x": "324",
-        "y": "9352.5"
+        "x": "284",
+        "y": "9339.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"AyudarPerroSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}",
+      "text": "{\n  \"keys\": {\n    \"key\": \"AyudarPerroSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar28]]",
+      "links": [
+        {
+          "name": "Calendar28",
+          "link": "Calendar28",
+          "pid": "111"
+        }
+      ],
       "name": "AyudarPerroSlide",
       "pid": "110",
       "position": {
-        "x": "552",
-        "y": "9347.5"
+        "x": "581",
+        "y": "9342.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2027\",\n    \"rightDecisionText\": \"2028\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[CasaPlanoCompletoSlide]]",
+      "links": [
+        {
+          "name": "CasaPlanoCompletoSlide",
+          "link": "CasaPlanoCompletoSlide",
+          "pid": "112"
+        }
+      ],
+      "name": "Calendar28",
+      "pid": "111",
+      "position": {
+        "x": "433",
+        "y": "9339.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"CasaPlanoCompletoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[NotaDebajoPuerta1Animation]]",
+      "links": [
+        {
+          "name": "NotaDebajoPuerta1Animation",
+          "link": "NotaDebajoPuerta1Animation",
+          "pid": "113"
+        }
+      ],
+      "name": "CasaPlanoCompletoSlide",
+      "pid": "112",
+      "position": {
+        "x": "431",
+        "y": "9504.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"NotaDebajoPuerta1Animation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[AceptarTrabajoCard]]",
+      "links": [
+        {
+          "name": "AceptarTrabajoCard",
+          "link": "AceptarTrabajoCard",
+          "pid": "114"
+        }
+      ],
+      "name": "NotaDebajoPuerta1Animation",
+      "pid": "113",
+      "position": {
+        "x": "431",
+        "y": "9654.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"CasaPlanoCompletoSlide\",\n    \"leftDecisionText\": \"Accept job\",\n    \"rightDecisionText\": \"Reject job\"\n  },\n  \"textCard\": \"They just offered you a job\n/nDo you accept?\",\n  \"tipeCard\": 1\n}\n\n[[AceptarTrabajoSlide]]\n[[RechazarTrabajoSlide]]",
+      "links": [
+        {
+          "name": "AceptarTrabajoSlide",
+          "link": "AceptarTrabajoSlide",
+          "pid": "115"
+        },
+        {
+          "name": "RechazarTrabajoSlide",
+          "link": "RechazarTrabajoSlide",
+          "pid": "116"
+        }
+      ],
+      "name": "AceptarTrabajoCard",
+      "pid": "114",
+      "position": {
+        "x": "430",
+        "y": "9799.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"AceptarTrabajoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[OficinaTrabajoCard]]",
+      "links": [
+        {
+          "name": "OficinaTrabajoCard",
+          "link": "OficinaTrabajoCard",
+          "pid": "117"
+        }
+      ],
+      "name": "AceptarTrabajoSlide",
+      "pid": "115",
+      "position": {
+        "x": "299",
+        "y": "9957.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"NotaDebajoPuerta2Animation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[CaraDemacradaSlide]]",
+      "links": [
+        {
+          "name": "CaraDemacradaSlide",
+          "link": "CaraDemacradaSlide",
+          "pid": "161"
+        }
+      ],
+      "name": "RechazarTrabajoSlide",
+      "pid": "116",
+      "position": {
+        "x": "713",
+        "y": "9917.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"OficinaTrabajoCard\",\n    \"leftDecisionText\": \"Show resume\",\n    \"rightDecisionText\": \"Kiss the boss\"\n  },\n  \"textCard\": \"You are at the job interview, I have to impress the interviewer\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[EnseñarCurriculumSlide]]\n[[BesarJefeAnimation]]",
+      "links": [
+        {
+          "name": "EnseñarCurriculumSlide",
+          "link": "EnseñarCurriculumSlide",
+          "pid": "118"
+        },
+        {
+          "name": "BesarJefeAnimation",
+          "link": "BesarJefeAnimation",
+          "pid": "119"
+        }
+      ],
+      "name": "OficinaTrabajoCard",
+      "pid": "117",
+      "position": {
+        "x": "438",
+        "y": "10100.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"EnseñarCurriculumSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ContratadoSlide]]",
+      "links": [
+        {
+          "name": "ContratadoSlide",
+          "link": "ContratadoSlide",
+          "pid": "120"
+        }
+      ],
+      "name": "EnseñarCurriculumSlide",
+      "pid": "118",
+      "position": {
+        "x": "302",
+        "y": "10227.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"BesarJefeAnimation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[ContratadoSlide]]",
+      "links": [
+        {
+          "name": "ContratadoSlide",
+          "link": "ContratadoSlide",
+          "pid": "120"
+        }
+      ],
+      "name": "BesarJefeAnimation",
+      "pid": "119",
+      "position": {
+        "x": "626",
+        "y": "10221.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ContratadoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar30]]",
+      "links": [
+        {
+          "name": "Calendar30",
+          "link": "Calendar30",
+          "pid": "121"
+        }
+      ],
+      "name": "ContratadoSlide",
+      "pid": "120",
+      "position": {
+        "x": "459",
+        "y": "10290.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2029\",\n    \"rightDecisionText\": \"2030\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[ApilarCajasGame]]",
+      "links": [
+        {
+          "name": "ApilarCajasGame",
+          "link": "ApilarCajasGame",
+          "pid": "122"
+        }
+      ],
+      "name": "Calendar30",
+      "pid": "121",
+      "position": {
+        "x": "459",
+        "y": "10425.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ApilarCajasGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[Calendar34]]",
+      "links": [
+        {
+          "name": "Calendar34",
+          "link": "Calendar34",
+          "pid": "123"
+        }
+      ],
+      "name": "ApilarCajasGame",
+      "pid": "122",
+      "position": {
+        "x": "459",
+        "y": "10575.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2033\",\n    \"rightDecisionText\": \"2034\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[PlanoGeneralMafiaSlide]]",
+      "links": [
+        {
+          "name": "PlanoGeneralMafiaSlide",
+          "link": "PlanoGeneralMafiaSlide",
+          "pid": "124"
+        }
+      ],
+      "name": "Calendar34",
+      "pid": "123",
+      "position": {
+        "x": "459",
+        "y": "10727.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"PlanoGeneralMafiaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[NotaRecadoMafiaSlide]]",
+      "links": [
+        {
+          "name": "NotaRecadoMafiaSlide",
+          "link": "NotaRecadoMafiaSlide",
+          "pid": "125"
+        }
+      ],
+      "name": "PlanoGeneralMafiaSlide",
+      "pid": "124",
+      "position": {
+        "x": "459",
+        "y": "10877.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"NotaRecadoMafiaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[AtracandoAbuelaSlide]]",
+      "links": [
+        {
+          "name": "AtracandoAbuelaSlide",
+          "link": "AtracandoAbuelaSlide",
+          "pid": "126"
+        }
+      ],
+      "name": "NotaRecadoMafiaSlide",
+      "pid": "125",
+      "position": {
+        "x": "459",
+        "y": "11027.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"AtracandoAbuelaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[AtracandoAbuelaCard]]",
+      "links": [
+        {
+          "name": "AtracandoAbuelaCard",
+          "link": "AtracandoAbuelaCard",
+          "pid": "127"
+        }
+      ],
+      "name": "AtracandoAbuelaSlide",
+      "pid": "126",
+      "position": {
+        "x": "459",
+        "y": "11177.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"AtracandoAbuelaCard\",\n    \"leftDecisionText\": \"Kill the granny\",\n    \"rightDecisionText\": \"Don't kill the granny\"\n  },\n  \"textCard\": \"You have discovered that your partner works in a sect and has told you to bring him the heart of a grandmother\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[MatarAbuelitaSlide]]\n[[NoMatarAbuelitaSlide]]",
+      "links": [
+        {
+          "name": "MatarAbuelitaSlide",
+          "link": "MatarAbuelitaSlide",
+          "pid": "128"
+        },
+        {
+          "name": "NoMatarAbuelitaSlide",
+          "link": "NoMatarAbuelitaSlide",
+          "pid": "129"
+        }
+      ],
+      "name": "AtracandoAbuelaCard",
+      "pid": "127",
+      "position": {
+        "x": "457",
+        "y": "11319.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"MatarAbuelitaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar36]]",
+      "links": [
+        {
+          "name": "Calendar36",
+          "link": "Calendar36",
+          "pid": "130"
+        }
+      ],
+      "name": "MatarAbuelitaSlide",
+      "pid": "128",
+      "position": {
+        "x": "266",
+        "y": "11376.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"CorazonFalsoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar36]]",
+      "links": [
+        {
+          "name": "Calendar36",
+          "link": "Calendar36",
+          "pid": "130"
+        }
+      ],
+      "name": "NoMatarAbuelitaSlide",
+      "pid": "129",
+      "position": {
+        "x": "631",
+        "y": "11418.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2035\",\n    \"rightDecisionText\": \"2036\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[CarGame]]",
+      "links": [
+        {
+          "name": "CarGame",
+          "link": "CarGame",
+          "pid": "131"
+        }
+      ],
+      "name": "Calendar36",
+      "pid": "130",
+      "position": {
+        "x": "458",
+        "y": "11470.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"CarGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[GanasJuegoCocheSlide]]\n[[PierdesJuegoCocheSlide]]",
+      "links": [
+        {
+          "name": "GanasJuegoCocheSlide",
+          "link": "GanasJuegoCocheSlide",
+          "pid": "132"
+        },
+        {
+          "name": "PierdesJuegoCocheSlide",
+          "link": "PierdesJuegoCocheSlide",
+          "pid": "133"
+        }
+      ],
+      "name": "CarGame",
+      "pid": "131",
+      "position": {
+        "x": "456",
+        "y": "11615.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"GanasJuegoCocheSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[MafiosoMesaSlide]]",
+      "links": [
+        {
+          "name": "MafiosoMesaSlide",
+          "link": "MafiosoMesaSlide",
+          "pid": "136"
+        }
+      ],
+      "name": "GanasJuegoCocheSlide",
+      "pid": "132",
+      "position": {
+        "x": "297",
+        "y": "11759.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"PierdesJuegoCocheSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[SalaArrestoSlide]]",
+      "links": [
+        {
+          "name": "SalaArrestoSlide",
+          "link": "SalaArrestoSlide",
+          "pid": "134"
+        }
+      ],
+      "name": "PierdesJuegoCocheSlide",
+      "pid": "133",
+      "position": {
+        "x": "541",
+        "y": "12170.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"SalaArrestoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[EleccionAbogadoSlide]]",
+      "links": [
+        {
+          "name": "EleccionAbogadoSlide",
+          "link": "EleccionAbogadoSlide",
+          "pid": "159"
+        }
+      ],
+      "name": "SalaArrestoSlide",
+      "pid": "134",
+      "position": {
+        "x": "533",
+        "y": "12513.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"GoToChurchSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[GoToChurchCard]]",
+      "links": [
+        {
+          "name": "GoToChurchCard",
+          "link": "GoToChurchCard",
+          "pid": "32"
+        }
+      ],
+      "name": "GoToChurchSlide",
+      "pid": "135",
+      "position": {
+        "x": "499",
+        "y": "2830.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"MafiosoMesaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[BilletesSlide]]",
+      "links": [
+        {
+          "name": "BilletesSlide",
+          "link": "BilletesSlide",
+          "pid": "137"
+        }
+      ],
+      "name": "MafiosoMesaSlide",
+      "pid": "136",
+      "position": {
+        "x": "102",
+        "y": "11793.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"BilletesSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[BilletesCard]]",
+      "links": [
+        {
+          "name": "BilletesCard",
+          "link": "BilletesCard",
+          "pid": "138"
+        }
+      ],
+      "name": "BilletesSlide",
+      "pid": "137",
+      "position": {
+        "x": "248",
+        "y": "11901.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"BilletesCard\",\n    \"leftDecisionText\": \"Kiss the boss\",\n    \"rightDecisionText\": \"Accept the money\"\n  },\n  \"textCard\": \"Your boss just paid you for good work.\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[BesarManoSlide]]\n[[AceptarDineroSlide]]",
+      "links": [
+        {
+          "name": "BesarManoSlide",
+          "link": "BesarManoSlide",
+          "pid": "140"
+        },
+        {
+          "name": "AceptarDineroSlide",
+          "link": "AceptarDineroSlide",
+          "pid": "139"
+        }
+      ],
+      "name": "BilletesCard",
+      "pid": "138",
+      "position": {
+        "x": "182",
+        "y": "12034.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"AceptarDineroSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar38]]",
+      "links": [
+        {
+          "name": "Calendar38",
+          "link": "Calendar38",
+          "pid": "141"
+        }
+      ],
+      "name": "AceptarDineroSlide",
+      "pid": "139",
+      "position": {
+        "x": "321",
+        "y": "12168.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"BesarManoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar38]]",
+      "links": [
+        {
+          "name": "Calendar38",
+          "link": "Calendar38",
+          "pid": "141"
+        }
+      ],
+      "name": "BesarManoSlide",
+      "pid": "140",
+      "position": {
+        "x": "43",
+        "y": "12167.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2037\",\n    \"rightDecisionText\": \"2038\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[ChillCasaSlide]]",
+      "links": [
+        {
+          "name": "ChillCasaSlide",
+          "link": "ChillCasaSlide",
+          "pid": "142"
+        }
+      ],
+      "name": "Calendar38",
+      "pid": "141",
+      "position": {
+        "x": "172",
+        "y": "12184.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ChillCasaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[EntraPoliciaCasaAnimation]]",
+      "links": [
+        {
+          "name": "EntraPoliciaCasaAnimation",
+          "link": "EntraPoliciaCasaAnimation",
+          "pid": "143"
+        }
+      ],
+      "name": "ChillCasaSlide",
+      "pid": "142",
+      "position": {
+        "x": "75",
+        "y": "12331.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"EntraPoliciaCasaAnimation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[EntraPoliciaCasaSlide]]",
+      "links": [
+        {
+          "name": "EntraPoliciaCasaSlide",
+          "link": "EntraPoliciaCasaSlide",
+          "pid": "160"
+        }
+      ],
+      "name": "EntraPoliciaCasaAnimation",
+      "pid": "143",
+      "position": {
+        "x": "233",
+        "y": "12362.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ArrestoPoliciaCasaCard\",\n    \"leftDecisionText\": \"Human lawyer\",\n    \"rightDecisionText\": \"Cat lawyer\"\n  },\n  \"textCard\": \"The police have just arrested you and they offer you a lawyer\n/nWhich one do you choose?\",\n  \"tipeCard\": 1\n}\n\n[[JuicioSlide]]\n[[JuicioSlide]]",
+      "links": [
+        {
+          "name": "JuicioSlide",
+          "link": "JuicioSlide",
+          "pid": "145"
+        },
+        {
+          "name": "JuicioSlide",
+          "link": "JuicioSlide",
+          "pid": "145"
+        }
+      ],
+      "name": "EleccionAbogadoCard",
+      "pid": "144",
+      "position": {
+        "x": "157",
+        "y": "12638.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"JuicioSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[SentenciaSlide]]",
+      "links": [
+        {
+          "name": "SentenciaSlide",
+          "link": "SentenciaSlide",
+          "pid": "147"
+        }
+      ],
+      "name": "JuicioSlide",
+      "pid": "145",
+      "position": {
+        "x": "365",
+        "y": "12693.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2038\",\n    \"rightDecisionText\": \"2039\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[PesasGame]]",
+      "links": [
+        {
+          "name": "PesasGame",
+          "link": "PesasGame",
+          "pid": "148"
+        }
+      ],
+      "name": "Calendar39",
+      "pid": "146",
+      "position": {
+        "x": "329",
+        "y": "12882.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"SentenciaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar39]]",
+      "links": [
+        {
+          "name": "Calendar39",
+          "link": "Calendar39",
+          "pid": "146"
+        }
+      ],
+      "name": "SentenciaSlide",
+      "pid": "147",
+      "position": {
+        "x": "155",
+        "y": "12798.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"PesasGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[Calendar40]]",
+      "links": [
+        {
+          "name": "Calendar40",
+          "link": "Calendar40",
+          "pid": "149"
+        }
+      ],
+      "name": "PesasGame",
+      "pid": "148",
+      "position": {
+        "x": "163",
+        "y": "13005.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2039\",\n    \"rightDecisionText\": \"2040\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[SentadoCeldaSlide]]",
+      "links": [
+        {
+          "name": "SentadoCeldaSlide",
+          "link": "SentadoCeldaSlide",
+          "pid": "150"
+        }
+      ],
+      "name": "Calendar40",
+      "pid": "149",
+      "position": {
+        "x": "337",
+        "y": "13094.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"SentadoCeldaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[NotaCeldaAnimacion]]",
+      "links": [
+        {
+          "name": "NotaCeldaAnimacion",
+          "link": "NotaCeldaAnimacion",
+          "pid": "151"
+        }
+      ],
+      "name": "SentadoCeldaSlide",
+      "pid": "150",
+      "position": {
+        "x": "186",
+        "y": "13223.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"NotaCeldaAnimacion\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[AceptarRescateCard]]",
+      "links": [
+        {
+          "name": "AceptarRescateCard",
+          "link": "AceptarRescateCard",
+          "pid": "152"
+        }
+      ],
+      "name": "NotaCeldaAnimacion",
+      "pid": "151",
+      "position": {
+        "x": "342",
+        "y": "13322.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"BilletesCard\",\n    \"leftDecisionText\": \"Yes\",\n    \"rightDecisionText\": \"No\"\n  },\n  \"textCard\": \"Other prisoners have organized a riot, should I join?\",\n  \"tipeCard\": 1\n}\n\n[[AceptarMotinSlide]]\n[[RechazarMotinSlide]]",
+      "links": [
+        {
+          "name": "AceptarMotinSlide",
+          "link": "AceptarMotinSlide",
+          "pid": "153"
+        },
+        {
+          "name": "RechazarMotinSlide",
+          "link": "RechazarMotinSlide",
+          "pid": "154"
+        }
+      ],
+      "name": "AceptarRescateCard",
+      "pid": "152",
+      "position": {
+        "x": "321",
+        "y": "13488.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"AceptarMotinSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[CoeteMotinSlide]]",
+      "links": [
+        {
+          "name": "CoeteMotinSlide",
+          "link": "CoeteMotinSlide",
+          "pid": "155"
+        }
+      ],
+      "name": "AceptarMotinSlide",
+      "pid": "153",
+      "position": {
+        "x": "148",
+        "y": "13586.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"RechazarMotinSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[MorirEspacioAnimacion]]",
+      "links": [
+        {
+          "name": "MorirEspacioAnimacion",
+          "link": "MorirEspacioAnimacion",
+          "pid": "157"
+        }
+      ],
+      "name": "RechazarMotinSlide",
+      "pid": "154",
+      "position": {
+        "x": "444",
+        "y": "13697.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"CoeteMotinSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[SpaceGame]]",
+      "links": [
+        {
+          "name": "SpaceGame",
+          "link": "SpaceGame",
+          "pid": "156"
+        }
+      ],
+      "name": "CoeteMotinSlide",
+      "pid": "155",
+      "position": {
+        "x": "145",
+        "y": "13757.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"CarGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[MorirEspacioAnimacion]]\n[[MorirEspacioAnimacion]]",
+      "links": [
+        {
+          "name": "MorirEspacioAnimacion",
+          "link": "MorirEspacioAnimacion",
+          "pid": "157"
+        },
+        {
+          "name": "MorirEspacioAnimacion",
+          "link": "MorirEspacioAnimacion",
+          "pid": "157"
+        }
+      ],
+      "name": "SpaceGame",
+      "pid": "156",
+      "position": {
+        "x": "263",
+        "y": "13910.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"MorirEspacioAnimacion\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[ConocerDiosSlide]]",
+      "links": [
+        {
+          "name": "ConocerDiosSlide",
+          "link": "ConocerDiosSlide",
+          "pid": "158"
+        }
+      ],
+      "name": "MorirEspacioAnimacion",
+      "pid": "157",
+      "position": {
+        "x": "502",
+        "y": "13936.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ConocerDiosCard]]",
+      "links": [
+        {
+          "name": "ConocerDiosCard",
+          "link": "ConocerDiosCard",
+          "pid": "162"
+        }
+      ],
+      "name": "ConocerDiosSlide",
+      "pid": "158",
+      "position": {
+        "x": "420",
+        "y": "14130.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"EleccionAbogadoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[EleccionAbogadoCard]]",
+      "links": [
+        {
+          "name": "EleccionAbogadoCard",
+          "link": "EleccionAbogadoCard",
+          "pid": "144"
+        }
+      ],
+      "name": "EleccionAbogadoSlide",
+      "pid": "159",
+      "position": {
+        "x": "292",
+        "y": "12505.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"EntraPoliciaCasaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[EleccionAbogadoSlide]]",
+      "links": [
+        {
+          "name": "EleccionAbogadoSlide",
+          "link": "EleccionAbogadoSlide",
+          "pid": "159"
+        }
+      ],
+      "name": "EntraPoliciaCasaSlide",
+      "pid": "160",
+      "position": {
+        "x": "394",
+        "y": "12370.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"CaraDemacradaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[AceptarTrabajoSlide]]",
+      "links": [
+        {
+          "name": "AceptarTrabajoSlide",
+          "link": "AceptarTrabajoSlide",
+          "pid": "115"
+        }
+      ],
+      "name": "CaraDemacradaSlide",
+      "pid": "161",
+      "position": {
+        "x": "544",
+        "y": "9958.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosCard\",\n    \"leftDecisionText\": \"Spit on god\",\n    \"rightDecisionText\": \"Shake hands with God\"\n  },\n  \"textCard\": \"You have found God, what do you do?\",\n  \"tipeCard\": 1\n}\n\n[[EscupirDiosSlide]]\n[[DarManoSlide]]",
+      "links": [
+        {
+          "name": "EscupirDiosSlide",
+          "link": "EscupirDiosSlide",
+          "pid": "163"
+        },
+        {
+          "name": "DarManoSlide",
+          "link": "DarManoSlide",
+          "pid": "164"
+        }
+      ],
+      "name": "ConocerDiosCard",
+      "pid": "162",
+      "position": {
+        "x": "421",
+        "y": "14280.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"EscupirDiosSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[AgujeroInfiernoSlide]]",
+      "links": [
+        {
+          "name": "AgujeroInfiernoSlide",
+          "link": "AgujeroInfiernoSlide",
+          "pid": "165"
+        }
+      ],
+      "name": "EscupirDiosSlide",
+      "pid": "163",
+      "position": {
+        "x": "262",
+        "y": "14432.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"DarManoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[AgujeroInfiernoSlide]]",
+      "links": [
+        {
+          "name": "AgujeroInfiernoSlide",
+          "link": "AgujeroInfiernoSlide",
+          "pid": "165"
+        }
+      ],
+      "name": "DarManoSlide",
+      "pid": "164",
+      "position": {
+        "x": "568",
+        "y": "14422.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"AgujeroInfiernoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ConocerDiabloSlide]]",
+      "links": [
+        {
+          "name": "ConocerDiabloSlide",
+          "link": "ConocerDiabloSlide",
+          "pid": "166"
+        }
+      ],
+      "name": "AgujeroInfiernoSlide",
+      "pid": "165",
+      "position": {
+        "x": "417",
+        "y": "14451.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiabloSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ConocerDiabloCard]]",
+      "links": [
+        {
+          "name": "ConocerDiabloCard",
+          "link": "ConocerDiabloCard",
+          "pid": "167"
+        }
+      ],
+      "name": "ConocerDiabloSlide",
+      "pid": "166",
+      "position": {
+        "x": "403",
+        "y": "14613.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiabloSlide\",\n    \"leftDecisionText\": \"Spit on devil\",\n    \"rightDecisionText\": \"Shake hands with devil\"\n  },\n  \"textCard\": \"God's thing has not worked, now you are facing the devil, what do you do?\",\n  \"tipeCard\": 1\n}\n\n[[PalHoyoSlide]]\n[[PalHoyoSlide]]",
+      "links": [
+        {
+          "name": "PalHoyoSlide",
+          "link": "PalHoyoSlide",
+          "pid": "168"
+        },
+        {
+          "name": "PalHoyoSlide",
+          "link": "PalHoyoSlide",
+          "pid": "168"
+        }
+      ],
+      "name": "ConocerDiabloCard",
+      "pid": "167",
+      "position": {
+        "x": "403",
+        "y": "14762.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"PalHoyoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ConocerDiosSupremoSlide]]",
+      "links": [
+        {
+          "name": "ConocerDiosSupremoSlide",
+          "link": "ConocerDiosSupremoSlide",
+          "pid": "169"
+        }
+      ],
+      "name": "PalHoyoSlide",
+      "pid": "168",
+      "position": {
+        "x": "403",
+        "y": "14911.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosSupremoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ConocerDiosSupremoCard]]",
+      "links": [
+        {
+          "name": "ConocerDiosSupremoCard",
+          "link": "ConocerDiosSupremoCard",
+          "pid": "170"
+        }
+      ],
+      "name": "ConocerDiosSupremoSlide",
+      "pid": "169",
+      "position": {
+        "x": "281",
+        "y": "15070.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosSupremoCard\",\n    \"leftDecisionText\": \"Reincarnate\",\n    \"rightDecisionText\": \"Return to the start menu\"\n  },\n  \"textCard\": \"You just came across ?????, he offered me to reincarnate or return to the start menu.\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[Inicio]]\n[[VolverMenuInicio]]",
+      "links": [
+        {
+          "name": "Inicio",
+          "link": "Inicio",
+          "pid": "1"
+        },
+        {
+          "name": "VolverMenuInicio",
+          "link": "VolverMenuInicio",
+          "pid": "171"
+        }
+      ],
+      "name": "ConocerDiosSupremoCard",
+      "pid": "170",
+      "position": {
+        "x": "464",
+        "y": "15130.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 6\n}",
+      "name": "VolverMenuInicio",
+      "pid": "171",
+      "position": {
+        "x": "461",
+        "y": "15297.5"
       }
     }
   ],

@@ -15,45 +15,34 @@ public class MinijuegoAnimales : MonoBehaviour
     void Start()
     {
         for (int i = 0; i < animales.Length; i++)
-        {
-            if (i == indice)
-            {
-                animales[i].SetActive(true);
-            }
-            else
-            {
-                animales[i].SetActive(false);
-            }
-        }
+            animales[i].SetActive(i == indice);
+        
+        ApagarLuz();
+        Invoke(nameof(EncenderLuz),0.5f);
     }
 
     public void Next()
     {
-        if (indice < animales.Length)indice++;
+        if (indice+1 < animales.Length)indice++;
         else
         {
-            print("FinalizarMinijuego");
+            CardController.instance.EndGame();
+            CancelInvoke(nameof(EncenderLuz));
+            return;
         }
 
-        for(int i = 0; i < animales.Length; i++) 
-        {
-            if (i == indice)
-            {
-                animales[i].SetActive(true);
-            }
-            else
-            {
-                animales[i].SetActive(false);
-            }
-        }
+        for (int i = 0; i < animales.Length; i++)
+            animales[i].SetActive(i == indice);
     }
 
     public void PulsarBoton()
     {
+        if (!luz.activeSelf) return;
+        
         ApagarLuz();
-        Next();
-
         Invoke(nameof(EncenderLuz),0.5f);
+        
+        Next();
     }
     
     public void ApagarLuz()
@@ -66,9 +55,5 @@ public class MinijuegoAnimales : MonoBehaviour
     {
         animalesParent.SetActive(true);
         luz.SetActive(true);
-    }
-    void Update()
-    {
-        
     }
 }
