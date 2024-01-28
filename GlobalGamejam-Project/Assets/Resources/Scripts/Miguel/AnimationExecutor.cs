@@ -8,4 +8,8 @@ public class AnimationExecutor : MonoBehaviour
     {
         GameObject.Find("CardManager").SendMessage(functionName);
     }
+    
+    public void ExecuteEndAnimation() {
+        GameObject.Find("CardManager").SendMessage("EndAnimation");
+    }
 }

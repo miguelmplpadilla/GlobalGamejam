@@ -5,27 +5,31 @@ using TMPro;
 
 public class CalendarScript : MonoBehaviour
 {
+    public static CalendarScript instance;
+    
     TextMeshProUGUI txtEdadAnterior;
     TextMeshProUGUI txtEdadSiguiente;
 
     Animator animator;
 
-    public int edadAnterior;
-    public int edadSiguiente;
-
 
     private void Awake()
     {
+        instance = this;
         txtEdadAnterior = GameObject.Find("TXT_Calendar_Top").GetComponent<TextMeshProUGUI>();
         txtEdadSiguiente = GameObject.Find("TXT_Calendar_Bot").GetComponent<TextMeshProUGUI>();
         animator = GetComponent<Animator>();
     }
-    void Start()
+
+    public void SetTextCalendar(string edadAnterior, string edadSiguiente)
     {
-        animator.SetBool("Next", false);
         txtEdadAnterior.text = "" + edadAnterior;
         txtEdadSiguiente.text = "" + edadSiguiente;
+    }
 
+    public void StartCalendar()
+    {
+        animator.SetBool("Next", false);
         Invoke(nameof(PasrPagina), 0.2f);
     }
 

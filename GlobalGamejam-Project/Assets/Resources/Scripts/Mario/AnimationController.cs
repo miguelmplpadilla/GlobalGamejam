@@ -7,7 +7,6 @@ public class AnimationController : MonoBehaviour
     public float duracion;
     void Start()
     {
-        Invoke(nameof(FinalizarAnim), duracion);
     }   
     void Update()
     {
