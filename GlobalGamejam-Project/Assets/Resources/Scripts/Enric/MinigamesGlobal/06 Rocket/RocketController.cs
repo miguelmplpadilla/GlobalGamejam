@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CarBoController : MonoBehaviour, IBeginDragHandler, IDragHandler
+public class RocketController : MonoBehaviour, IBeginDragHandler, IDragHandler
 {
     private bool gameEnded;
     private float clickOffset;
@@ -33,9 +33,9 @@ public class CarBoController : MonoBehaviour, IBeginDragHandler, IDragHandler
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        CarGame.instance.carVel = 0f;
-        CarGame.instance.roadVel = 0f;
+        SpaceGame.instance.carVel = 0f;
+        SpaceGame.instance.roadVel = 0f;
         gameEnded = true;
-        CarGame.instance.Crash();
+        SpaceGame.instance.Crash();
     }
 }
