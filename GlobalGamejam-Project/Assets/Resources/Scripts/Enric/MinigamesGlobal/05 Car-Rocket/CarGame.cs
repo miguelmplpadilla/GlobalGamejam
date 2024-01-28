@@ -6,6 +6,7 @@ public class CarGame : MonoBehaviour
 {
     public static CarGame instance;
     public float carVel = 300f;
+    public float roadVel = 250f;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -19,7 +20,7 @@ public class CarGame : MonoBehaviour
     IEnumerator StartCars()
     {
         yield return new WaitForSeconds(4);
-        TimerCar.instance.StartTimer(40);
+        TimerCar.instance.StartTimer(20);
         CarSpawner.instance.StartSpawning();
     }
 

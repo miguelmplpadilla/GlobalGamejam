@@ -10,6 +10,6 @@ public class CarScript : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.left * CarGame.instance.carVel * Time.deltaTime);
+        transform.Translate(Vector2.up * CarGame.instance.carVel * Time.deltaTime);
     }
 }

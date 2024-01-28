@@ -13,11 +13,10 @@ public class Marcador : MonoBehaviour
 
     public Color aciertoColor;
     public Color falloColor;
-    private Color originalColor;
+    public Color originalColor;
     void Start()
     {
         image = GetComponent<Image>();
-        originalColor = image.color;
         balls = new List<GameObject>();
         seq = DOTween.Sequence();
     }

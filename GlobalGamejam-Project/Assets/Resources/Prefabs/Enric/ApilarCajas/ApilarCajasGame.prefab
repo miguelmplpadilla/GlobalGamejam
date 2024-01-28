@@ -196,7 +196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press space to drop a box and stack them up to the line
+  m_text: Click to drop a box and stack them up to the line
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 59e01ee0663d5cf43a13e276a527c6a0, type: 2}
   m_sharedMaterial: {fileID: -2528826549422574644, guid: 59e01ee0663d5cf43a13e276a527c6a0, type: 2}

@@ -19,7 +19,7 @@ public class CarBoController : MonoBehaviour, IBeginDragHandler, IDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         if (gameEnded) return;
-        float desiredPos = Mathf.Clamp(eventData.position.y - clickOffset, originalPos - 250, originalPos + 250);
+        float desiredPos = Mathf.Clamp(eventData.position.y - clickOffset, originalPos - 270, originalPos + 280);
         transform.position = new Vector2(transform.position.x, desiredPos);
     }
 
@@ -34,6 +34,7 @@ public class CarBoController : MonoBehaviour, IBeginDragHandler, IDragHandler
     private void OnTriggerEnter2D(Collider2D collision)
     {
         CarGame.instance.carVel = 0f;
+        CarGame.instance.roadVel = 0f;
         gameEnded = true;
         CarGame.instance.Crash();
     }

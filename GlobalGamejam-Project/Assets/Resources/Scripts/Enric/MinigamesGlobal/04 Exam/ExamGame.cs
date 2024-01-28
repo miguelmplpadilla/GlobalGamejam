@@ -32,7 +32,7 @@ public class ExamGame : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         examResult.DOFade(1, 2);
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(2f);
         float note = aciertos / (aciertos + fallos);
         note *= 10;
         Debug.Log(note);

@@ -216,6 +216,7 @@ MonoBehaviour:
   balls: []
   aciertoColor: {r: 0.05490196, g: 0.65882355, b: 0.05490196, a: 1}
   falloColor: {r: 0.8, g: 0.05490196, b: 0.05490196, a: 1}
+  originalColor: {r: 0.6784314, g: 0.30980393, b: 0.12941177, a: 1}
 --- !u!61 &1176586379361005971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -530,7 +531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2390164497379035284}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -551,7 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7b5ac83cd4ca547875ccff478e6cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 500
+  velocity: 400
   persons: {fileID: 3004127341198991947}
   marcador: {fileID: 6839216773631140236}
   tutorial: {fileID: 6805070676846152265}
@@ -738,8 +739,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Click when the ball is here!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 037d20262899c104eb860ee39b3d02cb, type: 2}
-  m_sharedMaterial: {fileID: -6108640652655636812, guid: 037d20262899c104eb860ee39b3d02cb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 59e01ee0663d5cf43a13e276a527c6a0, type: 2}
+  m_sharedMaterial: {fileID: -2528826549422574644, guid: 59e01ee0663d5cf43a13e276a527c6a0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -763,13 +764,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.25
+  m_fontSize: 53.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 100
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -799,7 +800,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -32.7417, y: 0, z: -47.066406, w: 10.231812}
+  m_margin: {x: -68.21594, y: -3.2249146, z: -105.11536, w: 7.006653}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -872,8 +873,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 037d20262899c104eb860ee39b3d02cb, type: 2}
-  m_sharedMaterial: {fileID: -6108640652655636812, guid: 037d20262899c104eb860ee39b3d02cb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 59e01ee0663d5cf43a13e276a527c6a0, type: 2}
+  m_sharedMaterial: {fileID: -2528826549422574644, guid: 59e01ee0663d5cf43a13e276a527c6a0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -897,13 +898,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 102.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontSizeMax: 5000
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
