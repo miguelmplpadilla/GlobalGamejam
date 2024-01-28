@@ -12,12 +12,6 @@ public class CajaScript : MonoBehaviour
         canWin = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ActiveWin()
     {
         canWin = true;
@@ -27,7 +21,7 @@ public class CajaScript : MonoBehaviour
     {
         if (collision.CompareTag("WinLine"))
         {
-            print("HasGanado");
+            if (canWin) CardController.instance.EndGame();
         }
     }
 }
