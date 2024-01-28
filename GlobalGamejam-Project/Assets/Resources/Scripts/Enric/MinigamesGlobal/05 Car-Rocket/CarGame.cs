@@ -6,6 +6,7 @@ public class CarGame : MonoBehaviour
 {
     public static CarGame instance;
     public float carVel = 300f;
+    public float roadVel = 250f;
     // Start is called before the first frame update
     private void Awake()
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarScript : MonoBehaviour
+public class RoadScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -10,6 +10,6 @@ public class CarScript : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.up * CarGame.instance.carVel * Time.deltaTime);
+        transform.Translate(Vector2.left * CarGame.instance.roadVel * Time.deltaTime);
     }
 }
