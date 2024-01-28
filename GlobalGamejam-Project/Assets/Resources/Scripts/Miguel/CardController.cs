@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -8,10 +9,14 @@ using UnityEngine.UI;
 
 public class CardController : MonoBehaviour
 {
+    public bool isTesting = false;
+    public string startingPassageName = "";
+    
     public static CardController instance;
 
     public GameObject cardObj;
     public GameObject canvasCard;
+    public GameObject canvasCalendar;
     
     private RectTransform rtParent;
     
@@ -23,12 +28,10 @@ public class CardController : MonoBehaviour
 
     public Image imageCard;
     public Image imageDiapositiva;
-    public Image imageBackgroundDiapositiva;
     
     public Image imageForeground;
     
     public GameObject animationPanel;
-    public Image imageBackgroundAnimation;
 
     public TextMeshProUGUI textCard;
     public TextMeshProUGUI textLeft;
@@ -74,7 +77,7 @@ public class CardController : MonoBehaviour
         originalPositionPanel = rtParent.anchoredPosition;
         originalColorPanel = imagePanelLeft.color;
         
-        SetScene(story.passages[0]);
+        SetScene(!isTesting ? story.passages[0] : GetPassage(startingPassageName));
     }
 
     private void Update()
@@ -87,7 +90,7 @@ public class CardController : MonoBehaviour
         string[] info = passage.text.Split("\n\n");
 
         Card card = new Card();
-        
+    
         JsonUtility.FromJsonOverwrite(info[0].Replace("\n", "").Replace("\t", ""), card);
 
         switch (card.tipeCard)
@@ -100,35 +103,65 @@ public class CardController : MonoBehaviour
                 break;
             case 4: SetGame(card, passage);
                 break;
+            case 5: SetCalendar(card, passage);
+                break;
         }
+    }
+
+    private async void SetCalendar(Card card, Passage passage)
+    {
+        if (passage.links.Count > 0) 
+            nextPassageKey = passage.links[0].name;
+        else
+            nextPassageKey = story.passages[0].name;
+        
+        canvasCalendar.SetActive(true);
+        CalendarScript.instance.
+            SetTextCalendar(card.keys.leftDecisionText, card.keys.rightDecisionText);
+        
+        FadeOutForeground(() =>
+        {
+            CalendarScript.instance.StartCalendar();
+        });
+
+        await Task.Delay(4000);
+        
+        FadeInForeground(() =>
+        {
+            canvasCalendar.SetActive(false);
+            SetNext();
+        });
     }
 
     private void SetCard(Card card, Passage passage)
     {
         imageCard.sprite = GetSprite(card.keys.key);
         
-        textCard.text = card.textCard;
+        textCard.text = card.textCard.Replace("/n", "\n");
         textLeft.text = card.keys.leftDecisionText;
         textRight.text = card.keys.rightDecisionText;
         
         leftKey = passage.links[0].name;
         rightKey = passage.links[1].name;
+        
+        FadeOutForeground();
+        
+        cardObj.transform.parent.parent.localScale = Vector3.one;
     }
 
     private void SetDiapositiva(Card card, Passage passage)
     {
+        FadeOutForeground();
+        
         imageDiapositiva.transform.parent.gameObject.SetActive(true);
         
         Sprite spriteDiapositiva = GetSprite(card.keys.key);
         imageDiapositiva.sprite = spriteDiapositiva;
 
-        Color colorBackground = imageBackgroundDiapositiva.color;
-        colorBackground.a = 1;
-
-        imageBackgroundDiapositiva.DOColor(colorBackground, 0.2f);
-        imageDiapositiva.transform.DOScale(1, 0.3f).SetEase(Ease.OutBack);
-        
-        nextPassageKey = passage.links[0].name;
+        if (passage.links.Count > 0) 
+            nextPassageKey = passage.links[0].name;
+        else
+            nextPassageKey = story.passages[0].name;
     }
 
     private Sprite GetSprite(string nameSprite)
@@ -141,59 +174,90 @@ public class CardController : MonoBehaviour
         return GetSprite("Kojima_Quieres");
     }
 
-    public async void HideDiapositiva()
+    public void HideDiapositiva()
     {
-        Color colorBackground = imageBackgroundDiapositiva.color;
-        colorBackground.a = 0;
-        
-        imageBackgroundDiapositiva.DOColor(colorBackground, 0.2f);
-        await imageDiapositiva.transform.DOScale(0, 0.2f).SetEase(Ease.InBack).AsyncWaitForCompletion();
-        
-        imageDiapositiva.transform.parent.gameObject.SetActive(false);
+        FadeInForeground(() =>
+        {
+            imageDiapositiva.transform.parent.gameObject.SetActive(false);
+            SetNext();
+        });
     }
 
-    public async void HideAnimation(Action callback = null)
+    public void HideAnimation(Action callback = null)
     {
-        Color colorBackground = imageBackgroundAnimation.color;
-        colorBackground.a = 0;
+        FadeInForeground(() =>
+        {
+            animationPanel.transform.parent.gameObject.SetActive(false);
         
-        imageBackgroundAnimation.DOColor(colorBackground, 0.2f);
-        await animationPanel.transform.DOScale(0, 0.2f).SetEase(Ease.InBack).AsyncWaitForCompletion();
-        
-        animationPanel.transform.parent.gameObject.SetActive(false);
-        
-        callback?.Invoke();
+            callback?.Invoke();
+        });
     }
 
     public void EndAnimation()
     {
-        SetScene(GetPassage(nextPassageKey));
         HideAnimation(() =>
         {
             Destroy(animationPanel.transform.GetChild(0).gameObject);
+            SetScene(GetPassage(nextPassageKey));
         });
     }
 
-    public void EndGame()
+    public void EndGame(int typeDecision = 0)
     {
-        Debug.Log("EndGame");
-        
-        Passage passage = GetPassage(nextPassageKey);
+        Passage passage = null; 
 
-        bool sceneSeted = passage.links.Count < 2;
+        switch (typeDecision)
+        {
+            case 0: passage = GetPassage(nextPassageKey);
+                break;
+            case 1: passage = GetPassage(leftKey);
+                break;
+            case 2: passage = GetPassage(rightKey);
+                break;
+        }
         
-        FadeInOutForegorund(callbackMidle: () =>
+        FadeInForeground(() =>
         {
             canvasCard.SetActive(true);
             camera.SetActive(true);
             MinigamesHandler.instance.DestroyGame();
-            
-            if (sceneSeted)
-                SetScene(passage);
-        });
-        
-        if (!sceneSeted)
             SetScene(passage);
+        });
+    }
+
+    private async void FadeInForeground(Action callback = null)
+    {
+        imageForeground.transform.parent.gameObject.SetActive(true);
+        
+        Color colorForeground = imageForeground.color;
+        colorForeground.a = 0;
+
+        imageForeground.color = colorForeground;
+
+        colorForeground.a = 1;
+        
+        imageForeground.DOKill();
+
+        await imageForeground.DOColor(colorForeground, 1).AsyncWaitForCompletion();
+        
+        callback?.Invoke();
+    }
+    
+    private async void FadeOutForeground(Action callback = null)
+    {
+        imageForeground.transform.parent.gameObject.SetActive(true);
+        
+        Color colorForeground = imageForeground.color;
+        colorForeground.a = 1;
+
+        imageForeground.color = colorForeground;
+        
+        colorForeground.a = 0;
+        await imageForeground.DOColor(colorForeground, 1).AsyncWaitForCompletion();
+        
+        callback?.Invoke();
+        
+        imageForeground.transform.parent.gameObject.SetActive(false);
     }
 
     private void FadeImage(GameObject imageObj, float time, float alpha, Action callback = null, bool onlyObj = false)
@@ -218,25 +282,23 @@ public class CardController : MonoBehaviour
         SetScene(GetPassage(nextPassageKey));
     }
 
-     async void SetAnimation(Card card, Passage passage)
+    private void SetAnimation(Card card, Passage passage)
     {
-        nextPassageKey = passage.links[0].name;
+        if (passage.links.Count > 0) 
+            nextPassageKey = passage.links[0].name;
+        else
+            nextPassageKey = story.passages[0].name;
         
         animationPanel.transform.parent.gameObject.SetActive(true);
-
-        Color colorBackground = imageBackgroundAnimation.color;
-        colorBackground.a = 1;
-
-        await imageBackgroundAnimation.DOColor(colorBackground, 0.2f).AsyncWaitForCompletion();
-
+        
         Instantiate(GetPrefab(card.keys.key), animationPanel.transform);
         
-        animationPanel.transform.DOScale(1, 0.2f).SetEase(Ease.OutBack);
+        FadeOutForeground();
     }
 
     private GameObject GetPrefab(string namePrefab)
     {
-        GameObject[] prefabs = Resources.LoadAll<GameObject>("PrefabsMiguel");
+        GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs/Animations");
 
         foreach (var prefab in prefabs)
             if (prefab.name.Equals(namePrefab))
@@ -247,13 +309,22 @@ public class CardController : MonoBehaviour
 
     private void SetGame(Card card, Passage passage)
     {
-        nextPassageKey = passage.links[0].name;
-        
-        FadeInOutForegorund(callbackMidle: () =>
+        if (passage.links.Count > 0) 
+            nextPassageKey = passage.links[0].name;
+        else
+            nextPassageKey = story.passages[0].name;
+
+        if (!card.keys.key.Equals(""))
         {
+            MinigamesHandler.instance.StartMinigame(card.keys.key);
             canvasCard.SetActive(false);
             camera.SetActive(false);
-            MinigamesHandler.instance.StartMinigame(card.keys.key);
+        }
+        
+        FadeOutForeground(() =>
+        {
+            if (card.keys.key.Equals(""))
+                EndGame();
         });
     }
 
@@ -265,32 +336,13 @@ public class CardController : MonoBehaviour
         return null;
     }
 
-    private async void FadeInOutForegorund(Action callbackMidle = null, Action callbackEnd = null)
+    private void FadeInOutForegorund(Action callbackMidle = null, Action callbackEnd = null)
     {
-        imageForeground.transform.parent.gameObject.SetActive(true);
-        
-        Color colorForeground = imageForeground.color;
-        colorForeground.a = 0;
-
-        imageForeground.color = colorForeground;
-
-        colorForeground.a = 1;
-
-        await imageForeground.DOColor(colorForeground, 1).AsyncWaitForCompletion();
-        
-        callbackMidle?.Invoke();
-
-        imageForeground.DOKill();
-        
-        colorForeground.a = 1;
-        imageForeground.color = colorForeground;
-        
-        colorForeground.a = 0;
-        await imageForeground.DOColor(colorForeground, 1).AsyncWaitForCompletion();
-        
-        callbackEnd?.Invoke();
-        
-        imageForeground.transform.parent.gameObject.SetActive(false);
+        FadeInForeground(() =>
+        {
+            callbackMidle?.Invoke();
+            FadeOutForeground(callbackEnd);
+        });
     }
     
     public void OnPointerDown(PointerEventData eventData)
@@ -331,13 +383,20 @@ public class CardController : MonoBehaviour
         cardObj.transform.parent.DOKill();
         cardObj.transform.DOKill();
         rtParent.DOKill();
+
+        if (decision != 0)
+        {
+            FadeInForeground(() =>
+            {
+                cardObj.transform.parent.parent.localScale = Vector3.zero;
+                SetScene(GetPassage(decision == 1 ? leftKey : rightKey));
+            });
+        }
         
         cardObj.transform.parent.DOScale(1, 0.2f);
         cardObj.transform.DORotate(new Vector3(0, 0, 0), 0.2f);
         await rtParent.DOAnchorPos(originalPositionPanel, 0.2f).AsyncWaitForCompletion();
         
-        if (decision != 0) SetScene(GetPassage(decision == 1 ? leftKey : rightKey));
-
         returningCenter = false;
     }
 

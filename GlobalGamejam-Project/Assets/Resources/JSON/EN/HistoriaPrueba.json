@@ -1,56 +1,51 @@
 {
   "passages": [
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"EspermatozoideFecundacion\",\n    \"leftDecisionText\": \"Left\",\n    \"rightDecisionText\": \"Right\"\n  },\n  \"textCard\": \"You are a sperm, it is very dark and there are two paths, which one are you heading for?\",\n  \"tipeCard\": 1\n}\n\n[[Birth]]\n[[Birth]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"SpermAnimationStart\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[Fecundation]]\n",
       "links": [
         {
-          "name": "Birth",
-          "link": "Birth",
-          "pid": "2"
-        },
-        {
-          "name": "Birth",
-          "link": "Birth",
-          "pid": "2"
+          "name": "Fecundation",
+          "link": "Fecundation",
+          "pid": "42"
         }
       ],
-      "name": "Fecundacion",
+      "name": "Inicio",
       "pid": "1",
       "position": {
-        "x": "579",
-        "y": "117.5"
+        "x": "49",
+        "y": "16"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"BirthGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[DivorceSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"BirthGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[Calendar1]]",
       "links": [
         {
-          "name": "DivorceSlide",
-          "link": "DivorceSlide",
-          "pid": "3"
+          "name": "Calendar1",
+          "link": "Calendar1",
+          "pid": "13"
         }
       ],
       "name": "Birth",
       "pid": "2",
       "position": {
-        "x": "577",
-        "y": "300.5"
+        "x": "359",
+        "y": "245"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"DivorceSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[DecisionMotherFather]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"DivorceSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[SlideMotherFather]]",
       "links": [
         {
-          "name": "DecisionMotherFather",
-          "link": "DecisionMotherFather",
-          "pid": "4"
+          "name": "SlideMotherFather",
+          "link": "SlideMotherFather",
+          "pid": "14"
         }
       ],
       "name": "DivorceSlide",
       "pid": "3",
       "position": {
-        "x": "572",
-        "y": "435.5"
+        "x": "735",
+        "y": "299.5"
       }
     },
     {
@@ -70,44 +65,44 @@
       "name": "DecisionMotherFather",
       "pid": "4",
       "position": {
-        "x": "572",
-        "y": "576.5"
+        "x": "578",
+        "y": "535.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"MotherSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Kindergarten]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"MotherSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar2]]",
       "links": [
         {
-          "name": "Kindergarten",
-          "link": "Kindergarten",
-          "pid": "7"
+          "name": "Calendar2",
+          "link": "Calendar2",
+          "pid": "17"
         }
       ],
       "name": "Mother",
       "pid": "5",
       "position": {
-        "x": "463",
-        "y": "712.5"
+        "x": "391",
+        "y": "622.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"FatherSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Kindergarten]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"FatherSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar2]]",
       "links": [
         {
-          "name": "Kindergarten",
-          "link": "Kindergarten",
-          "pid": "7"
+          "name": "Calendar2",
+          "link": "Calendar2",
+          "pid": "17"
         }
       ],
       "name": "Father",
       "pid": "6",
       "position": {
-        "x": "672",
-        "y": "720.5"
+        "x": "748",
+        "y": "621.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"KindergartenSlide\",\n    \"leftDecisionText\": \"Play with other children\",\n    \"rightDecisionText\": \"Play with the homeless\"\n  },\n  \"textCard\": \"There's a homeless man looking through the kindergarten window\nWho are you going to play with?\",\n  \"tipeCard\": 1\n}\n\n[[PlayChildren]]\n[[PlayHomeless]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"KindergartenCard\",\n    \"leftDecisionText\": \"Play with other children\",\n    \"rightDecisionText\": \"Play with the homeless\"\n  },\n  \"textCard\": \"There's a homeless man looking through the kindergarten window\n  /nWho are you going to play with?\",\n  \"tipeCard\": 1\n}\n\n[[PlayChildren]]\n[[PlayHomeless]]",
       "links": [
         {
           "name": "PlayChildren",
@@ -123,44 +118,44 @@
       "name": "Kindergarten",
       "pid": "7",
       "position": {
-        "x": "557",
-        "y": "862.5"
+        "x": "471",
+        "y": "918.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"PlayChildrenSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[WhatPlay]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"PlayChildrenSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar3]]",
       "links": [
         {
-          "name": "WhatPlay",
-          "link": "WhatPlay",
-          "pid": "10"
+          "name": "Calendar3",
+          "link": "Calendar3",
+          "pid": "18"
         }
       ],
       "name": "PlayChildren",
       "pid": "8",
       "position": {
-        "x": "425",
-        "y": "1004.5"
+        "x": "345",
+        "y": "1042.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"PlayHomelesSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[WhatPlay]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"PlayHomelesSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar3]]",
       "links": [
         {
-          "name": "WhatPlay",
-          "link": "WhatPlay",
-          "pid": "10"
+          "name": "Calendar3",
+          "link": "Calendar3",
+          "pid": "18"
         }
       ],
       "name": "PlayHomeless",
       "pid": "9",
       "position": {
-        "x": "669",
-        "y": "1004.5"
+        "x": "685",
+        "y": "1034.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"JuegoSolo\",\n    \"leftDecisionText\": \"Play with paints\",\n    \"rightDecisionText\": \"Play with matches\"\n  },\n  \"textCard\": \"What should you play with?\",\n  \"tipeCard\": 1\n}\n\n[[Pintar]]\n[[CasaQuemar]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"Play with paints\",\n    \"rightDecisionText\": \"Play with matches\"\n  },\n  \"textCard\": \"What should you play with?\",\n  \"tipeCard\": 1\n}\n\n[[Pintar]]\n[[CasaQuemar]]",
       "links": [
         {
           "name": "Pintar",
@@ -176,40 +171,839 @@
       "name": "WhatPlay",
       "pid": "10",
       "position": {
-        "x": "547",
-        "y": "1147.5"
+        "x": "525",
+        "y": "1348.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"Pintar\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Fecundacion]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"Pintar\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar5]]",
       "links": [
         {
-          "name": "Fecundacion",
-          "link": "Fecundacion",
-          "pid": "1"
+          "name": "Calendar5",
+          "link": "Calendar5",
+          "pid": "19"
         }
       ],
       "name": "Pintar",
       "pid": "11",
       "position": {
-        "x": "472",
-        "y": "1297.5"
+        "x": "367",
+        "y": "1358.5"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"CasaQuemar\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Fecundacion]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"CasaQuemar\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar5]]",
       "links": [
         {
-          "name": "Fecundacion",
-          "link": "Fecundacion",
-          "pid": "1"
+          "name": "Calendar5",
+          "link": "Calendar5",
+          "pid": "19"
         }
       ],
       "name": "CasaQuemar",
       "pid": "12",
       "position": {
-        "x": "622",
-        "y": "1297.5"
+        "x": "689",
+        "y": "1364.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2000\",\n    \"rightDecisionText\": \"2001\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[DivorceSlide]]",
+      "links": [
+        {
+          "name": "DivorceSlide",
+          "link": "DivorceSlide",
+          "pid": "3"
+        }
+      ],
+      "name": "Calendar1",
+      "pid": "13",
+      "position": {
+        "x": "543",
+        "y": "271.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"MotherFatherSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[DecisionMotherFather]]",
+      "links": [
+        {
+          "name": "DecisionMotherFather",
+          "link": "DecisionMotherFather",
+          "pid": "4"
+        }
+      ],
+      "name": "SlideMotherFather",
+      "pid": "14",
+      "position": {
+        "x": "598",
+        "y": "411.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"HomelessKindergartenAnimation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[Kindergarten]]",
+      "links": [
+        {
+          "name": "Kindergarten",
+          "link": "Kindergarten",
+          "pid": "7"
+        }
+      ],
+      "name": "HomlesAnimation",
+      "pid": "15",
+      "position": {
+        "x": "594",
+        "y": "827.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"JuegoSolo\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[WhatPlay]]",
+      "links": [
+        {
+          "name": "WhatPlay",
+          "link": "WhatPlay",
+          "pid": "10"
+        }
+      ],
+      "name": "WhatPlaySlide",
+      "pid": "16",
+      "position": {
+        "x": "515",
+        "y": "1208.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2001\",\n    \"rightDecisionText\": \"2002\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[HomlesAnimation]]",
+      "links": [
+        {
+          "name": "HomlesAnimation",
+          "link": "HomlesAnimation",
+          "pid": "15"
+        }
+      ],
+      "name": "Calendar2",
+      "pid": "17",
+      "position": {
+        "x": "578",
+        "y": "696.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2002\",\n    \"rightDecisionText\": \"2003\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[WhatPlaySlide]]",
+      "links": [
+        {
+          "name": "WhatPlaySlide",
+          "link": "WhatPlaySlide",
+          "pid": "16"
+        }
+      ],
+      "name": "Calendar3",
+      "pid": "18",
+      "position": {
+        "x": "507",
+        "y": "1078.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2004\",\n    \"rightDecisionText\": \"2005\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[VanAnimation]]",
+      "links": [
+        {
+          "name": "VanAnimation",
+          "link": "VanAnimation",
+          "pid": "20"
+        }
+      ],
+      "name": "Calendar5",
+      "pid": "19",
+      "position": {
+        "x": "526",
+        "y": "1520.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"VanAnimation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[CandyCard]]",
+      "links": [
+        {
+          "name": "CandyCard",
+          "link": "CandyCard",
+          "pid": "21"
+        }
+      ],
+      "name": "VanAnimation",
+      "pid": "20",
+      "position": {
+        "x": "515",
+        "y": "1648.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"CandyCard\",\n    \"leftDecisionText\": \"Accept\",\n    \"rightDecisionText\": \"Deny\"\n  },\n  \"textCard\": \"A stranger offers you a candy, do you accept the candy?\",\n  \"tipeCard\": 1\n}\n\n[[Aceptar]]\n[[Denegar]]",
+      "links": [
+        {
+          "name": "Aceptar",
+          "link": "Aceptar",
+          "pid": "22"
+        },
+        {
+          "name": "Denegar",
+          "link": "Denegar",
+          "pid": "23"
+        }
+      ],
+      "name": "CandyCard",
+      "pid": "21",
+      "position": {
+        "x": "518",
+        "y": "1772.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"AceptarCaramelos\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[GameRecogerAbitacion]]",
+      "links": [
+        {
+          "name": "GameRecogerAbitacion",
+          "link": "GameRecogerAbitacion",
+          "pid": "24"
+        }
+      ],
+      "name": "Aceptar",
+      "pid": "22",
+      "position": {
+        "x": "380",
+        "y": "1903.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"DenegarCaramelos\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[GameRecogerAbitacion]]",
+      "links": [
+        {
+          "name": "GameRecogerAbitacion",
+          "link": "GameRecogerAbitacion",
+          "pid": "24"
+        }
+      ],
+      "name": "Denegar",
+      "pid": "23",
+      "position": {
+        "x": "655",
+        "y": "1916.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"RoomGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[Calendar7]]",
+      "links": [
+        {
+          "name": "Calendar7",
+          "link": "Calendar7",
+          "pid": "25"
+        }
+      ],
+      "name": "GameRecogerAbitacion",
+      "pid": "24",
+      "position": {
+        "x": "518",
+        "y": "1981.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2006\",\n    \"rightDecisionText\": \"2007\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[ChicoChicaSlide]]",
+      "links": [
+        {
+          "name": "ChicoChicaSlide",
+          "link": "ChicoChicaSlide",
+          "pid": "26"
+        }
+      ],
+      "name": "Calendar7",
+      "pid": "25",
+      "position": {
+        "x": "512",
+        "y": "2133.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ChicaLoveSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[LoveNote]]",
+      "links": [
+        {
+          "name": "LoveNote",
+          "link": "LoveNote",
+          "pid": "27"
+        }
+      ],
+      "name": "ChicoChicaSlide",
+      "pid": "26",
+      "position": {
+        "x": "509",
+        "y": "2272.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"LoveNote\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[LoveLetterDecision]]",
+      "links": [
+        {
+          "name": "LoveLetterDecision",
+          "link": "LoveLetterDecision",
+          "pid": "28"
+        }
+      ],
+      "name": "LoveNote",
+      "pid": "27",
+      "position": {
+        "x": "516",
+        "y": "2396.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"LoveLetterDecision\",\n    \"leftDecisionText\": \"Draw a dick\",\n    \"rightDecisionText\": \"Write a love letter\"\n  },\n  \"textCard\": \"The girl next door sent a love letter\n/nWhat do you answer to the girl?\",\n  \"tipeCard\": 1\n}\n\n[[DrawDick]]\n[[WriteLoveLetter]]",
+      "links": [
+        {
+          "name": "DrawDick",
+          "link": "DrawDick",
+          "pid": "29"
+        },
+        {
+          "name": "WriteLoveLetter",
+          "link": "WriteLoveLetter",
+          "pid": "30"
+        }
+      ],
+      "name": "LoveLetterDecision",
+      "pid": "28",
+      "position": {
+        "x": "514",
+        "y": "2545.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ChicoChicaSlap\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar10]]",
+      "links": [
+        {
+          "name": "Calendar10",
+          "link": "Calendar10",
+          "pid": "31"
+        }
+      ],
+      "name": "DrawDick",
+      "pid": "29",
+      "position": {
+        "x": "376",
+        "y": "2677.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ChicoChicaLove\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar10]]",
+      "links": [
+        {
+          "name": "Calendar10",
+          "link": "Calendar10",
+          "pid": "31"
+        }
+      ],
+      "name": "WriteLoveLetter",
+      "pid": "30",
+      "position": {
+        "x": "636",
+        "y": "2692.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2009\",\n    \"rightDecisionText\": \"2010\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[GoToChurch]]",
+      "links": [
+        {
+          "name": "GoToChurch",
+          "link": "GoToChurch",
+          "pid": "32"
+        }
+      ],
+      "name": "Calendar10",
+      "pid": "31",
+      "position": {
+        "x": "512",
+        "y": "2701.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"GoToChurch\",\n    \"leftDecisionText\": \"Love God\",\n    \"rightDecisionText\": \"Hate God\"\n  },\n  \"textCard\": \"Your parents took you to church\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[LoveGod]]\n[[HateGod]]",
+      "links": [
+        {
+          "name": "LoveGod",
+          "link": "LoveGod",
+          "pid": "33"
+        },
+        {
+          "name": "HateGod",
+          "link": "HateGod",
+          "pid": "34"
+        }
+      ],
+      "name": "GoToChurch",
+      "pid": "32",
+      "position": {
+        "x": "506",
+        "y": "2848.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"LoveGodSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar12]]",
+      "links": [
+        {
+          "name": "Calendar12",
+          "link": "Calendar12",
+          "pid": "35"
+        }
+      ],
+      "name": "LoveGod",
+      "pid": "33",
+      "position": {
+        "x": "310",
+        "y": "2972.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"HateGodSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar12]]",
+      "links": [
+        {
+          "name": "Calendar12",
+          "link": "Calendar12",
+          "pid": "35"
+        }
+      ],
+      "name": "HateGod",
+      "pid": "34",
+      "position": {
+        "x": "683",
+        "y": "2992.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2011\",\n    \"rightDecisionText\": \"2012\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[FatherNote]]",
+      "links": [
+        {
+          "name": "FatherNote",
+          "link": "FatherNote",
+          "pid": "36"
+        }
+      ],
+      "name": "Calendar12",
+      "pid": "35",
+      "position": {
+        "x": "508",
+        "y": "2984.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"FatherNoteSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Stores]]",
+      "links": [
+        {
+          "name": "Stores",
+          "link": "Stores",
+          "pid": "37"
+        }
+      ],
+      "name": "FatherNote",
+      "pid": "36",
+      "position": {
+        "x": "517",
+        "y": "3117.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"StoresSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[ShopStoreCard]]",
+      "links": [
+        {
+          "name": "ShopStoreCard",
+          "link": "ShopStoreCard",
+          "pid": "38"
+        }
+      ],
+      "name": "Stores",
+      "pid": "37",
+      "position": {
+        "x": "519",
+        "y": "3246.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"Buy the bread\",\n    \"rightDecisionText\": \"Buy cigars\"\n  },\n  \"textCard\": \"Your father gave you money to buy bread.\n/nWhat do you buy?\",\n  \"tipeCard\": 1\n}\n\n[[BuyBread]]\n[[BuyCigars]]",
+      "links": [
+        {
+          "name": "BuyBread",
+          "link": "BuyBread",
+          "pid": "39"
+        },
+        {
+          "name": "BuyCigars",
+          "link": "BuyCigars",
+          "pid": "40"
+        }
+      ],
+      "name": "ShopStoreCard",
+      "pid": "38",
+      "position": {
+        "x": "523",
+        "y": "3395.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"BuyBreadSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar13]]",
+      "links": [
+        {
+          "name": "Calendar13",
+          "link": "Calendar13",
+          "pid": "41"
+        }
+      ],
+      "name": "BuyBread",
+      "pid": "39",
+      "position": {
+        "x": "380",
+        "y": "3546.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"BuyCigarsSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar13]]",
+      "links": [
+        {
+          "name": "Calendar13",
+          "link": "Calendar13",
+          "pid": "41"
+        }
+      ],
+      "name": "BuyCigars",
+      "pid": "40",
+      "position": {
+        "x": "654",
+        "y": "3546.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2012\",\n    \"rightDecisionText\": \"2013\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[EsconditeGame]]",
+      "links": [
+        {
+          "name": "EsconditeGame",
+          "link": "EsconditeGame",
+          "pid": "45"
+        }
+      ],
+      "name": "Calendar13",
+      "pid": "41",
+      "position": {
+        "x": "515",
+        "y": "3548.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"EspermatozoideFecundacion\",\n    \"leftDecisionText\": \"Left\",\n    \"rightDecisionText\": \"Right\"\n  },\n  \"textCard\": \"You are a sperm, it is very dark and there are two paths, which one are you heading for?\",\n  \"tipeCard\": 1\n}\n\n[[SpermLeft]]\n[[SpermRight]]",
+      "links": [
+        {
+          "name": "SpermLeft",
+          "link": "SpermLeft",
+          "pid": "43"
+        },
+        {
+          "name": "SpermRight",
+          "link": "SpermRight",
+          "pid": "44"
+        }
+      ],
+      "name": "Fecundation",
+      "pid": "42",
+      "position": {
+        "x": "210",
+        "y": "68"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"SpermAnimationLeft\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[Birth]]",
+      "links": [
+        {
+          "name": "Birth",
+          "link": "Birth",
+          "pid": "2"
+        }
+      ],
+      "name": "SpermLeft",
+      "pid": "43",
+      "position": {
+        "x": "174",
+        "y": "231"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"SpermAnimationRight\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[Birth]]",
+      "links": [
+        {
+          "name": "Birth",
+          "link": "Birth",
+          "pid": "2"
+        }
+      ],
+      "name": "SpermRight",
+      "pid": "44",
+      "position": {
+        "x": "390",
+        "y": "79"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"EsconditeGame\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}\n\n[[Pillado]]\n[[NoPillado]]",
+      "links": [
+        {
+          "name": "Pillado",
+          "link": "Pillado",
+          "pid": "46"
+        },
+        {
+          "name": "NoPillado",
+          "link": "NoPillado",
+          "pid": "47"
+        }
+      ],
+      "name": "EsconditeGame",
+      "pid": "45",
+      "position": {
+        "x": "520",
+        "y": "3694.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"PilladoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar15]]",
+      "links": [
+        {
+          "name": "Calendar15",
+          "link": "Calendar15",
+          "pid": "48"
+        }
+      ],
+      "name": "Pillado",
+      "pid": "46",
+      "position": {
+        "x": "356",
+        "y": "3824.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"NoPilladoSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar15]]",
+      "links": [
+        {
+          "name": "Calendar15",
+          "link": "Calendar15",
+          "pid": "48"
+        }
+      ],
+      "name": "NoPillado",
+      "pid": "47",
+      "position": {
+        "x": "664",
+        "y": "3837.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2014\",\n    \"rightDecisionText\": \"2015\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[PellasCard]]",
+      "links": [
+        {
+          "name": "PellasCard",
+          "link": "PellasCard",
+          "pid": "49"
+        }
+      ],
+      "name": "Calendar15",
+      "pid": "48",
+      "position": {
+        "x": "507",
+        "y": "3862.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"PellasCard\",\n    \"leftDecisionText\": \"Go to class\",\n    \"rightDecisionText\": \"Skip class\"\n  },\n  \"textCard\": \"It's time to go to class and your classmate offers you to go for a walk.\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[GoClass]]\n[[SkipClass]]\n\n",
+      "links": [
+        {
+          "name": "GoClass",
+          "link": "GoClass",
+          "pid": "50"
+        },
+        {
+          "name": "SkipClass",
+          "link": "SkipClass",
+          "pid": "51"
+        }
+      ],
+      "name": "PellasCard",
+      "pid": "49",
+      "position": {
+        "x": "500",
+        "y": "4006.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"GoClassSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar16]]",
+      "links": [
+        {
+          "name": "Calendar16",
+          "link": "Calendar16",
+          "pid": "52"
+        }
+      ],
+      "name": "GoClass",
+      "pid": "50",
+      "position": {
+        "x": "351",
+        "y": "4128.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"SkipClassSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar16]]",
+      "links": [
+        {
+          "name": "Calendar16",
+          "link": "Calendar16",
+          "pid": "52"
+        }
+      ],
+      "name": "SkipClass",
+      "pid": "51",
+      "position": {
+        "x": "645",
+        "y": "4131.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2015\",\n    \"rightDecisionText\": \"2016\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[HomelessMoneyCard]]",
+      "links": [
+        {
+          "name": "HomelessMoneyCard",
+          "link": "HomelessMoneyCard",
+          "pid": "53"
+        }
+      ],
+      "name": "Calendar16",
+      "pid": "52",
+      "position": {
+        "x": "500",
+        "y": "4151.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"HomelessMoneyCard\",\n    \"leftDecisionText\": \"Rob the blind\",\n    \"rightDecisionText\": \"Give money\"\n  },\n  \"textCard\": \"You go down the street and you meet a homeless man\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[RobBlind]]\n[[GiveMoney]]",
+      "links": [
+        {
+          "name": "RobBlind",
+          "link": "RobBlind",
+          "pid": "54"
+        },
+        {
+          "name": "GiveMoney",
+          "link": "GiveMoney",
+          "pid": "55"
+        }
+      ],
+      "name": "HomelessMoneyCard",
+      "pid": "53",
+      "position": {
+        "x": "499",
+        "y": "4290.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"RobBlindSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[RobBlindAnimation]]",
+      "links": [
+        {
+          "name": "RobBlindAnimation",
+          "link": "RobBlindAnimation",
+          "pid": "56"
+        }
+      ],
+      "name": "RobBlind",
+      "pid": "54",
+      "position": {
+        "x": "306",
+        "y": "4384.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"TerrorismHomelessSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar17]]",
+      "links": [
+        {
+          "name": "Calendar17",
+          "link": "Calendar17",
+          "pid": "57"
+        }
+      ],
+      "name": "GiveMoney",
+      "pid": "55",
+      "position": {
+        "x": "571",
+        "y": "4434.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"AmbulanceAnimation\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[Calendar17]]",
+      "links": [
+        {
+          "name": "Calendar17",
+          "link": "Calendar17",
+          "pid": "57"
+        }
+      ],
+      "name": "RobBlindAnimation",
+      "pid": "56",
+      "position": {
+        "x": "281",
+        "y": "4532.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"2016\",\n    \"rightDecisionText\": \"2017\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 5\n}\n\n[[ExamCard]]",
+      "links": [
+        {
+          "name": "ExamCard",
+          "link": "ExamCard",
+          "pid": "58"
+        }
+      ],
+      "name": "Calendar17",
+      "pid": "57",
+      "position": {
+        "x": "476",
+        "y": "4582.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ExamCard\",\n    \"leftDecisionText\": \"Use earpiece to copy\",\n    \"rightDecisionText\": \"Study hard for the exam\"\n  },\n  \"textCard\": \"You see on the notice board that tomorrow is the final exam of the course.\n/nWhat will you do?\",\n  \"tipeCard\": 1\n}\n\n[[UsarPinganillo]]\n[[EstudiarDuro]]",
+      "links": [
+        {
+          "name": "UsarPinganillo",
+          "link": "UsarPinganillo",
+          "pid": "59"
+        },
+        {
+          "name": "EstudiarDuro",
+          "link": "EstudiarDuro",
+          "pid": "60"
+        }
+      ],
+      "name": "ExamCard",
+      "pid": "58",
+      "position": {
+        "x": "452",
+        "y": "4714.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"CopiarExamen\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}",
+      "name": "UsarPinganillo",
+      "pid": "59",
+      "position": {
+        "x": "354",
+        "y": "4859.5"
+      }
+    },
+    {
+      "text": "{\n  \"keys\": {\n    \"key\": \"ExamenNormal\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 4\n}",
+      "name": "EstudiarDuro",
+      "pid": "60",
+      "position": {
+        "x": "546",
+        "y": "4851.5"
       }
     }
   ],
