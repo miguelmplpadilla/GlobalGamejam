@@ -336,8 +336,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 40
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 59e01ee0663d5cf43a13e276a527c6a0, type: 2}
-  m_sharedMaterial: {fileID: -2528826549422574644, guid: 59e01ee0663d5cf43a13e276a527c6a0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 037d20262899c104eb860ee39b3d02cb, type: 2}
+  m_sharedMaterial: {fileID: -6108640652655636812, guid: 037d20262899c104eb860ee39b3d02cb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -361,13 +361,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 136.2
+  m_fontSize: 100
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 150
-  m_fontStyle: 1
+  m_fontSizeMax: 100
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -865,8 +865,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: DRAG THE CAR AND AVOID AN ACCIDENT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 59e01ee0663d5cf43a13e276a527c6a0, type: 2}
-  m_sharedMaterial: {fileID: -2528826549422574644, guid: 59e01ee0663d5cf43a13e276a527c6a0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 037d20262899c104eb860ee39b3d02cb, type: 2}
+  m_sharedMaterial: {fileID: -6108640652655636812, guid: 037d20262899c104eb860ee39b3d02cb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -890,13 +890,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 69.75
+  m_fontSize: 58.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 100
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -926,7 +926,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -32.7417, y: -32.24933, z: -47.066406, w: -77.88312}
+  m_margin: {x: -32.7417, y: 0, z: -47.066406, w: -48.85858}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -985,8 +985,7 @@ MonoBehaviour:
   - {fileID: 2497288944035972429, guid: b970c07aaf4895e44a3be634d4b13125, type: 3}
   - {fileID: 394684193396519467, guid: 2880b671876fcdd4cb9253478fad4449, type: 3}
   - {fileID: 1335447263079603538, guid: 7806ec21dfa41b046ad9e3b14ebfbf0d, type: 3}
-  yMinRange: 280
-  yMaxRange: 270
+  yRange: 270
   maxCars: 100
 --- !u!1 &7478519516460458188
 GameObject:

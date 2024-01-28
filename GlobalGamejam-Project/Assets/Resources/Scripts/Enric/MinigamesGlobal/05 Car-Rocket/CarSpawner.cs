@@ -7,8 +7,7 @@ public class CarSpawner : MonoBehaviour
     public static CarSpawner instance;
     public GameObject[] cars;
 
-    public float yMinRange;
-    public float yMaxRange;
+    public float yRange;
 
     private int contador;
     public int maxCars = 20;
@@ -42,6 +41,6 @@ public class CarSpawner : MonoBehaviour
     private void SpawnCar()
     {
         GameObject currBall = Instantiate(cars[Random.Range(0, cars.Length)], transform);
-        currBall.transform.localPosition = new Vector3(currBall.transform.localPosition.x, currBall.transform.localPosition.y + Random.Range(-yMinRange, yMaxRange), currBall.transform.localPosition.z);
+        currBall.transform.localPosition = new Vector3(currBall.transform.localPosition.x, currBall.transform.localPosition.y + Random.Range(-yRange, yRange+10), currBall.transform.localPosition.z);
     }
 }
