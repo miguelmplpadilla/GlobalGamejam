@@ -556,6 +556,7 @@ MonoBehaviour:
   balls: []
   aciertoColor: {r: 0.05490196, g: 0.65882355, b: 0.05490196, a: 1}
   falloColor: {r: 0.8, g: 0.05490196, b: 0.05490196, a: 1}
+  originalColor: {r: 0.6784314, g: 0.30980393, b: 0.12941177, a: 1}
 --- !u!61 &1313808283327133813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1023,7 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7b5ac83cd4ca547875ccff478e6cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 400
+  velocity: 500
   persons: {fileID: 4499457728681537441}
   marcador: {fileID: 496691147885808971}
   tutorial: {fileID: 3441178138992356360}
