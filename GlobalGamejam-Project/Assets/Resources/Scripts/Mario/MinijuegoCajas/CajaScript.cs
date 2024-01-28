@@ -6,9 +6,11 @@ public class CajaScript : MonoBehaviour
 {
     bool canWin;
 
+    private bool win = false;
+
     void Start()
     {
-        Invoke(nameof(ActiveWin), 1f);
+        Invoke(nameof(ActiveWin), 2f);
         canWin = false;
     }
 
@@ -17,11 +19,17 @@ public class CajaScript : MonoBehaviour
         canWin = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
+        if (win) return;
+        
         if (collision.CompareTag("WinLine"))
         {
-            if (canWin) CardController.instance.EndGame();
+            if (canWin)
+            {
+                CardController.instance.EndGame();
+                win = true;
+            }
         }
     }
 }
