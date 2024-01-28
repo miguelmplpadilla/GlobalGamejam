@@ -176,6 +176,7 @@ public class CardController : MonoBehaviour
 
     public void HideDiapositiva()
     {
+        Debug.Log("HideDiapositiva");
         FadeInForeground(() =>
         {
             imageDiapositiva.transform.parent.gameObject.SetActive(false);
@@ -204,6 +205,7 @@ public class CardController : MonoBehaviour
 
     public void EndGame(int typeDecision = 0)
     {
+        Debug.Log(typeDecision);
         Passage passage = null; 
 
         switch (typeDecision)
@@ -309,8 +311,16 @@ public class CardController : MonoBehaviour
 
     private void SetGame(Card card, Passage passage)
     {
-        if (passage.links.Count > 0) 
+        if (passage.links.Count > 0)
+        {
             nextPassageKey = passage.links[0].name;
+
+            if (passage.links.Count > 1)
+            {
+                leftKey = passage.links[0].name;
+                rightKey = passage.links[1].name;
+            }
+        }
         else
             nextPassageKey = story.passages[0].name;
 
