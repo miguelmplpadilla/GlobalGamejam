@@ -23,7 +23,7 @@ public class StudyGame : MonoBehaviour
         gameEnded = false;
         isPantallaOn = false;
         pantalla.SetActive(false);
-        Door.instance.CloseDoorFirst(6500);
+        Door.instance.CloseDoorFirst(6.500f);
     }
 
     // Update is called once per frame

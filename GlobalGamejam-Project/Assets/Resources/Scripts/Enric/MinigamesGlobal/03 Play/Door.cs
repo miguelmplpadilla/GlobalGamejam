@@ -15,44 +15,42 @@ public class Door : MonoBehaviour
         instance = this;
     }
     
-    public async void OpenDoor(int delay)
+    IEnumerator OpenDoor(float delay)
     {
-        await Task.Delay(delay);
+       yield return new WaitForSeconds(delay);
         isOpen = true;
         doorOpen.SetActive(true);
         doorClosed.SetActive(false);
 
-        int nextAction = Random.Range(2000, 5000);
-        CheckDoor(750);
-        CloseDoor(nextAction);
+        float nextAction = Random.Range(2, 5);
+        StartCoroutine(CheckDoor(0.750f));
+        StartCoroutine(CloseDoor(nextAction));
     }
-    public async void CloseDoor(int delay)
+    IEnumerator CloseDoor(float delay)
     {
-        await Task.Delay(delay);
-        Debug.Log("Closed");
+        yield return new WaitForSeconds(delay);
         isChecking = false;
         isOpen = false;
         doorOpen.SetActive(false);
         doorClosed.SetActive(true);
 
-        int nextAction = Random.Range(2500, 6500);
-        OpenDoor(nextAction);
+        float nextAction = Random.Range(2.500f, 6.500f);
+        StartCoroutine(OpenDoor(nextAction));
     }
 
-    public void CloseDoorFirst(int delay)
+    public void CloseDoorFirst(float delay)
     {
-        Debug.Log("Closed");
         isChecking = false;
         isOpen = false;
         doorOpen.SetActive(false);
         doorClosed.SetActive(true);
 
-        OpenDoor(delay);
+        StartCoroutine(OpenDoor(delay));
     }
 
-    public async void CheckDoor(int delay)
+    IEnumerator CheckDoor(float delay)
     {
-        await Task.Delay(delay);
+        yield return new WaitForSeconds(delay);
         isChecking = true;
     }
 
