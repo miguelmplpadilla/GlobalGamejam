@@ -112,8 +112,7 @@ public class CardController : MonoBehaviour
 
     private void VolverMenuInicio()
     {
-        Debug.Log("Cargar escena menu inicio");
-        SetScene(story.passages[0]);
+        SceneManager.LoadScene("StartScene");
     }
 
     private async void SetCalendar(Card card, Passage passage)

@@ -18,6 +18,8 @@ public class CajaScript : MonoBehaviour
     {
         canWin = true;
     }
+    
+    
 
     private void OnTriggerStay2D(Collider2D collision)
     {

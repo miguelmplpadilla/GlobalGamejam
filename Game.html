@@ -1,0 +1,1797 @@
+<html>
+  <head>
+    <title>Game</title>
+    <script type="text/javascript">
+      /**
+       * Twison - Twine 2 JSON Export Story Format
+       *
+       * Copyright (c) 2015 Em Walker
+       * https://lazerwalker.com
+       *
+       * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+       * associated documentation files (the "Software"), to deal in the Software without restriction,
+       * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+       * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+       * subject to the following conditions:
+       *
+       * The above copyright notice and this permission notice shall be included in all copies or substantial
+       * portions of the Software.
+       *
+       * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+       * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+       * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+       * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+       * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+       */
+      var Twison={extractLinksFromText:function(t){var n=t.match(/\[\[.+?\]\]/g);return n?n.map(function(t){var n=t.match(/\[\[(.*?)\-\&gt;(.*?)\]\]/);return n?{name:n[1],link:n[2]}:(t=t.substring(2,t.length-2),{name:t,link:t})}):null},extractPropsFromText:function(t){var n,r={},e=!1;const a=/\{\{((\s|\S)+?)\}\}((\s|\S)+?)\{\{\/\1\}\}/gm;for(;null!==(n=a.exec(t));){const o=n[1],s=n[3].replace(/(\r\n|\n|\r)/gm,""),i=this.extractPropsFromText(s);r[o]=null!==i?i:s,e=!0}return e?r:null},convertPassage:function(t){var n={text:t.innerHTML},r=Twison.extractLinksFromText(n.text);r&&(n.links=r);const e=Twison.extractPropsFromText(n.text);if(e&&(n.props=e),["name","pid","position","tags"].forEach(function(r){var e=t.attributes[r].value;e&&(n[r]=e)}),n.position){var a=n.position.split(",");n.position={x:a[0],y:a[1]}}return n.tags&&(n.tags=n.tags.split(" ")),n},convertStory:function(t){var n=t.getElementsByTagName("tw-passagedata"),r=Array.prototype.slice.call(n).map(Twison.convertPassage),e={passages:r};["name","startnode","creator","creator-version","ifid"].forEach(function(n){var r=t.attributes[n].value;r&&(e[n]=r)});var a={};return e.passages.forEach(function(t){a[t.name]=t.pid}),e.passages.forEach(function(t){t.links&&t.links.forEach(function(t){t.pid=a[t.link],t.pid||(t.broken=!0)})}),e},convert:function(){var t=document.getElementsByTagName("tw-storydata")[0],n=JSON.stringify(Twison.convertStory(t),null,2);document.getElementById("output").innerHTML=n}};window.Twison=Twison;
+    </script>
+  </head>
+  <body>
+    <pre id="output"></pre>
+    <div id="storyData" style="display: none;">
+      <tw-storydata name="Game" startnode="1" creator="Twine" creator-version="2.2.0" ifid="42D65650-C02A-4B47-B2FC-3BCAECFD0EB3" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Inicio" tags="" position="49,16" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;SpermAnimationStart&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[Fecundation]]
+</tw-passagedata><tw-passagedata pid="2" name="Birth" tags="" position="359,245" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;BirthGame&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 4
+}
+
+[[Calendar1]]</tw-passagedata><tw-passagedata pid="3" name="DivorceSlide" tags="" position="735,299.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;DivorceSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[SlideMotherFather]]</tw-passagedata><tw-passagedata pid="4" name="DecisionMotherFather" tags="" position="578,535.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;DecisionMotherFather&quot;,
+    &quot;leftDecisionText&quot;: &quot;Go with mom&quot;,
+    &quot;rightDecisionText&quot;: &quot;Go with dad&quot;
+  },
+  &quot;textCard&quot;: &quot;Your parents have divorced, who are you staying with?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[Mother]]
+[[Father]]</tw-passagedata><tw-passagedata pid="5" name="Mother" tags="" position="391,622.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;MotherSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar2]]</tw-passagedata><tw-passagedata pid="6" name="Father" tags="" position="748,621.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;FatherSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar2]]</tw-passagedata><tw-passagedata pid="7" name="Kindergarten" tags="" position="471,918.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;KindergartenCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Play with other children&quot;,
+    &quot;rightDecisionText&quot;: &quot;Play with the homeless&quot;
+  },
+  &quot;textCard&quot;: &quot;There&#39;s a homeless man looking through the kindergarten window
+  /nWho are you going to play with?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[PlayChildren]]
+[[PlayHomeless]]</tw-passagedata><tw-passagedata pid="8" name="PlayChildren" tags="" position="345,1042.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PlayChildrenSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar3]]</tw-passagedata><tw-passagedata pid="9" name="PlayHomeless" tags="" position="685,1034.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PlayHomelesSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar3]]</tw-passagedata><tw-passagedata pid="10" name="WhatPlay" tags="" position="525,1348.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;Play with paints&quot;,
+    &quot;rightDecisionText&quot;: &quot;Play with matches&quot;
+  },
+  &quot;textCard&quot;: &quot;What should you play with?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[Pintar]]
+[[CasaQuemar]]</tw-passagedata><tw-passagedata pid="11" name="Pintar" tags="" position="367,1358.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;Pintar&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar5]]</tw-passagedata><tw-passagedata pid="12" name="CasaQuemar" tags="" position="689,1364.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;CasaQuemar&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar5]]</tw-passagedata><tw-passagedata pid="13" name="Calendar1" tags="" position="543,271.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2000&quot;,
+    &quot;rightDecisionText&quot;: &quot;2001&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[DivorceSlide]]</tw-passagedata><tw-passagedata pid="14" name="SlideMotherFather" tags="" position="598,411.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;MotherFatherSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[DecisionMotherFather]]</tw-passagedata><tw-passagedata pid="15" name="HomlesAnimation" tags="" position="594,827.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;HomelessKindergartenAnimation&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[Kindergarten]]</tw-passagedata><tw-passagedata pid="16" name="WhatPlaySlide" tags="" position="515,1208.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;JuegoSolo&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[WhatPlay]]</tw-passagedata><tw-passagedata pid="17" name="Calendar2" tags="" position="578,696.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2001&quot;,
+    &quot;rightDecisionText&quot;: &quot;2002&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[HomlesAnimation]]</tw-passagedata><tw-passagedata pid="18" name="Calendar3" tags="" position="507,1078.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2002&quot;,
+    &quot;rightDecisionText&quot;: &quot;2003&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[WhatPlaySlide]]</tw-passagedata><tw-passagedata pid="19" name="Calendar5" tags="" position="526,1520.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2004&quot;,
+    &quot;rightDecisionText&quot;: &quot;2005&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[VanAnimation]]</tw-passagedata><tw-passagedata pid="20" name="VanAnimation" tags="" position="515,1648.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;VanAnimation&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[CandyCard]]</tw-passagedata><tw-passagedata pid="21" name="CandyCard" tags="" position="518,1772.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;CandyCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Accept&quot;,
+    &quot;rightDecisionText&quot;: &quot;Deny&quot;
+  },
+  &quot;textCard&quot;: &quot;A stranger offers you a candy, do you accept the candy?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[Aceptar]]
+[[Denegar]]</tw-passagedata><tw-passagedata pid="22" name="Aceptar" tags="" position="380,1903.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;AceptarCaramelos&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[GameRecogerAbitacion]]</tw-passagedata><tw-passagedata pid="23" name="Denegar" tags="" position="655,1916.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;DenegarCaramelos&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[GameRecogerAbitacion]]</tw-passagedata><tw-passagedata pid="24" name="GameRecogerAbitacion" tags="" position="518,1981.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;RoomGame&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 4
+}
+
+[[Calendar7]]</tw-passagedata><tw-passagedata pid="25" name="Calendar7" tags="" position="512,2133.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2006&quot;,
+    &quot;rightDecisionText&quot;: &quot;2007&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[ChicoChicaSlide]]</tw-passagedata><tw-passagedata pid="26" name="ChicoChicaSlide" tags="" position="509,2272.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ChicaLoveSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[LoveNote]]</tw-passagedata><tw-passagedata pid="27" name="LoveNote" tags="" position="516,2396.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;LoveNote&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[LoveLetterDecision]]</tw-passagedata><tw-passagedata pid="28" name="LoveLetterDecision" tags="" position="514,2545.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;LoveLetterDecision&quot;,
+    &quot;leftDecisionText&quot;: &quot;Draw a dick&quot;,
+    &quot;rightDecisionText&quot;: &quot;Write a love letter&quot;
+  },
+  &quot;textCard&quot;: &quot;The girl next door sent a love letter
+/nWhat do you answer to the girl?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[DrawDick]]
+[[WriteLoveLetter]]</tw-passagedata><tw-passagedata pid="29" name="DrawDick" tags="" position="342,2671.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ChicoChicaSlap&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar10]]</tw-passagedata><tw-passagedata pid="30" name="WriteLoveLetter" tags="" position="689,2672.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ChicoChicaLove&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar10]]</tw-passagedata><tw-passagedata pid="31" name="Calendar10" tags="" position="512,2701.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2009&quot;,
+    &quot;rightDecisionText&quot;: &quot;2010&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[GoToChurchSlide]]</tw-passagedata><tw-passagedata pid="32" name="GoToChurchCard" tags="" position="504,2949.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;GoToChurchCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Love God&quot;,
+    &quot;rightDecisionText&quot;: &quot;Hate God&quot;
+  },
+  &quot;textCard&quot;: &quot;Your parents took you to church
+/nWhat are you doing?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[LoveGod]]
+[[HateGod]]</tw-passagedata><tw-passagedata pid="33" name="LoveGod" tags="" position="359,3101.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;LoveGodSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar12]]</tw-passagedata><tw-passagedata pid="34" name="HateGod" tags="" position="671,3129.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;HateGodSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar12]]</tw-passagedata><tw-passagedata pid="35" name="Calendar12" tags="" position="513,3104.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2011&quot;,
+    &quot;rightDecisionText&quot;: &quot;2012&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[FatherNote]]</tw-passagedata><tw-passagedata pid="36" name="FatherNote" tags="" position="519,3235.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;FatherNoteSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Stores]]</tw-passagedata><tw-passagedata pid="37" name="Stores" tags="" position="364,3254.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;StoresSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[ShopStoreCard]]</tw-passagedata><tw-passagedata pid="38" name="ShopStoreCard" tags="" position="515,3387.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ShopStoreCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Buy the bread&quot;,
+    &quot;rightDecisionText&quot;: &quot;Buy cigars&quot;
+  },
+  &quot;textCard&quot;: &quot;Your father gave you money to buy bread.
+/nWhat do you buy?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[BuyBread]]
+[[BuyCigars]]</tw-passagedata><tw-passagedata pid="39" name="BuyBread" tags="" position="347,3498.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;BuyBreadSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar13]]</tw-passagedata><tw-passagedata pid="40" name="BuyCigars" tags="" position="677,3509.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;BuyCigarsSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar13]]</tw-passagedata><tw-passagedata pid="41" name="Calendar13" tags="" position="504,3532.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2012&quot;,
+    &quot;rightDecisionText&quot;: &quot;2013&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[EsconditeGame]]</tw-passagedata><tw-passagedata pid="42" name="Fecundation" tags="" position="210,68" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;EspermatozoideFecundacion&quot;,
+    &quot;leftDecisionText&quot;: &quot;Left&quot;,
+    &quot;rightDecisionText&quot;: &quot;Right&quot;
+  },
+  &quot;textCard&quot;: &quot;You are a sperm, it is very dark and there are two paths, which one are you heading for?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[SpermLeft]]
+[[SpermRight]]</tw-passagedata><tw-passagedata pid="43" name="SpermLeft" tags="" position="174,231" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;SpermAnimationLeft&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[Birth]]</tw-passagedata><tw-passagedata pid="44" name="SpermRight" tags="" position="390,79" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;SpermAnimationRight&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[Birth]]</tw-passagedata><tw-passagedata pid="45" name="EsconditeGame" tags="" position="496,3651.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;StudyGame&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 4
+}
+
+[[NoPillado]]
+[[Pillado]]</tw-passagedata><tw-passagedata pid="46" name="Pillado" tags="" position="722,3724.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PilladoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar15]]</tw-passagedata><tw-passagedata pid="47" name="NoPillado" tags="" position="280,3723.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;NoPilladoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar15]]</tw-passagedata><tw-passagedata pid="48" name="Calendar15" tags="" position="476,3820.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2014&quot;,
+    &quot;rightDecisionText&quot;: &quot;2015&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[GoClassPellasSlide]]</tw-passagedata><tw-passagedata pid="49" name="PellasCard" tags="" position="534,4000.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PellasCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Go to class&quot;,
+    &quot;rightDecisionText&quot;: &quot;Skip class&quot;
+  },
+  &quot;textCard&quot;: &quot;It&#39;s time to go to class and your classmate offers you to go for a walk.
+/nWhat are you doing?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[GoClass]]
+[[SkipClass]]
+
+</tw-passagedata><tw-passagedata pid="50" name="GoClass" tags="" position="351,4128.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;GoClassSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar16]]</tw-passagedata><tw-passagedata pid="51" name="SkipClass" tags="" position="645,4131.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;SkipClassSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar16]]</tw-passagedata><tw-passagedata pid="52" name="Calendar16" tags="" position="500,4151.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2015&quot;,
+    &quot;rightDecisionText&quot;: &quot;2016&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[HomelessBlindSlide]]</tw-passagedata><tw-passagedata pid="53" name="HomelessMoneyCard" tags="" position="434,4422.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;HomelessMoneyCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Rob the blind&quot;,
+    &quot;rightDecisionText&quot;: &quot;Give money&quot;
+  },
+  &quot;textCard&quot;: &quot;You go down the street and you meet a homeless man
+/nWhat are you doing?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[RobBlind]]
+[[GiveMoney]]</tw-passagedata><tw-passagedata pid="54" name="RobBlind" tags="" position="245,4434.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;RobBlindSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[RobBlindAnimation]]</tw-passagedata><tw-passagedata pid="55" name="GiveMoney" tags="" position="604,4442.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;GiveMoneyHomeless&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[TerrorismHomeless]]</tw-passagedata><tw-passagedata pid="56" name="RobBlindAnimation" tags="" position="230,4573.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;AmbulanceAnimation&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[Calendar17]]</tw-passagedata><tw-passagedata pid="57" name="Calendar17" tags="" position="420,4588.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2016&quot;,
+    &quot;rightDecisionText&quot;: &quot;2017&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[ExamSlide]]</tw-passagedata><tw-passagedata pid="58" name="ExamCard" tags="" position="382,4867.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ExamCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Use earpiece to copy&quot;,
+    &quot;rightDecisionText&quot;: &quot;Study hard for the exam&quot;
+  },
+  &quot;textCard&quot;: &quot;You see on the notice board that tomorrow is the final exam of the course.
+/nWhat will you do?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[UsarPinganilloSlide]]
+[[EstudiarDuroSlide]]</tw-passagedata><tw-passagedata pid="59" name="UsarPinganillo" tags="" position="196,5117.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ExamGame&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 4
+}
+
+[[AprobarExamen]]
+[[SuspenderExamen]]</tw-passagedata><tw-passagedata pid="60" name="EstudiarDuro" tags="" position="499,5108.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ExamGameNoCopy&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 4
+}
+
+[[AprobarExamen]]
+[[SuspenderExamen]]</tw-passagedata><tw-passagedata pid="61" name="GoClassPellasSlide" tags="" position="364,3951.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;GoClassPellasSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[PellasCard]]</tw-passagedata><tw-passagedata pid="62" name="TerrorismHomeless" tags="" position="598,4597.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;TerrorismHomelessSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar17]]</tw-passagedata><tw-passagedata pid="63" name="HomelessBlindSlide" tags="" position="468,4276.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;HomelessBlindSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[HomelessMoneyCard]]</tw-passagedata><tw-passagedata pid="64" name="ExamSlide" tags="" position="402,4725.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ExamSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[ExamCard]]</tw-passagedata><tw-passagedata pid="65" name="UsarPinganilloSlide" tags="" position="222,4967.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;UsarPinganilloSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[UsarPinganillo]]</tw-passagedata><tw-passagedata pid="66" name="EstudiarDuroSlide" tags="" position="540,4947.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;EstudiarDuroSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[EstudiarDuro]]</tw-passagedata><tw-passagedata pid="67" name="AprobarExamen" tags="" position="136,5359.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;AprobarExamen&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar18]]</tw-passagedata><tw-passagedata pid="68" name="SuspenderExamen" tags="" position="572,5324.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;SuspenderExamen&quot;,
+    &quot;leftDecisionText&quot;: &quot;Repeat the exam&quot;,
+    &quot;rightDecisionText&quot;: &quot;Hack the exam note&quot;
+  },
+  &quot;textCard&quot;: &quot;You have failed the exam
+/nWhat will you do?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[EstudiarDuro]]
+[[HackearNotaSlide]]</tw-passagedata><tw-passagedata pid="69" name="HackearNotaSlide" tags="" position="420,5371.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;HackearNotaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar18]]</tw-passagedata><tw-passagedata pid="70" name="Calendar18" tags="" position="282,5408.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2017&quot;,
+    &quot;rightDecisionText&quot;: &quot;2018&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[UniversidadSlide]]</tw-passagedata><tw-passagedata pid="71" name="UniversidadSlide" tags="" position="417,5545.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;UniversidadSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[UniversidadCard]]</tw-passagedata><tw-passagedata pid="72" name="UniversidadCard" tags="" position="411,5677.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;UniversidadCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Smoke dope&quot;,
+    &quot;rightDecisionText&quot;: &quot;Read Karl Marx&quot;
+  },
+  &quot;textCard&quot;: &quot;You just entered university
+/nWhat is the first thing you will do?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[SmokingDopeSlide]]
+[[ReadKarlMarxSlide]]
+
+</tw-passagedata><tw-passagedata pid="73" name="SmokingDopeSlide" tags="" position="241,5783.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;SmokingDopeSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar19]]</tw-passagedata><tw-passagedata pid="74" name="ReadKarlMarxSlide" tags="" position="560,5801.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ReadKarlMarxSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar19]]</tw-passagedata><tw-passagedata pid="75" name="Calendar19" tags="" position="405,5816.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ReadKarlMarxSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;2019&quot;,
+    &quot;rightDecisionText&quot;: &quot;2020&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[CompañeroUniSlide]]</tw-passagedata><tw-passagedata pid="76" name="CompañeroUniSlide" tags="" position="405,5965.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;CompañeroUniSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[NotaCompañeroSlide]]</tw-passagedata><tw-passagedata pid="77" name="NotaCompañeroSlide" tags="" position="412,6170.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;NotaCompañeroSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[CompañeroCultoCard]]</tw-passagedata><tw-passagedata pid="78" name="CompañeroCultoCard" tags="" position="262,6347.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;CompañeroCultoCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Enter the cult&quot;,
+    &quot;rightDecisionText&quot;: &quot;Do not enter the cult&quot;
+  },
+  &quot;textCard&quot;: &quot;Your roommate has offered you to join a cult
+/nDo you accept?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[ShakeHandsWashSlide]]
+[[NoAceptarCultoSlide]]</tw-passagedata><tw-passagedata pid="79" name="NoAceptarCultoSlide" tags="" position="513,6350.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;NoAceptarCultoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[BañoAnimation]]</tw-passagedata><tw-passagedata pid="80" name="Calendar20" tags="" position="348,6827.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2019&quot;,
+    &quot;rightDecisionText&quot;: &quot;2020&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[PrimerRitoSatanicoSlide]]</tw-passagedata><tw-passagedata pid="81" name="BañoAnimation" tags="" position="589,6484.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;BañoAnimation&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[BañoCard]]</tw-passagedata><tw-passagedata pid="82" name="BañoCard" tags="" position="625,6643.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;BañoCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Wash your hands and shake hands&quot;,
+    &quot;rightDecisionText&quot;: &quot;Shake hands with dirty hands&quot;
+  },
+  &quot;textCard&quot;: &quot;Your roommate has forced you to join the sect, you have to shake his hand to accept
+/nWhat are you doing?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[ShakeHandsWashSlide]]
+[[ShakeHandsSlide]]</tw-passagedata><tw-passagedata pid="83" name="ShakeHandsWashSlide" tags="" position="308,6639.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ShakeHandsWashSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar20]]</tw-passagedata><tw-passagedata pid="84" name="ShakeHandsSlide" tags="" position="505,6791.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ShakeHandsSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar20]]</tw-passagedata><tw-passagedata pid="85" name="PrimerRitoSatanicoSlide" tags="" position="417,6956.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PrimerRitoSatanicoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[PrimerRitoSatanicoCard]]</tw-passagedata><tw-passagedata pid="86" name="PrimerRitoSatanicoCard" tags="" position="419,7088.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PrimerRitoSatanicoCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Sacrifice goat&quot;,
+    &quot;rightDecisionText&quot;: &quot;Drink milk&quot;
+  },
+  &quot;textCard&quot;: &quot;You are in your first satanic rite
+/nWhat are you doing?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[SacrificeGoatSlide]]
+[[DrinkMilkSlide]]</tw-passagedata><tw-passagedata pid="87" name="SacrificeGoatSlide" tags="" position="262,7214.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;SacrificeGoatSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar21]]</tw-passagedata><tw-passagedata pid="88" name="DrinkMilkSlide" tags="" position="565,7237.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;DrinkMilkSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar21]]</tw-passagedata><tw-passagedata pid="89" name="Calendar21" tags="" position="420,7253.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2020&quot;,
+    &quot;rightDecisionText&quot;: &quot;2021&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[PlanoGeneralOuijaSlide]]</tw-passagedata><tw-passagedata pid="90" name="PlanoGeneralOuijaSlide" tags="" position="420,7405.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PlanoGeneralOuijaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[OuijaSlide]]</tw-passagedata><tw-passagedata pid="91" name="OuijaSlide" tags="" position="420,7553.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;OuijaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[UsarOuijaCard]]</tw-passagedata><tw-passagedata pid="92" name="UsarOuijaCard" tags="" position="419,7695.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;UsarOuijaCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Talk to your dead grandmother&quot;,
+    &quot;rightDecisionText&quot;: &quot;Contact the devil&quot;
+  },
+  &quot;textCard&quot;: &quot;You are in a Ouija board with the sect
+/nWho do you contact?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[HablarAbuelaSlide]]
+[[HablarDiabloSlide]]</tw-passagedata><tw-passagedata pid="93" name="HablarAbuelaSlide" tags="" position="257,7837.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;HablarAbuelaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar22]]</tw-passagedata><tw-passagedata pid="94" name="HablarDiabloSlide" tags="" position="596,7831.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;HablarDiabloSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar22]]</tw-passagedata><tw-passagedata pid="95" name="Calendar22" tags="" position="430,7857.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;HablarAbuelaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;2021&quot;,
+    &quot;rightDecisionText&quot;: &quot;2022&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[UltimaClaseSlide]]</tw-passagedata><tw-passagedata pid="96" name="UltimaClaseSlide" tags="" position="427,8009.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;UltimaClaseSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[UltimaClaseCard]]</tw-passagedata><tw-passagedata pid="97" name="UltimaClaseCard" tags="" position="427,8136.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;UltimaClaseCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Throw stone at the teacher&quot;,
+    &quot;rightDecisionText&quot;: &quot;Attend in class&quot;
+  },
+  &quot;textCard&quot;: &quot;You are in one of the last classes of the university
+/nWhat are you doing?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[LanzarPiedraSlide]]
+[[PrestarAtencionSlide]]
+
+</tw-passagedata><tw-passagedata pid="98" name="LanzarPiedraSlide" tags="" position="229,8167.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;LanzarPiedraSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[ExpulsionSlide]]</tw-passagedata><tw-passagedata pid="99" name="PrestarAtencionSlide" tags="" position="637,8201.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PrestarAtencionSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar24]]</tw-passagedata><tw-passagedata pid="100" name="Calendar24" tags="" position="429,8308.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2023&quot;,
+    &quot;rightDecisionText&quot;: &quot;2024&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[AdorarCultoSlide]]</tw-passagedata><tw-passagedata pid="101" name="AdorarCultoSlide" tags="" position="426,8450.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;AdorarCultoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[AdorarCultoGame]]</tw-passagedata><tw-passagedata pid="102" name="AdorarCultoGame" tags="" position="420,8589.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;MinijuegoSecta&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 4
+}
+
+[[Calendar26]]</tw-passagedata><tw-passagedata pid="103" name="ExpulsionSlide" tags="" position="236,8307.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ExpulsionSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar24]]</tw-passagedata><tw-passagedata pid="104" name="Calendar26" tags="" position="422,8737.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2025&quot;,
+    &quot;rightDecisionText&quot;: &quot;2026&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[PeriodicoSectaSlide]]</tw-passagedata><tw-passagedata pid="105" name="PeriodicoSectaSlide" tags="" position="439,8887.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PeriodicoSectaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[PerritoSlide]]</tw-passagedata><tw-passagedata pid="106" name="PerritoSlide" tags="" position="439,9036.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PerritoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[PerritoCard]]</tw-passagedata><tw-passagedata pid="107" name="PerritoCard" tags="" position="439,9186.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PerritoCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Kick the dog&quot;,
+    &quot;rightDecisionText&quot;: &quot;Help the dog&quot;
+  },
+  &quot;textCard&quot;: &quot;After reading bad news, you find a little dog on the street
+/nWhat do you do with him?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[DarPatadaSlide]]
+[[AyudarPerroSlide]]</tw-passagedata><tw-passagedata pid="108" name="DarPatadaSlide" tags="" position="284,9339.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;DarPatadaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar28]]</tw-passagedata><tw-passagedata pid="109" name="AyudarPerroSlide" tags="" position="581,9342.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;AyudarPerroSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar28]]</tw-passagedata><tw-passagedata pid="110" name="Calendar28" tags="" position="433,9339.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2027&quot;,
+    &quot;rightDecisionText&quot;: &quot;2028&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[CasaPlanoCompletoSlide]]</tw-passagedata><tw-passagedata pid="111" name="CasaPlanoCompletoSlide" tags="" position="431,9504.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;CasaPlanoCompletoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[NotaDebajoPuerta1Animation]]</tw-passagedata><tw-passagedata pid="112" name="NotaDebajoPuerta1Animation" tags="" position="431,9654.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;NotaDebajoPuerta1Animation&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[AceptarTrabajoCard]]</tw-passagedata><tw-passagedata pid="113" name="AceptarTrabajoCard" tags="" position="430,9799.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;CasaPlanoCompletoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;Accept job&quot;,
+    &quot;rightDecisionText&quot;: &quot;Reject job&quot;
+  },
+  &quot;textCard&quot;: &quot;They just offered you a job
+/nDo you accept?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[AceptarTrabajoSlide]]
+[[RechazarTrabajoSlide]]</tw-passagedata><tw-passagedata pid="114" name="AceptarTrabajoSlide" tags="" position="299,9957.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;AceptarTrabajoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[OficinaTrabajoCard]]</tw-passagedata><tw-passagedata pid="115" name="RechazarTrabajoSlide" tags="" position="713,9917.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;NotaDebajoPuerta2Animation&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[CaraDemacradaSlide]]</tw-passagedata><tw-passagedata pid="116" name="OficinaTrabajoCard" tags="" position="438,10100.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;OficinaTrabajoCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Show resume&quot;,
+    &quot;rightDecisionText&quot;: &quot;Kiss the boss&quot;
+  },
+  &quot;textCard&quot;: &quot;You are at the job interview, I have to impress the interviewer
+/nWhat are you doing?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[EnseñarCurriculumSlide]]
+[[BesarJefeAnimation]]</tw-passagedata><tw-passagedata pid="117" name="EnseñarCurriculumSlide" tags="" position="302,10227.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;EnseñarCurriculumSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[ContratadoSlide]]</tw-passagedata><tw-passagedata pid="118" name="BesarJefeAnimation" tags="" position="626,10221.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;BesarJefeAnimation&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[ContratadoSlide]]</tw-passagedata><tw-passagedata pid="119" name="ContratadoSlide" tags="" position="459,10290.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ContratadoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar30]]</tw-passagedata><tw-passagedata pid="120" name="Calendar30" tags="" position="459,10425.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2029&quot;,
+    &quot;rightDecisionText&quot;: &quot;2030&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[ApilarCajasGame]]</tw-passagedata><tw-passagedata pid="121" name="ApilarCajasGame" tags="" position="459,10575.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ApilarCajasGame&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 4
+}
+
+[[Calendar34]]</tw-passagedata><tw-passagedata pid="122" name="Calendar34" tags="" position="459,10727.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2033&quot;,
+    &quot;rightDecisionText&quot;: &quot;2034&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[PlanoGeneralMafiaSlide]]</tw-passagedata><tw-passagedata pid="123" name="PlanoGeneralMafiaSlide" tags="" position="459,10877.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PlanoGeneralMafiaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[NotaRecadoMafiaSlide]]</tw-passagedata><tw-passagedata pid="124" name="NotaRecadoMafiaSlide" tags="" position="459,11027.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;NotaRecadoMafiaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[AtracandoAbuelaSlide]]</tw-passagedata><tw-passagedata pid="125" name="AtracandoAbuelaSlide" tags="" position="459,11177.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;AtracandoAbuelaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[AtracandoAbuelaCard]]</tw-passagedata><tw-passagedata pid="126" name="AtracandoAbuelaCard" tags="" position="457,11319.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;AtracandoAbuelaCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Kill the granny&quot;,
+    &quot;rightDecisionText&quot;: &quot;Don&#39;t kill the granny&quot;
+  },
+  &quot;textCard&quot;: &quot;You have discovered that your partner works in a sect and has told you to bring him the heart of a grandmother
+/nWhat are you doing?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[MatarAbuelitaSlide]]
+[[NoMatarAbuelitaSlide]]</tw-passagedata><tw-passagedata pid="127" name="MatarAbuelitaSlide" tags="" position="266,11419.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;MatarAbuelitaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar36]]</tw-passagedata><tw-passagedata pid="128" name="NoMatarAbuelitaSlide" tags="" position="631,11418.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;CorazonFalsoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar36]]</tw-passagedata><tw-passagedata pid="129" name="Calendar36" tags="" position="458,11470.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2035&quot;,
+    &quot;rightDecisionText&quot;: &quot;2036&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[CarGame]]</tw-passagedata><tw-passagedata pid="130" name="CarGame" tags="" position="456,11615.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;CarGame&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 4
+}
+
+[[GanasJuegoCocheSlide]]
+[[PierdesJuegoCocheSlide]]</tw-passagedata><tw-passagedata pid="131" name="GanasJuegoCocheSlide" tags="" position="297,11759.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;GanasJuegoCocheSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[MafiosoMesaSlide]]</tw-passagedata><tw-passagedata pid="132" name="PierdesJuegoCocheSlide" tags="" position="541,12170.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PierdesJuegoCocheSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[SalaArrestoSlide]]</tw-passagedata><tw-passagedata pid="133" name="SalaArrestoSlide" tags="" position="533,12513.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;SalaArrestoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[EleccionAbogadoSlide]]</tw-passagedata><tw-passagedata pid="134" name="GoToChurchSlide" tags="" position="499,2830.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;GoToChurchSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[GoToChurchCard]]</tw-passagedata><tw-passagedata pid="135" name="MafiosoMesaSlide" tags="" position="102,11793.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;MafiosoMesaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[BilletesSlide]]</tw-passagedata><tw-passagedata pid="136" name="BilletesSlide" tags="" position="248,11901.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;BilletesSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[BilletesCard]]</tw-passagedata><tw-passagedata pid="137" name="BilletesCard" tags="" position="182,12034.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;BilletesCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Kiss the boss&quot;,
+    &quot;rightDecisionText&quot;: &quot;Accept the money&quot;
+  },
+  &quot;textCard&quot;: &quot;Your boss just paid you for good work.
+/nWhat are you doing?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[BesarManoSlide]]
+[[AceptarDineroSlide]]</tw-passagedata><tw-passagedata pid="138" name="AceptarDineroSlide" tags="" position="321,12168.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;AceptarDineroSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar38]]</tw-passagedata><tw-passagedata pid="139" name="BesarManoSlide" tags="" position="43,12167.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;BesarManoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar38]]</tw-passagedata><tw-passagedata pid="140" name="Calendar38" tags="" position="172,12184.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2037&quot;,
+    &quot;rightDecisionText&quot;: &quot;2038&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[ChillCasaSlide]]</tw-passagedata><tw-passagedata pid="141" name="ChillCasaSlide" tags="" position="75,12331.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ChillCasaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[EntraPoliciaCasaAnimation]]</tw-passagedata><tw-passagedata pid="142" name="EntraPoliciaCasaAnimation" tags="" position="233,12362.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;EntraPoliciaCasaAnimation&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[EntraPoliciaCasaSlide]]</tw-passagedata><tw-passagedata pid="143" name="EleccionAbogadoCard" tags="" position="157,12638.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ArrestoPoliciaCasaCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Human lawyer&quot;,
+    &quot;rightDecisionText&quot;: &quot;Cat lawyer&quot;
+  },
+  &quot;textCard&quot;: &quot;The police have just arrested you and they offer you a lawyer
+/nWhich one do you choose?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[JuicioSlide]]
+[[JuicioSlide]]</tw-passagedata><tw-passagedata pid="144" name="JuicioSlide" tags="" position="365,12693.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;JuicioSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[SentenciaSlide]]</tw-passagedata><tw-passagedata pid="145" name="Calendar39" tags="" position="329,12882.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2038&quot;,
+    &quot;rightDecisionText&quot;: &quot;2039&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[PesasGame]]</tw-passagedata><tw-passagedata pid="146" name="SentenciaSlide" tags="" position="155,12798.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;SentenciaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[Calendar39]]</tw-passagedata><tw-passagedata pid="147" name="PesasGame" tags="" position="163,13005.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PesasGame&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 4
+}
+
+[[Calendar40]]</tw-passagedata><tw-passagedata pid="148" name="Calendar40" tags="" position="337,13094.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;2039&quot;,
+    &quot;rightDecisionText&quot;: &quot;2040&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 5
+}
+
+[[SentadoCeldaSlide]]</tw-passagedata><tw-passagedata pid="149" name="SentadoCeldaSlide" tags="" position="186,13223.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;SentadoCeldaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[NotaCeldaAnimacion]]</tw-passagedata><tw-passagedata pid="150" name="NotaCeldaAnimacion" tags="" position="342,13322.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;NotaCeldaAnimacion&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[AceptarRescateCard]]</tw-passagedata><tw-passagedata pid="151" name="AceptarRescateCard" tags="" position="321,13488.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;BilletesCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Yes&quot;,
+    &quot;rightDecisionText&quot;: &quot;No&quot;
+  },
+  &quot;textCard&quot;: &quot;Other prisoners have organized a riot, should I join?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[AceptarMotinSlide]]
+[[RechazarMotinSlide]]</tw-passagedata><tw-passagedata pid="152" name="AceptarMotinSlide" tags="" position="148,13586.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;AceptarMotinSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[CoeteMotinSlide]]</tw-passagedata><tw-passagedata pid="153" name="RechazarMotinSlide" tags="" position="444,13697.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;RechazarMotinSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[MorirEspacioAnimacion]]</tw-passagedata><tw-passagedata pid="154" name="CoeteMotinSlide" tags="" position="145,13757.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;CoeteMotinSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[SpaceGame]]</tw-passagedata><tw-passagedata pid="155" name="SpaceGame" tags="" position="263,13910.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;SpaceGame&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 4
+}
+
+[[MorirEspacioAnimacion]]
+[[MorirEspacioAnimacion]]</tw-passagedata><tw-passagedata pid="156" name="MorirEspacioAnimacion" tags="" position="502,13936.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;MorirEspacioAnimacion&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 3
+}
+
+[[ConocerDiosSlide]]</tw-passagedata><tw-passagedata pid="157" name="ConocerDiosSlide" tags="" position="420,14130.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ConocerDiosSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[ConocerDiosCard]]</tw-passagedata><tw-passagedata pid="158" name="EleccionAbogadoSlide" tags="" position="292,12505.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;EleccionAbogadoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[EleccionAbogadoCard]]</tw-passagedata><tw-passagedata pid="159" name="EntraPoliciaCasaSlide" tags="" position="394,12370.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;EntraPoliciaCasaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[EleccionAbogadoSlide]]</tw-passagedata><tw-passagedata pid="160" name="CaraDemacradaSlide" tags="" position="544,9958.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;CaraDemacradaSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[AceptarTrabajoSlide]]</tw-passagedata><tw-passagedata pid="161" name="ConocerDiosCard" tags="" position="421,14280.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ConocerDiosCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Spit on god&quot;,
+    &quot;rightDecisionText&quot;: &quot;Shake hands with God&quot;
+  },
+  &quot;textCard&quot;: &quot;You have found God, what do you do?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[EscupirDiosSlide]]
+[[DarManoSlide]]</tw-passagedata><tw-passagedata pid="162" name="EscupirDiosSlide" tags="" position="262,14432.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;EscupirDiosSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[AgujeroInfiernoSlide]]</tw-passagedata><tw-passagedata pid="163" name="DarManoSlide" tags="" position="568,14422.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;DarManoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[AgujeroInfiernoSlide]]</tw-passagedata><tw-passagedata pid="164" name="AgujeroInfiernoSlide" tags="" position="417,14451.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;AgujeroInfiernoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[ConocerDiabloSlide]]</tw-passagedata><tw-passagedata pid="165" name="ConocerDiabloSlide" tags="" position="403,14613.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ConocerDiabloSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[ConocerDiabloCard]]</tw-passagedata><tw-passagedata pid="166" name="ConocerDiabloCard" tags="" position="403,14762.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ConocerDiabloSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;Spit on devil&quot;,
+    &quot;rightDecisionText&quot;: &quot;Shake hands with devil&quot;
+  },
+  &quot;textCard&quot;: &quot;God&#39;s thing has not worked, now you are facing the devil, what do you do?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[PalHoyoSlide]]
+[[PalHoyoSlide]]</tw-passagedata><tw-passagedata pid="167" name="PalHoyoSlide" tags="" position="403,14911.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;PalHoyoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[ConocerDiosSupremoSlide]]</tw-passagedata><tw-passagedata pid="168" name="ConocerDiosSupremoSlide" tags="" position="281,15070.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ConocerDiosSupremoSlide&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 2
+}
+
+[[ConocerDiosSupremoCard]]</tw-passagedata><tw-passagedata pid="169" name="ConocerDiosSupremoCard" tags="" position="503,15116.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;ConocerDiosSupremoCard&quot;,
+    &quot;leftDecisionText&quot;: &quot;Reincarnate&quot;,
+    &quot;rightDecisionText&quot;: &quot;Return to the start menu&quot;
+  },
+  &quot;textCard&quot;: &quot;You just came across ?????, he offered me to reincarnate or return to the start menu.
+/nWhat are you doing?&quot;,
+  &quot;tipeCard&quot;: 1
+}
+
+[[Inicio]]
+[[VolverMenuInicio]]</tw-passagedata><tw-passagedata pid="170" name="VolverMenuInicio" tags="" position="323,15239.5" size="100,100">{
+  &quot;keys&quot;: {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;leftDecisionText&quot;: &quot;&quot;,
+    &quot;rightDecisionText&quot;: &quot;&quot;
+  },
+  &quot;textCard&quot;: &quot;&quot;,
+  &quot;tipeCard&quot;: 6
+}</tw-passagedata></tw-storydata>
+    </div>
+    <script>
+      Twison.convert();
+    </script>
+  </body>
+</html>

@@ -281,7 +281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &256689092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,8 +978,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd5ddf61f69bfe47aca9d4d61f85754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTesting: 0
-  startingPassageName: "NotaCompa\xF1eroSlide"
+  isTesting: 1
+  startingPassageName: ApilarCajasGame
   cardObj: {fileID: 562009423}
   canvasCard: {fileID: 977449075}
   canvasCalendar: {fileID: 431481294}

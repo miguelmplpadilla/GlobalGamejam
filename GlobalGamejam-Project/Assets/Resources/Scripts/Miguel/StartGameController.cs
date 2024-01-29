@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +7,11 @@ using UnityEngine.UI;
 public class StartGameController : MonoBehaviour
 {
     public Image foreground;
+
+    private void Start()
+    {
+        FadeOutForeGround();
+    }
 
     public void StartGame()
     {
@@ -33,5 +35,22 @@ public class StartGameController : MonoBehaviour
         await foreground.DOColor(colorForeground, 1).AsyncWaitForCompletion();
         
         callback?.Invoke();
+    }
+
+    private async void FadeOutForeGround(Action callback = null)
+    {
+        foreground.transform.localScale = Vector3.one;
+        Color colorForeground = foreground.color;
+        colorForeground.a = 1;
+
+        foreground.color = colorForeground;
+        
+        colorForeground.a = 0;
+
+        await foreground.DOColor(colorForeground, 1).AsyncWaitForCompletion();
+        
+        callback?.Invoke();
+        
+        foreground.transform.localScale = Vector3.zero;
     }
 }
