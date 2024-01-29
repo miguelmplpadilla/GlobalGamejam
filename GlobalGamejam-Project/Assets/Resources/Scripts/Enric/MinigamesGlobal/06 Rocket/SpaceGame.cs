@@ -38,7 +38,7 @@ public class SpaceGame : MonoBehaviour
 
     IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         MinigamesHandler.instance.EndMinigame();
     }
 }
