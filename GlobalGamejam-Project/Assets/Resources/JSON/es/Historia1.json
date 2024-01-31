@@ -45,11 +45,11 @@
       "pid": "3",
       "position": {
         "x": "735",
-        "y": "299.5"
+        "y": "299"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"DecisionMotherFather\",\n    \"leftDecisionText\": \"Go with mom\",\n    \"rightDecisionText\": \"Go with dad\"\n  },\n  \"textCard\": \"Your parents have divorced, who are you staying with?\",\n  \"tipeCard\": 1\n}\n\n[[Mother]]\n[[Father]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"DecisionMotherFather\",\n    \"leftDecisionText\": \"Ir con mamá\",\n    \"rightDecisionText\": \"Ir con papá\"\n  },\n  \"textCard\": \"Tus padres se han divorciado, ¿con quién te quedas?\",\n  \"tipeCard\": 1\n}\n\n[[Mother]]\n[[Father]]",
       "links": [
         {
           "name": "Mother",
@@ -66,7 +66,7 @@
       "pid": "4",
       "position": {
         "x": "578",
-        "y": "535.5"
+        "y": "535"
       }
     },
     {
@@ -82,7 +82,7 @@
       "pid": "5",
       "position": {
         "x": "391",
-        "y": "622.5"
+        "y": "622"
       }
     },
     {
@@ -98,11 +98,11 @@
       "pid": "6",
       "position": {
         "x": "748",
-        "y": "621.5"
+        "y": "621"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"KindergartenCard\",\n    \"leftDecisionText\": \"Play with other children\",\n    \"rightDecisionText\": \"Play with the homeless\"\n  },\n  \"textCard\": \"There's a homeless man looking through the kindergarten window\n  /nWho are you going to play with?\",\n  \"tipeCard\": 1\n}\n\n[[PlayChildren]]\n[[PlayHomeless]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"KindergartenCard\",\n    \"leftDecisionText\": \"Jugar con otros niños\",\n    \"rightDecisionText\": \"Jugar con el indigente\"\n  },\n  \"textCard\": \"Hay un hombre sin hogar mirando por la ventana del jardín de infantes.\\n¿Con quién vas a jugar?\",\n  \"tipeCard\": 1\n}\n\n[[PlayChildren]]\n[[PlayHomeless]]",
       "links": [
         {
           "name": "PlayChildren",
@@ -119,7 +119,7 @@
       "pid": "7",
       "position": {
         "x": "471",
-        "y": "918.5"
+        "y": "918"
       }
     },
     {
@@ -135,7 +135,7 @@
       "pid": "8",
       "position": {
         "x": "345",
-        "y": "1042.5"
+        "y": "1042"
       }
     },
     {
@@ -151,11 +151,11 @@
       "pid": "9",
       "position": {
         "x": "685",
-        "y": "1034.5"
+        "y": "1034"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"Play with paints\",\n    \"rightDecisionText\": \"Play with matches\"\n  },\n  \"textCard\": \"What should you play with?\",\n  \"tipeCard\": 1\n}\n\n[[Pintar]]\n[[CasaQuemar]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"Jugar con pinturas\",\n    \"rightDecisionText\": \"Jugar con fósforos\"\n  },\n  \"textCard\": \"¿Con qué deberías jugar?\",\n  \"tipeCard\": 1\n}\n\n[[Pintar]]\n[[CasaQuemar]]",
       "links": [
         {
           "name": "Pintar",
@@ -172,7 +172,7 @@
       "pid": "10",
       "position": {
         "x": "525",
-        "y": "1348.5"
+        "y": "1348"
       }
     },
     {
@@ -187,8 +187,8 @@
       "name": "Pintar",
       "pid": "11",
       "position": {
-        "x": "367",
-        "y": "1358.5"
+        "x": "366",
+        "y": "1410"
       }
     },
     {
@@ -203,8 +203,8 @@
       "name": "CasaQuemar",
       "pid": "12",
       "position": {
-        "x": "689",
-        "y": "1364.5"
+        "x": "711",
+        "y": "1413"
       }
     },
     {
@@ -220,7 +220,7 @@
       "pid": "13",
       "position": {
         "x": "543",
-        "y": "271.5"
+        "y": "271"
       }
     },
     {
@@ -236,7 +236,7 @@
       "pid": "14",
       "position": {
         "x": "598",
-        "y": "411.5"
+        "y": "411"
       }
     },
     {
@@ -252,7 +252,7 @@
       "pid": "15",
       "position": {
         "x": "594",
-        "y": "827.5"
+        "y": "827"
       }
     },
     {
@@ -268,7 +268,7 @@
       "pid": "16",
       "position": {
         "x": "515",
-        "y": "1208.5"
+        "y": "1208"
       }
     },
     {
@@ -284,7 +284,7 @@
       "pid": "17",
       "position": {
         "x": "578",
-        "y": "696.5"
+        "y": "696"
       }
     },
     {
@@ -300,7 +300,7 @@
       "pid": "18",
       "position": {
         "x": "507",
-        "y": "1078.5"
+        "y": "1078"
       }
     },
     {
@@ -316,7 +316,7 @@
       "pid": "19",
       "position": {
         "x": "526",
-        "y": "1520.5"
+        "y": "1520"
       }
     },
     {
@@ -332,11 +332,11 @@
       "pid": "20",
       "position": {
         "x": "515",
-        "y": "1648.5"
+        "y": "1648"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"CandyCard\",\n    \"leftDecisionText\": \"Accept\",\n    \"rightDecisionText\": \"Deny\"\n  },\n  \"textCard\": \"A stranger offers you a candy, do you accept the candy?\",\n  \"tipeCard\": 1\n}\n\n[[Aceptar]]\n[[Denegar]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"CandyCard\",\n    \"leftDecisionText\": \"Aceptar\",\n    \"rightDecisionText\": \"Rechazar\"\n  },\n  \"textCard\": \"Un extraño te ofrece un dulce, ¿aceptas el dulce?\",\n  \"tipeCard\": 1\n}\n\n[[Aceptar]]\n[[Denegar]]",
       "links": [
         {
           "name": "Aceptar",
@@ -353,7 +353,7 @@
       "pid": "21",
       "position": {
         "x": "518",
-        "y": "1772.5"
+        "y": "1772"
       }
     },
     {
@@ -369,7 +369,7 @@
       "pid": "22",
       "position": {
         "x": "380",
-        "y": "1903.5"
+        "y": "1903"
       }
     },
     {
@@ -385,7 +385,7 @@
       "pid": "23",
       "position": {
         "x": "655",
-        "y": "1916.5"
+        "y": "1916"
       }
     },
     {
@@ -401,7 +401,7 @@
       "pid": "24",
       "position": {
         "x": "518",
-        "y": "1981.5"
+        "y": "1981"
       }
     },
     {
@@ -417,7 +417,7 @@
       "pid": "25",
       "position": {
         "x": "512",
-        "y": "2133.5"
+        "y": "2133"
       }
     },
     {
@@ -433,7 +433,7 @@
       "pid": "26",
       "position": {
         "x": "509",
-        "y": "2272.5"
+        "y": "2272"
       }
     },
     {
@@ -449,11 +449,11 @@
       "pid": "27",
       "position": {
         "x": "516",
-        "y": "2396.5"
+        "y": "2396"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"LoveLetterDecision\",\n    \"leftDecisionText\": \"Draw a dick\",\n    \"rightDecisionText\": \"Write a love letter\"\n  },\n  \"textCard\": \"The girl next door sent a love letter\n/nWhat do you answer to the girl?\",\n  \"tipeCard\": 1\n}\n\n[[DrawDick]]\n[[WriteLoveLetter]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"LoveLetterDecision\",\n    \"leftDecisionText\": \"Dibujar un pene\",\n    \"rightDecisionText\": \"Escribir una carta de amor\"\n  },\n  \"textCard\": \"La chica de al lado envió una carta de amor.\\n¿Qué le respondes a la chica?\",\n  \"tipeCard\": 1\n}\n\n[[DrawDick]]\n[[WriteLoveLetter]]",
       "links": [
         {
           "name": "DrawDick",
@@ -470,7 +470,7 @@
       "pid": "28",
       "position": {
         "x": "514",
-        "y": "2545.5"
+        "y": "2545"
       }
     },
     {
@@ -486,7 +486,7 @@
       "pid": "29",
       "position": {
         "x": "342",
-        "y": "2671.5"
+        "y": "2671"
       }
     },
     {
@@ -502,7 +502,7 @@
       "pid": "30",
       "position": {
         "x": "689",
-        "y": "2672.5"
+        "y": "2672"
       }
     },
     {
@@ -518,11 +518,11 @@
       "pid": "31",
       "position": {
         "x": "512",
-        "y": "2701.5"
+        "y": "2701"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"GoToChurchCard\",\n    \"leftDecisionText\": \"Love God\",\n    \"rightDecisionText\": \"Hate God\"\n  },\n  \"textCard\": \"Your parents took you to church\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[LoveGod]]\n[[HateGod]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"GoToChurchCard\",\n    \"leftDecisionText\": \"Amar a Dios\",\n    \"rightDecisionText\": \"Odiar a Dios\"\n  },\n  \"textCard\": \"Tus padres te llevaron a la iglesia.\\n¿Qué estás haciendo?\",\n  \"tipeCard\": 1\n}\n\n[[LoveGod]]\n[[HateGod]]",
       "links": [
         {
           "name": "LoveGod",
@@ -539,7 +539,7 @@
       "pid": "32",
       "position": {
         "x": "504",
-        "y": "2949.5"
+        "y": "2948"
       }
     },
     {
@@ -555,7 +555,7 @@
       "pid": "33",
       "position": {
         "x": "359",
-        "y": "3101.5"
+        "y": "3101"
       }
     },
     {
@@ -571,7 +571,7 @@
       "pid": "34",
       "position": {
         "x": "671",
-        "y": "3129.5"
+        "y": "3129"
       }
     },
     {
@@ -587,7 +587,7 @@
       "pid": "35",
       "position": {
         "x": "513",
-        "y": "3104.5"
+        "y": "3104"
       }
     },
     {
@@ -603,7 +603,7 @@
       "pid": "36",
       "position": {
         "x": "519",
-        "y": "3235.5"
+        "y": "3235"
       }
     },
     {
@@ -618,12 +618,12 @@
       "name": "Stores",
       "pid": "37",
       "position": {
-        "x": "364",
-        "y": "3254.5"
+        "x": "355",
+        "y": "3310"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"ShopStoreCard\",\n    \"leftDecisionText\": \"Buy the bread\",\n    \"rightDecisionText\": \"Buy cigars\"\n  },\n  \"textCard\": \"Your father gave you money to buy bread.\n/nWhat do you buy?\",\n  \"tipeCard\": 1\n}\n\n[[BuyBread]]\n[[BuyCigars]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"ShopStoreCard\",\n    \"leftDecisionText\": \"Comprar el pan\",\n    \"rightDecisionText\": \"Comprar cigarros\"\n  },\n  \"textCard\": \"Tu padre te dio dinero para comprar pan.\\n¿Qué compras?\",\n  \"tipeCard\": 1\n}\n\n[[BuyBread]]\n[[BuyCigars]]",
       "links": [
         {
           "name": "BuyBread",
@@ -640,7 +640,7 @@
       "pid": "38",
       "position": {
         "x": "515",
-        "y": "3387.5"
+        "y": "3387"
       }
     },
     {
@@ -656,7 +656,7 @@
       "pid": "39",
       "position": {
         "x": "347",
-        "y": "3498.5"
+        "y": "3498"
       }
     },
     {
@@ -672,7 +672,7 @@
       "pid": "40",
       "position": {
         "x": "677",
-        "y": "3509.5"
+        "y": "3509"
       }
     },
     {
@@ -688,11 +688,11 @@
       "pid": "41",
       "position": {
         "x": "504",
-        "y": "3532.5"
+        "y": "3532"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"EspermatozoideFecundacion\",\n    \"leftDecisionText\": \"Left\",\n    \"rightDecisionText\": \"Right\"\n  },\n  \"textCard\": \"You are a sperm, it is very dark and there are two paths, which one are you heading for?\",\n  \"tipeCard\": 1\n}\n\n[[SpermLeft]]\n[[SpermRight]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"EspermatozoideFecundacion\",\n    \"leftDecisionText\": \"Izquierda\",\n    \"rightDecisionText\": \"Derecha\"\n  },\n  \"textCard\": \"Eres un espermatozoide, está muy oscuro y hay dos caminos, ¿por cuál vas?\",\n  \"tipeCard\": 1\n}\n\n[[SpermLeft]]\n[[SpermRight]]",
       "links": [
         {
           "name": "SpermLeft",
@@ -762,7 +762,7 @@
       "pid": "45",
       "position": {
         "x": "496",
-        "y": "3651.5"
+        "y": "3651"
       }
     },
     {
@@ -778,7 +778,7 @@
       "pid": "46",
       "position": {
         "x": "722",
-        "y": "3724.5"
+        "y": "3724"
       }
     },
     {
@@ -794,7 +794,7 @@
       "pid": "47",
       "position": {
         "x": "280",
-        "y": "3723.5"
+        "y": "3723"
       }
     },
     {
@@ -810,11 +810,11 @@
       "pid": "48",
       "position": {
         "x": "476",
-        "y": "3820.5"
+        "y": "3820"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"PellasCard\",\n    \"leftDecisionText\": \"Go to class\",\n    \"rightDecisionText\": \"Skip class\"\n  },\n  \"textCard\": \"It's time to go to class and your classmate offers you to go for a walk.\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[GoClass]]\n[[SkipClass]]\n\n",
+      "text": "{\n  \"keys\": {\n    \"key\": \"PellasCard\",\n    \"leftDecisionText\": \"Ir a clase\",\n    \"rightDecisionText\": \"Saltarse la clase\"\n  },\n  \"textCard\": \"Es hora de ir a clase y tu compañero de clase te ofrece ir a dar un paseo.\\n¿Qué haces?\",\n  \"tipeCard\": 1\n}\n\n[[GoClass]]\n[[SkipClass]]\n\n",
       "links": [
         {
           "name": "GoClass",
@@ -831,7 +831,7 @@
       "pid": "49",
       "position": {
         "x": "534",
-        "y": "4000.5"
+        "y": "4000"
       }
     },
     {
@@ -847,7 +847,7 @@
       "pid": "50",
       "position": {
         "x": "351",
-        "y": "4128.5"
+        "y": "4128"
       }
     },
     {
@@ -863,7 +863,7 @@
       "pid": "51",
       "position": {
         "x": "645",
-        "y": "4131.5"
+        "y": "4131"
       }
     },
     {
@@ -879,11 +879,11 @@
       "pid": "52",
       "position": {
         "x": "500",
-        "y": "4151.5"
+        "y": "4151"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"HomelessMoneyCard\",\n    \"leftDecisionText\": \"Rob the blind\",\n    \"rightDecisionText\": \"Give money\"\n  },\n  \"textCard\": \"You go down the street and you meet a homeless man\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[RobBlind]]\n[[GiveMoney]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"HomelessMoneyCard\",\n    \"leftDecisionText\": \"Robar al ciego\",\n    \"rightDecisionText\": \"Dar dinero\"\n  },\n  \"textCard\": \"Bajas por la calle y te encuentras con un hombre sin hogar.\\n¿Qué haces?\",\n  \"tipeCard\": 1\n}\n\n[[RobBlind]]\n[[GiveMoney]]",
       "links": [
         {
           "name": "RobBlind",
@@ -900,7 +900,7 @@
       "pid": "53",
       "position": {
         "x": "434",
-        "y": "4422.5"
+        "y": "4422"
       }
     },
     {
@@ -916,7 +916,7 @@
       "pid": "54",
       "position": {
         "x": "245",
-        "y": "4434.5"
+        "y": "4434"
       }
     },
     {
@@ -932,7 +932,7 @@
       "pid": "55",
       "position": {
         "x": "604",
-        "y": "4442.5"
+        "y": "4442"
       }
     },
     {
@@ -948,7 +948,7 @@
       "pid": "56",
       "position": {
         "x": "230",
-        "y": "4573.5"
+        "y": "4573"
       }
     },
     {
@@ -964,11 +964,11 @@
       "pid": "57",
       "position": {
         "x": "420",
-        "y": "4588.5"
+        "y": "4588"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"ExamCard\",\n    \"leftDecisionText\": \"Use earpiece to copy\",\n    \"rightDecisionText\": \"Study hard for the exam\"\n  },\n  \"textCard\": \"You see on the notice board that tomorrow is the final exam of the course.\n/nWhat will you do?\",\n  \"tipeCard\": 1\n}\n\n[[UsarPinganilloSlide]]\n[[EstudiarDuroSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"ExamCard\",\n    \"leftDecisionText\": \"Usar el auricular para copiar\",\n    \"rightDecisionText\": \"Estudiar duro para el examen\"\n  },\n  \"textCard\": \"Ves en el tablón de anuncios que hoy es el examen final del curso.\\n¿Qué harás?\",\n  \"tipeCard\": 1\n}\n\n[[UsarPinganilloSlide]]\n[[EstudiarDuroSlide]]",
       "links": [
         {
           "name": "UsarPinganilloSlide",
@@ -985,7 +985,7 @@
       "pid": "58",
       "position": {
         "x": "382",
-        "y": "4867.5"
+        "y": "4867"
       }
     },
     {
@@ -1006,7 +1006,7 @@
       "pid": "59",
       "position": {
         "x": "196",
-        "y": "5117.5"
+        "y": "5117"
       }
     },
     {
@@ -1027,7 +1027,7 @@
       "pid": "60",
       "position": {
         "x": "499",
-        "y": "5108.5"
+        "y": "5108"
       }
     },
     {
@@ -1043,7 +1043,7 @@
       "pid": "61",
       "position": {
         "x": "364",
-        "y": "3951.5"
+        "y": "3951"
       }
     },
     {
@@ -1059,7 +1059,7 @@
       "pid": "62",
       "position": {
         "x": "598",
-        "y": "4597.5"
+        "y": "4597"
       }
     },
     {
@@ -1075,7 +1075,7 @@
       "pid": "63",
       "position": {
         "x": "468",
-        "y": "4276.5"
+        "y": "4276"
       }
     },
     {
@@ -1091,7 +1091,7 @@
       "pid": "64",
       "position": {
         "x": "402",
-        "y": "4725.5"
+        "y": "4725"
       }
     },
     {
@@ -1107,7 +1107,7 @@
       "pid": "65",
       "position": {
         "x": "222",
-        "y": "4967.5"
+        "y": "4967"
       }
     },
     {
@@ -1123,7 +1123,7 @@
       "pid": "66",
       "position": {
         "x": "540",
-        "y": "4947.5"
+        "y": "4947"
       }
     },
     {
@@ -1139,11 +1139,11 @@
       "pid": "67",
       "position": {
         "x": "136",
-        "y": "5359.5"
+        "y": "5363"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"SuspenderExamen\",\n    \"leftDecisionText\": \"Repeat the exam\",\n    \"rightDecisionText\": \"Hack the exam note\"\n  },\n  \"textCard\": \"You have failed the exam\n/nWhat will you do?\",\n  \"tipeCard\": 1\n}\n\n[[EstudiarDuro]]\n[[HackearNotaSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"SuspenderExamen\",\n    \"leftDecisionText\": \"Repetir el examen\",\n    \"rightDecisionText\": \"Hackear la nota del examen\"\n  },\n  \"textCard\": \"Has suspendido el examen.\\n¿Qué harás?\",\n  \"tipeCard\": 1\n}\n\n[[EstudiarDuro]]\n[[HackearNotaSlide]]",
       "links": [
         {
           "name": "EstudiarDuro",
@@ -1159,24 +1159,24 @@
       "name": "SuspenderExamen",
       "pid": "68",
       "position": {
-        "x": "572",
-        "y": "5324.5"
+        "x": "569",
+        "y": "5273"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"HackearNotaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[Calendar18]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"HackearNotaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[AprobarExamen]]",
       "links": [
         {
-          "name": "Calendar18",
-          "link": "Calendar18",
-          "pid": "70"
+          "name": "AprobarExamen",
+          "link": "AprobarExamen",
+          "pid": "67"
         }
       ],
       "name": "HackearNotaSlide",
       "pid": "69",
       "position": {
-        "x": "420",
-        "y": "5371.5"
+        "x": "394",
+        "y": "5296"
       }
     },
     {
@@ -1191,8 +1191,8 @@
       "name": "Calendar18",
       "pid": "70",
       "position": {
-        "x": "282",
-        "y": "5408.5"
+        "x": "286",
+        "y": "5439"
       }
     },
     {
@@ -1208,11 +1208,11 @@
       "pid": "71",
       "position": {
         "x": "417",
-        "y": "5545.5"
+        "y": "5545"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"UniversidadCard\",\n    \"leftDecisionText\": \"Smoke dope\",\n    \"rightDecisionText\": \"Read Karl Marx\"\n  },\n  \"textCard\": \"You just entered university\n/nWhat is the first thing you will do?\",\n  \"tipeCard\": 1\n}\n\n[[SmokingDopeSlide]]\n[[ReadKarlMarxSlide]]\n\n",
+      "text": "{\n  \"keys\": {\n    \"key\": \"UniversidadCard\",\n    \"leftDecisionText\": \"Fumar marihuana\",\n    \"rightDecisionText\": \"Leer a Karl Marx\"\n  },\n  \"textCard\": \"Acabas de ingresar a la universidad.\\n¿Qué es lo primero que harás?\",\n  \"tipeCard\": 1\n}\n\n[[SmokingDopeSlide]]\n[[ReadKarlMarxSlide]]\n\n",
       "links": [
         {
           "name": "SmokingDopeSlide",
@@ -1229,7 +1229,7 @@
       "pid": "72",
       "position": {
         "x": "411",
-        "y": "5677.5"
+        "y": "5677"
       }
     },
     {
@@ -1245,7 +1245,7 @@
       "pid": "73",
       "position": {
         "x": "241",
-        "y": "5783.5"
+        "y": "5783"
       }
     },
     {
@@ -1261,7 +1261,7 @@
       "pid": "74",
       "position": {
         "x": "560",
-        "y": "5801.5"
+        "y": "5801"
       }
     },
     {
@@ -1277,7 +1277,7 @@
       "pid": "75",
       "position": {
         "x": "405",
-        "y": "5816.5"
+        "y": "5816"
       }
     },
     {
@@ -1293,7 +1293,7 @@
       "pid": "76",
       "position": {
         "x": "405",
-        "y": "5965.5"
+        "y": "5965"
       }
     },
     {
@@ -1309,11 +1309,11 @@
       "pid": "77",
       "position": {
         "x": "412",
-        "y": "6170.5"
+        "y": "6170"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"CompañeroCultoCard\",\n    \"leftDecisionText\": \"Enter the cult\",\n    \"rightDecisionText\": \"Do not enter the cult\"\n  },\n  \"textCard\": \"Your roommate has offered you to join a cult\n/nDo you accept?\",\n  \"tipeCard\": 1\n}\n\n[[ShakeHandsWashSlide]]\n[[NoAceptarCultoSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"CompañeroCultoCard\",\n    \"leftDecisionText\": \"Entrar al culto\",\n    \"rightDecisionText\": \"No entrar al culto\"\n  },\n  \"textCard\": \"Tu compañero de cuarto te ha ofrecido unirte a un culto.\\n¿Aceptas?\",\n  \"tipeCard\": 1\n}\n\n[[ShakeHandsWashSlide]]\n[[NoAceptarCultoSlide]]",
       "links": [
         {
           "name": "ShakeHandsWashSlide",
@@ -1330,7 +1330,7 @@
       "pid": "78",
       "position": {
         "x": "262",
-        "y": "6347.5"
+        "y": "6347"
       }
     },
     {
@@ -1346,7 +1346,7 @@
       "pid": "79",
       "position": {
         "x": "513",
-        "y": "6350.5"
+        "y": "6350"
       }
     },
     {
@@ -1362,7 +1362,7 @@
       "pid": "80",
       "position": {
         "x": "348",
-        "y": "6827.5"
+        "y": "6827"
       }
     },
     {
@@ -1378,11 +1378,11 @@
       "pid": "81",
       "position": {
         "x": "589",
-        "y": "6484.5"
+        "y": "6484"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"BañoCard\",\n    \"leftDecisionText\": \"Wash your hands and shake hands\",\n    \"rightDecisionText\": \"Shake hands with dirty hands\"\n  },\n  \"textCard\": \"Your roommate has forced you to join the sect, you have to shake his hand to accept\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[ShakeHandsWashSlide]]\n[[ShakeHandsSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"BañoCard\",\n    \"leftDecisionText\": \"Lavarte las manos y estrecharlas\",\n    \"rightDecisionText\": \"Estrechar manos con manos sucias\"\n  },\n  \"textCard\": \"Tu compañero de cuarto te ha obligado a unirte a la secta, tienes que estrecharle la mano para aceptar.\\n¿Qué harás?\",\n  \"tipeCard\": 1\n}\n\n[[ShakeHandsWashSlide]]\n[[ShakeHandsSlide]]",
       "links": [
         {
           "name": "ShakeHandsWashSlide",
@@ -1399,7 +1399,7 @@
       "pid": "82",
       "position": {
         "x": "625",
-        "y": "6643.5"
+        "y": "6643"
       }
     },
     {
@@ -1415,7 +1415,7 @@
       "pid": "83",
       "position": {
         "x": "308",
-        "y": "6639.5"
+        "y": "6639"
       }
     },
     {
@@ -1431,7 +1431,7 @@
       "pid": "84",
       "position": {
         "x": "505",
-        "y": "6791.5"
+        "y": "6791"
       }
     },
     {
@@ -1447,11 +1447,11 @@
       "pid": "85",
       "position": {
         "x": "417",
-        "y": "6956.5"
+        "y": "6956"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"PrimerRitoSatanicoCard\",\n    \"leftDecisionText\": \"Sacrifice goat\",\n    \"rightDecisionText\": \"Drink milk\"\n  },\n  \"textCard\": \"You are in your first satanic rite\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[SacrificeGoatSlide]]\n[[DrinkMilkSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"PrimerRitoSatanicoCard\",\n    \"leftDecisionText\": \"Sacrificar una cabra\",\n    \"rightDecisionText\": \"Beber leche\"\n  },\n  \"textCard\": \"Estás en tu primer rito satánico.\\n¿Qué harás?\",\n  \"tipeCard\": 1\n}\n\n[[SacrificeGoatSlide]]\n[[DrinkMilkSlide]]",
       "links": [
         {
           "name": "SacrificeGoatSlide",
@@ -1468,7 +1468,7 @@
       "pid": "86",
       "position": {
         "x": "419",
-        "y": "7088.5"
+        "y": "7088"
       }
     },
     {
@@ -1484,7 +1484,7 @@
       "pid": "87",
       "position": {
         "x": "262",
-        "y": "7214.5"
+        "y": "7214"
       }
     },
     {
@@ -1500,7 +1500,7 @@
       "pid": "88",
       "position": {
         "x": "565",
-        "y": "7237.5"
+        "y": "7237"
       }
     },
     {
@@ -1516,7 +1516,7 @@
       "pid": "89",
       "position": {
         "x": "420",
-        "y": "7253.5"
+        "y": "7253"
       }
     },
     {
@@ -1532,7 +1532,7 @@
       "pid": "90",
       "position": {
         "x": "420",
-        "y": "7405.5"
+        "y": "7405"
       }
     },
     {
@@ -1548,11 +1548,11 @@
       "pid": "91",
       "position": {
         "x": "420",
-        "y": "7553.5"
+        "y": "7553"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"UsarOuijaCard\",\n    \"leftDecisionText\": \"Talk to your dead grandmother\",\n    \"rightDecisionText\": \"Contact the devil\"\n  },\n  \"textCard\": \"You are in a Ouija board with the sect\n/nWho do you contact?\",\n  \"tipeCard\": 1\n}\n\n[[HablarAbuelaSlide]]\n[[HablarDiabloSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"UsarOuijaCard\",\n    \"leftDecisionText\": \"Hablar con tu abuela fallecida\",\n    \"rightDecisionText\": \"Contactar al diablo\"\n  },\n  \"textCard\": \"Estás en una tabla Ouija con la secta.\\n¿A quién contactas?\",\n  \"tipeCard\": 1\n}\n\n[[HablarAbuelaSlide]]\n[[HablarDiabloSlide]]",
       "links": [
         {
           "name": "HablarAbuelaSlide",
@@ -1569,7 +1569,7 @@
       "pid": "92",
       "position": {
         "x": "419",
-        "y": "7695.5"
+        "y": "7695"
       }
     },
     {
@@ -1585,7 +1585,7 @@
       "pid": "93",
       "position": {
         "x": "257",
-        "y": "7837.5"
+        "y": "7837"
       }
     },
     {
@@ -1601,7 +1601,7 @@
       "pid": "94",
       "position": {
         "x": "596",
-        "y": "7831.5"
+        "y": "7831"
       }
     },
     {
@@ -1617,7 +1617,7 @@
       "pid": "95",
       "position": {
         "x": "430",
-        "y": "7857.5"
+        "y": "7857"
       }
     },
     {
@@ -1633,11 +1633,11 @@
       "pid": "96",
       "position": {
         "x": "427",
-        "y": "8009.5"
+        "y": "8009"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"UltimaClaseCard\",\n    \"leftDecisionText\": \"Throw stone at the teacher\",\n    \"rightDecisionText\": \"Attend in class\"\n  },\n  \"textCard\": \"You are in one of the last classes of the university\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[LanzarPiedraSlide]]\n[[PrestarAtencionSlide]]\n\n",
+      "text": "{\n  \"keys\": {\n    \"key\": \"UltimaClaseCard\",\n    \"leftDecisionText\": \"Tirar una piedra al profesor\",\n    \"rightDecisionText\": \"Asistir a la clase\"\n  },\n  \"textCard\": \"Estás en una de las últimas clases de la universidad.\\n¿Qué harás?\",\n  \"tipeCard\": 1\n}\n\n[[LanzarPiedraSlide]]\n[[PrestarAtencionSlide]]\n\n",
       "links": [
         {
           "name": "LanzarPiedraSlide",
@@ -1654,7 +1654,7 @@
       "pid": "97",
       "position": {
         "x": "427",
-        "y": "8136.5"
+        "y": "8136"
       }
     },
     {
@@ -1670,7 +1670,7 @@
       "pid": "98",
       "position": {
         "x": "229",
-        "y": "8167.5"
+        "y": "8167"
       }
     },
     {
@@ -1686,7 +1686,7 @@
       "pid": "99",
       "position": {
         "x": "637",
-        "y": "8201.5"
+        "y": "8201"
       }
     },
     {
@@ -1702,7 +1702,7 @@
       "pid": "100",
       "position": {
         "x": "429",
-        "y": "8308.5"
+        "y": "8308"
       }
     },
     {
@@ -1718,7 +1718,7 @@
       "pid": "101",
       "position": {
         "x": "426",
-        "y": "8450.5"
+        "y": "8450"
       }
     },
     {
@@ -1734,7 +1734,7 @@
       "pid": "102",
       "position": {
         "x": "420",
-        "y": "8589.5"
+        "y": "8589"
       }
     },
     {
@@ -1750,7 +1750,7 @@
       "pid": "103",
       "position": {
         "x": "236",
-        "y": "8307.5"
+        "y": "8307"
       }
     },
     {
@@ -1766,7 +1766,7 @@
       "pid": "104",
       "position": {
         "x": "422",
-        "y": "8737.5"
+        "y": "8737"
       }
     },
     {
@@ -1782,7 +1782,7 @@
       "pid": "105",
       "position": {
         "x": "439",
-        "y": "8887.5"
+        "y": "8887"
       }
     },
     {
@@ -1798,11 +1798,11 @@
       "pid": "106",
       "position": {
         "x": "439",
-        "y": "9036.5"
+        "y": "9036"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"PerritoCard\",\n    \"leftDecisionText\": \"Kick the dog\",\n    \"rightDecisionText\": \"Help the dog\"\n  },\n  \"textCard\": \"After reading bad news, you find a little dog on the street\n/nWhat do you do with him?\",\n  \"tipeCard\": 1\n}\n\n[[DarPatadaSlide]]\n[[AyudarPerroSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"PerritoCard\",\n    \"leftDecisionText\": \"Patear al perro\",\n    \"rightDecisionText\": \"Ayudar al perro\"\n  },\n  \"textCard\": \"Después de leer malas noticias, encuentras un pequeño perro en la calle.\\n¿Qué haces con él?\",\n  \"tipeCard\": 1\n}\n\n[[DarPatadaSlide]]\n[[AyudarPerroSlide]]",
       "links": [
         {
           "name": "DarPatadaSlide",
@@ -1819,7 +1819,7 @@
       "pid": "107",
       "position": {
         "x": "439",
-        "y": "9186.5"
+        "y": "9186"
       }
     },
     {
@@ -1835,7 +1835,7 @@
       "pid": "108",
       "position": {
         "x": "284",
-        "y": "9339.5"
+        "y": "9339"
       }
     },
     {
@@ -1851,7 +1851,7 @@
       "pid": "109",
       "position": {
         "x": "581",
-        "y": "9342.5"
+        "y": "9342"
       }
     },
     {
@@ -1867,7 +1867,7 @@
       "pid": "110",
       "position": {
         "x": "433",
-        "y": "9339.5"
+        "y": "9339"
       }
     },
     {
@@ -1883,7 +1883,7 @@
       "pid": "111",
       "position": {
         "x": "431",
-        "y": "9504.5"
+        "y": "9504"
       }
     },
     {
@@ -1899,11 +1899,11 @@
       "pid": "112",
       "position": {
         "x": "431",
-        "y": "9654.5"
+        "y": "9654"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"CasaPlanoCompletoSlide\",\n    \"leftDecisionText\": \"Accept job\",\n    \"rightDecisionText\": \"Reject job\"\n  },\n  \"textCard\": \"They just offered you a job\n/nDo you accept?\",\n  \"tipeCard\": 1\n}\n\n[[AceptarTrabajoSlide]]\n[[RechazarTrabajoSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"CasaPlanoCompletoSlide\",\n    \"leftDecisionText\": \"Aceptar trabajo\",\n    \"rightDecisionText\": \"Rechazar trabajo\"\n  },\n  \"textCard\": \"Acaban de ofrecerte un trabajo.\\n¿Lo aceptas?\",\n  \"tipeCard\": 1\n}\n\n[[AceptarTrabajoSlide]]\n[[RechazarTrabajoSlide]]",
       "links": [
         {
           "name": "AceptarTrabajoSlide",
@@ -1920,7 +1920,7 @@
       "pid": "113",
       "position": {
         "x": "430",
-        "y": "9799.5"
+        "y": "9799"
       }
     },
     {
@@ -1936,7 +1936,7 @@
       "pid": "114",
       "position": {
         "x": "299",
-        "y": "9957.5"
+        "y": "9957"
       }
     },
     {
@@ -1952,11 +1952,11 @@
       "pid": "115",
       "position": {
         "x": "713",
-        "y": "9917.5"
+        "y": "9917"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"OficinaTrabajoCard\",\n    \"leftDecisionText\": \"Show resume\",\n    \"rightDecisionText\": \"Kiss the boss\"\n  },\n  \"textCard\": \"You are at the job interview, I have to impress the interviewer\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[EnseñarCurriculumSlide]]\n[[BesarJefeAnimation]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"OficinaTrabajoCard\",\n    \"leftDecisionText\": \"Mostrar currículum\",\n    \"rightDecisionText\": \"Besar al jefe\"\n  },\n  \"textCard\": \"Estás en la entrevista de trabajo, tienes que impresionar al entrevistador.\\n¿Qué harás?\",\n  \"tipeCard\": 1\n}\n\n[[EnseñarCurriculumSlide]]\n[[BesarJefeAnimation]]",
       "links": [
         {
           "name": "EnseñarCurriculumSlide",
@@ -1973,7 +1973,7 @@
       "pid": "116",
       "position": {
         "x": "438",
-        "y": "10100.5"
+        "y": "10100"
       }
     },
     {
@@ -1989,7 +1989,7 @@
       "pid": "117",
       "position": {
         "x": "302",
-        "y": "10227.5"
+        "y": "10227"
       }
     },
     {
@@ -2005,7 +2005,7 @@
       "pid": "118",
       "position": {
         "x": "626",
-        "y": "10221.5"
+        "y": "10221"
       }
     },
     {
@@ -2021,7 +2021,7 @@
       "pid": "119",
       "position": {
         "x": "459",
-        "y": "10290.5"
+        "y": "10290"
       }
     },
     {
@@ -2037,7 +2037,7 @@
       "pid": "120",
       "position": {
         "x": "459",
-        "y": "10425.5"
+        "y": "10425"
       }
     },
     {
@@ -2053,7 +2053,7 @@
       "pid": "121",
       "position": {
         "x": "459",
-        "y": "10575.5"
+        "y": "10575"
       }
     },
     {
@@ -2069,7 +2069,7 @@
       "pid": "122",
       "position": {
         "x": "459",
-        "y": "10727.5"
+        "y": "10727"
       }
     },
     {
@@ -2085,7 +2085,7 @@
       "pid": "123",
       "position": {
         "x": "459",
-        "y": "10877.5"
+        "y": "10877"
       }
     },
     {
@@ -2101,7 +2101,7 @@
       "pid": "124",
       "position": {
         "x": "459",
-        "y": "11027.5"
+        "y": "11027"
       }
     },
     {
@@ -2117,11 +2117,11 @@
       "pid": "125",
       "position": {
         "x": "459",
-        "y": "11177.5"
+        "y": "11177"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"AtracandoAbuelaCard\",\n    \"leftDecisionText\": \"Kill the granny\",\n    \"rightDecisionText\": \"Don't kill the granny\"\n  },\n  \"textCard\": \"You have discovered that your partner works in a sect and has told you to bring him the heart of a grandmother\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[MatarAbuelitaSlide]]\n[[NoMatarAbuelitaSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"AtracandoAbuelaCard\",\n    \"leftDecisionText\": \"Matar a la abuela\",\n    \"rightDecisionText\": \"No matar a la abuela\"\n  },\n  \"textCard\": \"Has descubierto que tu pareja trabaja en una secta y te ha pedido que le traigas el corazón de una abuela.\\n¿Qué harás?\",\n  \"tipeCard\": 1\n}\n\n[[MatarAbuelitaSlide]]\n[[NoMatarAbuelitaSlide]]",
       "links": [
         {
           "name": "MatarAbuelitaSlide",
@@ -2138,7 +2138,7 @@
       "pid": "126",
       "position": {
         "x": "457",
-        "y": "11319.5"
+        "y": "11319"
       }
     },
     {
@@ -2154,7 +2154,7 @@
       "pid": "127",
       "position": {
         "x": "266",
-        "y": "11419.5"
+        "y": "11419"
       }
     },
     {
@@ -2170,7 +2170,7 @@
       "pid": "128",
       "position": {
         "x": "631",
-        "y": "11418.5"
+        "y": "11418"
       }
     },
     {
@@ -2186,7 +2186,7 @@
       "pid": "129",
       "position": {
         "x": "458",
-        "y": "11470.5"
+        "y": "11470"
       }
     },
     {
@@ -2207,7 +2207,7 @@
       "pid": "130",
       "position": {
         "x": "456",
-        "y": "11615.5"
+        "y": "11615"
       }
     },
     {
@@ -2223,7 +2223,7 @@
       "pid": "131",
       "position": {
         "x": "297",
-        "y": "11759.5"
+        "y": "11759"
       }
     },
     {
@@ -2239,7 +2239,7 @@
       "pid": "132",
       "position": {
         "x": "541",
-        "y": "12170.5"
+        "y": "12170"
       }
     },
     {
@@ -2255,7 +2255,7 @@
       "pid": "133",
       "position": {
         "x": "533",
-        "y": "12513.5"
+        "y": "12513"
       }
     },
     {
@@ -2271,7 +2271,7 @@
       "pid": "134",
       "position": {
         "x": "499",
-        "y": "2830.5"
+        "y": "2830"
       }
     },
     {
@@ -2287,7 +2287,7 @@
       "pid": "135",
       "position": {
         "x": "102",
-        "y": "11793.5"
+        "y": "11793"
       }
     },
     {
@@ -2303,11 +2303,11 @@
       "pid": "136",
       "position": {
         "x": "248",
-        "y": "11901.5"
+        "y": "11901"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"BilletesCard\",\n    \"leftDecisionText\": \"Kiss the boss\",\n    \"rightDecisionText\": \"Accept the money\"\n  },\n  \"textCard\": \"Your boss just paid you for good work.\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[BesarManoSlide]]\n[[AceptarDineroSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"BilletesCard\",\n    \"leftDecisionText\": \"Besar al jefe\",\n    \"rightDecisionText\": \"Aceptar el dinero\"\n  },\n  \"textCard\": \"Tu jefe acaba de pagarte por tu buen trabajo.\\n¿Qué harás?\",\n  \"tipeCard\": 1\n}\n\n[[BesarManoSlide]]\n[[AceptarDineroSlide]]",
       "links": [
         {
           "name": "BesarManoSlide",
@@ -2324,7 +2324,7 @@
       "pid": "137",
       "position": {
         "x": "182",
-        "y": "12034.5"
+        "y": "12034"
       }
     },
     {
@@ -2340,7 +2340,7 @@
       "pid": "138",
       "position": {
         "x": "321",
-        "y": "12168.5"
+        "y": "12168"
       }
     },
     {
@@ -2356,7 +2356,7 @@
       "pid": "139",
       "position": {
         "x": "43",
-        "y": "12167.5"
+        "y": "12167"
       }
     },
     {
@@ -2372,7 +2372,7 @@
       "pid": "140",
       "position": {
         "x": "172",
-        "y": "12184.5"
+        "y": "12184"
       }
     },
     {
@@ -2388,7 +2388,7 @@
       "pid": "141",
       "position": {
         "x": "75",
-        "y": "12331.5"
+        "y": "12331"
       }
     },
     {
@@ -2404,7 +2404,7 @@
       "pid": "142",
       "position": {
         "x": "233",
-        "y": "12362.5"
+        "y": "12362"
       }
     },
     {
@@ -2425,7 +2425,7 @@
       "pid": "143",
       "position": {
         "x": "157",
-        "y": "12638.5"
+        "y": "12638"
       }
     },
     {
@@ -2441,7 +2441,7 @@
       "pid": "144",
       "position": {
         "x": "365",
-        "y": "12693.5"
+        "y": "12693"
       }
     },
     {
@@ -2457,7 +2457,7 @@
       "pid": "145",
       "position": {
         "x": "329",
-        "y": "12882.5"
+        "y": "12882"
       }
     },
     {
@@ -2473,7 +2473,7 @@
       "pid": "146",
       "position": {
         "x": "155",
-        "y": "12798.5"
+        "y": "12798"
       }
     },
     {
@@ -2489,7 +2489,7 @@
       "pid": "147",
       "position": {
         "x": "163",
-        "y": "13005.5"
+        "y": "13005"
       }
     },
     {
@@ -2505,7 +2505,7 @@
       "pid": "148",
       "position": {
         "x": "337",
-        "y": "13094.5"
+        "y": "13094"
       }
     },
     {
@@ -2521,7 +2521,7 @@
       "pid": "149",
       "position": {
         "x": "186",
-        "y": "13223.5"
+        "y": "13223"
       }
     },
     {
@@ -2537,11 +2537,11 @@
       "pid": "150",
       "position": {
         "x": "342",
-        "y": "13322.5"
+        "y": "13322"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"BilletesCard\",\n    \"leftDecisionText\": \"Yes\",\n    \"rightDecisionText\": \"No\"\n  },\n  \"textCard\": \"Other prisoners have organized a riot, should I join?\",\n  \"tipeCard\": 1\n}\n\n[[AceptarMotinSlide]]\n[[RechazarMotinSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"BilletesCard\",\n    \"leftDecisionText\": \"Sí\",\n    \"rightDecisionText\": \"No\"\n  },\n  \"textCard\": \"Otros prisioneros han organizado un motín, ¿debería unirme?\",\n  \"tipeCard\": 1\n}\n\n[[AceptarMotinSlide]]\n[[RechazarMotinSlide]]",
       "links": [
         {
           "name": "AceptarMotinSlide",
@@ -2558,7 +2558,7 @@
       "pid": "151",
       "position": {
         "x": "321",
-        "y": "13488.5"
+        "y": "13488"
       }
     },
     {
@@ -2574,7 +2574,7 @@
       "pid": "152",
       "position": {
         "x": "148",
-        "y": "13586.5"
+        "y": "13586"
       }
     },
     {
@@ -2590,7 +2590,7 @@
       "pid": "153",
       "position": {
         "x": "444",
-        "y": "13697.5"
+        "y": "13697"
       }
     },
     {
@@ -2606,7 +2606,7 @@
       "pid": "154",
       "position": {
         "x": "145",
-        "y": "13757.5"
+        "y": "13757"
       }
     },
     {
@@ -2627,7 +2627,7 @@
       "pid": "155",
       "position": {
         "x": "263",
-        "y": "13910.5"
+        "y": "13910"
       }
     },
     {
@@ -2643,7 +2643,7 @@
       "pid": "156",
       "position": {
         "x": "502",
-        "y": "13936.5"
+        "y": "13936"
       }
     },
     {
@@ -2659,7 +2659,7 @@
       "pid": "157",
       "position": {
         "x": "420",
-        "y": "14130.5"
+        "y": "14130"
       }
     },
     {
@@ -2675,7 +2675,7 @@
       "pid": "158",
       "position": {
         "x": "292",
-        "y": "12505.5"
+        "y": "12505"
       }
     },
     {
@@ -2691,7 +2691,7 @@
       "pid": "159",
       "position": {
         "x": "394",
-        "y": "12370.5"
+        "y": "12370"
       }
     },
     {
@@ -2707,11 +2707,11 @@
       "pid": "160",
       "position": {
         "x": "544",
-        "y": "9958.5"
+        "y": "9958"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosCard\",\n    \"leftDecisionText\": \"Spit on god\",\n    \"rightDecisionText\": \"Shake hands with God\"\n  },\n  \"textCard\": \"You have found God, what do you do?\",\n  \"tipeCard\": 1\n}\n\n[[EscupirDiosSlide]]\n[[DarManoSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosCard\",\n    \"leftDecisionText\": \"Escupir a Dios\",\n    \"rightDecisionText\": \"Estrechar la mano de Dios\"\n  },\n  \"textCard\": \"Has encontrado a Dios, ¿qué haces?\",\n  \"tipeCard\": 1\n}\n\n[[EscupirDiosSlide]]\n[[DarManoSlide]]",
       "links": [
         {
           "name": "EscupirDiosSlide",
@@ -2728,7 +2728,7 @@
       "pid": "161",
       "position": {
         "x": "421",
-        "y": "14280.5"
+        "y": "14280"
       }
     },
     {
@@ -2744,7 +2744,7 @@
       "pid": "162",
       "position": {
         "x": "262",
-        "y": "14432.5"
+        "y": "14432"
       }
     },
     {
@@ -2760,7 +2760,7 @@
       "pid": "163",
       "position": {
         "x": "568",
-        "y": "14422.5"
+        "y": "14422"
       }
     },
     {
@@ -2776,7 +2776,7 @@
       "pid": "164",
       "position": {
         "x": "417",
-        "y": "14451.5"
+        "y": "14451"
       }
     },
     {
@@ -2792,7 +2792,7 @@
       "pid": "165",
       "position": {
         "x": "403",
-        "y": "14613.5"
+        "y": "14613"
       }
     },
     {
@@ -2813,7 +2813,7 @@
       "pid": "166",
       "position": {
         "x": "403",
-        "y": "14762.5"
+        "y": "14762"
       }
     },
     {
@@ -2829,7 +2829,7 @@
       "pid": "167",
       "position": {
         "x": "403",
-        "y": "14911.5"
+        "y": "14911"
       }
     },
     {
@@ -2845,11 +2845,11 @@
       "pid": "168",
       "position": {
         "x": "281",
-        "y": "15070.5"
+        "y": "15070"
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosSupremoCard\",\n    \"leftDecisionText\": \"Reincarnate\",\n    \"rightDecisionText\": \"Return to the start menu\"\n  },\n  \"textCard\": \"You just came across ?????, he offered me to reincarnate or return to the start menu.\n/nWhat are you doing?\",\n  \"tipeCard\": 1\n}\n\n[[Inicio]]\n[[VolverMenuInicio]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiosSupremoCard\",\n    \"leftDecisionText\": \"Reencarnar\",\n    \"rightDecisionText\": \"Volver al menú de inicio\"\n  },\n  \"textCard\": \"Acabas de encontrarte con ?????, él me ofreció reencarnar o volver al menú de inicio.\\n¿Qué harás?\",\n  \"tipeCard\": 1\n}\n\n[[Inicio]]\n[[VolverMenuInicio]]",
       "links": [
         {
           "name": "Inicio",
@@ -2866,7 +2866,7 @@
       "pid": "169",
       "position": {
         "x": "503",
-        "y": "15116.5"
+        "y": "15116"
       }
     },
     {
@@ -2875,11 +2875,11 @@
       "pid": "170",
       "position": {
         "x": "323",
-        "y": "15239.5"
+        "y": "15239"
       }
     }
   ],
-  "name": "Game",
+  "name": "Game-ES",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.2.0",
