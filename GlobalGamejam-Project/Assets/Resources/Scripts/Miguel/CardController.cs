@@ -1,4 +1,6 @@
 using System;
+using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
@@ -57,8 +59,22 @@ public class CardController : MonoBehaviour
 
     private GameObject camera;
 
+    public string[] idiomas;
+    public string languageName;
+
     private void Awake()
     {
+        CultureInfo culture = CultureInfo.CurrentCulture;
+
+        if (!isTesting) languageName = culture.TwoLetterISOLanguageName;
+        
+        jsonStory = Resources.Load<TextAsset>("JSON/en/Historia1");
+
+        if (idiomas.Contains(languageName))
+        {
+            jsonStory = Resources.Load<TextAsset>("JSON/" + languageName + "/Historia1");
+        }
+        
         instance = this;
         
         rtParent = cardObj.transform.parent.GetComponent<RectTransform>();
@@ -299,8 +315,8 @@ public class CardController : MonoBehaviour
             nextPassageKey = story.passages[0].name;
         
         animationPanel.transform.parent.gameObject.SetActive(true);
-        
-        Instantiate(GetPrefab(card.keys.key), animationPanel.transform);
+
+        Instantiate(GetPrefab(card.keys.key), animationPanel.transform).transform.localPosition = Vector3.zero;
         
         FadeOutForeground();
     }
@@ -423,6 +439,9 @@ public class CardController : MonoBehaviour
         imagePanelRight.DOColor(originalColorPanel, 0.3f);
         
         if (panelPaintColor == 0) return;
+
+        imagePanelLeft.DOKill();
+        imagePanelRight.DOKill();
         
         imagePanelLeft.DOColor(panelPaintColor == 1 ? new Color32(27, 27, 27, 255) : originalColorPanel, 0.2f);
         imagePanelRight.DOColor(panelPaintColor == 2 ? new Color32(27, 27, 27, 255) : originalColorPanel, 0.2f);

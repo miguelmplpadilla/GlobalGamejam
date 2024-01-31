@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/MiguelSampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Resources/Scenes/Minigames.unity
+    path: Assets/Resources/Scenes/GameScenes/Minigames.unity
     guid: ea9da45a125842f4693dd68c6fcf04da
   - enabled: 1
     path: Assets/Resources/Scenes/GameScenes/GameScene.unity
