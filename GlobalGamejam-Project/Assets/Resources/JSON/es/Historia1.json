@@ -2796,7 +2796,7 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiabloSlide\",\n    \"leftDecisionText\": \"Spit on devil\",\n    \"rightDecisionText\": \"Shake hands with devil\"\n  },\n  \"textCard\": \"God's thing has not worked, now you are facing the devil, what do you do?\",\n  \"tipeCard\": 1\n}\n\n[[PalHoyoSlide]]\n[[PalHoyoSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"ConocerDiabloSlide\",\n    \"leftDecisionText\": \"Escupir al diablo\",\n    \"rightDecisionText\": \"Estrechar la mano del diablo\"\n  },\n  \"textCard\": \"La cosa de Dios no ha funcionado, ahora te enfrentas al diablo, ¿qué haces?\",\n  \"tipeCard\": 1\n}\n\n[[PalHoyoSlide]]\n[[PalHoyoSlide]]",
       "links": [
         {
           "name": "PalHoyoSlide",
