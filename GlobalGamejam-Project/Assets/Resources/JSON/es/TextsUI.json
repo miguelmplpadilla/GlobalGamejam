@@ -1,0 +1,48 @@
+{
+  "texts": [
+    {
+      "id": "Next",
+      "text": "Siguiente"
+    },
+    {
+      "id": "PlayCaugth",
+      "text": "Juega sin ser atrapado"
+    },
+    {
+      "id": "ClickOffOn",
+      "text": "Haz clic para encender/apagar el monitor"
+    },
+    {
+      "id": "ClickBall",
+      "text": "¡Haz clic cuando la pelota esté aquí!"
+    },
+    {
+      "id": "DargCar",
+      "text": "ARRASTRA EL COCHE Y EVITA UN ACCIDENTE"
+    },
+    {
+      "id": "DargRocket",
+      "text": "ARRASTRA EL COHETE Y EVITA LOS ASTEROIDES"
+    },
+    {
+      "id": "ClickBox",
+      "text": "Haz clic para soltar una caja y apílalas hasta la línea"
+    },
+    {
+      "id": "ClickBirth",
+      "text": "Prepárate para hacer clic tan rápido como puedas"
+    },
+    {
+      "id": "TotalForce",
+      "text": "Fuerza total"
+    },
+    {
+      "id": "ClickWeights",
+      "text": "Haz clic para levantar pesas sin parar"
+    },
+    {
+      "id": "CleanRoom",
+      "text": "¡Limpia tu habitación!"
+    }
+  ]
+}

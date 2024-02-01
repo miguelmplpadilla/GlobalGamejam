@@ -1,0 +1,48 @@
+{
+  "texts": [
+    {
+      "id": "Next",
+      "text": "Siguiente"
+    },
+    {
+      "id": "PlayCaugth",
+      "text": "Play without being caugth"
+    },
+    {
+      "id": "ClickOffOn",
+      "text": "Click for turning on/off the monitor"
+    },
+    {
+      "id": "ClickBall",
+      "text": "Click when the ball is here!"
+    },
+    {
+      "id": "DargCar",
+      "text": "DRAG THE CAR AND AVOID AN ACCIDENT"
+    },
+    {
+      "id": "DargRocket",
+      "text": "DRAG THE ROCKET AND AVOID THE ASTEROIDS"
+    },
+    {
+      "id": "ClickBox",
+      "text": "Click to drop a box and stack them up to the line"
+    },
+    {
+      "id": "ClickBirth",
+      "text": "Prepare to click as fast as you can"
+    },
+    {
+      "id": "TotalForce",
+      "text": "Total Force"
+    },
+    {
+      "id": "ClickWeights",
+      "text": "Click to do weights without stopping"
+    },
+    {
+      "id": "CleanRoom",
+      "text": "Clean your room!"
+    }
+  ]
+}

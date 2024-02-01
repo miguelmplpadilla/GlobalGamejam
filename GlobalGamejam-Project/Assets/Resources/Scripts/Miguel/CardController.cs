@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using DG.Tweening;
+using Resources.Scripts.Miguel;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -66,14 +68,15 @@ public class CardController : MonoBehaviour
     {
         CultureInfo culture = CultureInfo.CurrentCulture;
 
-        if (!isTesting) languageName = culture.TwoLetterISOLanguageName;
+        languageName = culture.TwoLetterISOLanguageName;
         
-        jsonStory = Resources.Load<TextAsset>("JSON/en/Historia1");
+        if (PlayerPrefs.HasKey("CurrentIdiom"))
+            languageName = PlayerPrefs.GetString("CurrentIdiom");
+        
+        jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/en/Historia1");
 
         if (idiomas.Contains(languageName))
-        {
-            jsonStory = Resources.Load<TextAsset>("JSON/" + languageName + "/Historia1");
-        }
+            jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/" + languageName + "/Historia1");
         
         instance = this;
         
@@ -189,7 +192,7 @@ public class CardController : MonoBehaviour
 
     private Sprite GetSprite(string nameSprite)
     {
-        Sprite[] sprites = Resources.LoadAll<Sprite>("Sprites/Diapositivas");
+        Sprite[] sprites = UnityEngine.Resources.LoadAll<Sprite>("Sprites/Diapositivas");
 
         foreach (var sprite in sprites)
             if (sprite.name.Equals(nameSprite)) return sprite;
@@ -323,7 +326,7 @@ public class CardController : MonoBehaviour
 
     private GameObject GetPrefab(string namePrefab)
     {
-        GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs/Animations");
+        GameObject[] prefabs = UnityEngine.Resources.LoadAll<GameObject>("Prefabs/Animations");
 
         foreach (var prefab in prefabs)
             if (prefab.name.Equals(namePrefab))
