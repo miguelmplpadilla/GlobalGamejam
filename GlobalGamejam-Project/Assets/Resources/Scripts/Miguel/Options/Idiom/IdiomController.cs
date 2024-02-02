@@ -61,6 +61,12 @@ public class IdiomController : MonoBehaviour
     
     private void ChangeIdiomFromPlayerPrefs()
     {
+        if (!PlayerPrefs.HasKey("CurrentIdiom"))
+        {
+            ChangeIdiom();
+            return;
+        }
+        
         for (int i = 0; i < idioms.Length; i++)
         {
             if (!idioms[i].textUIIdiom.id

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class OptionsController : MonoBehaviour
@@ -17,5 +18,12 @@ public class OptionsController : MonoBehaviour
     {
         panelButtons.transform.localScale = Vector3.one;
         panelOptions.transform.localScale = Vector3.zero;
+    }
+    
+    //[MenuItem("Tools/Delete Player Prefs")]
+    public static void DeletePlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("Player Prefs Deleted");
     }
 }

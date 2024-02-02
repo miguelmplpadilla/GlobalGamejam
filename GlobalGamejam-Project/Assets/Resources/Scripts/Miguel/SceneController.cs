@@ -1,22 +1,21 @@
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using DG.Tweening;
-using Resources.Scripts.Miguel;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class CardController : MonoBehaviour
+public class SceneController : MonoBehaviour
 {
     public bool isTesting = false;
     public string startingPassageName = "";
     
-    public static CardController instance;
+    public static SceneController instance;
 
     public GameObject cardObj;
     public GameObject canvasCard;
@@ -93,8 +92,15 @@ public class CardController : MonoBehaviour
         camera = GameObject.Find("MainCamera");
         originalPositionPanel = rtParent.anchoredPosition;
         originalColorPanel = imagePanelLeft.color;
+
+        string startPassage = startingPassageName;
+
+        if (!isTesting && PlayerPrefs.HasKey("PassageSaved"))
+            startPassage = PlayerPrefs.GetString("PassageSaved");
+        else if (!isTesting)
+            startPassage = story.passages[0].name;
         
-        SetScene(!isTesting ? story.passages[0] : GetPassage(startingPassageName));
+        SetScene(GetPassage(startPassage));
     }
 
     private void Update()
@@ -104,6 +110,8 @@ public class CardController : MonoBehaviour
 
     public void SetScene(Passage passage)
     {
+        PlayerPrefs.SetString("PassageSaved", passage.name);
+        
         string[] info = passage.text.Split("\n\n");
 
         Card card = new Card();
@@ -122,14 +130,24 @@ public class CardController : MonoBehaviour
                 break;
             case 5: SetCalendar(card, passage);
                 break;
-            case 6: VolverMenuInicio();
+            case 6: 
+                PlayerPrefs.SetString("PassageSaved", story.passages[0].name);
+                VolverMenuInicio();
                 break;
         }
     }
 
-    private void VolverMenuInicio()
+    public void VolverMenuInicio()
     {
         SceneManager.LoadScene("StartScene");
+    }
+
+    public void CerrarJuegoMenuInicio()
+    {
+        FadeInForeground(() =>
+        {
+            VolverMenuInicio();
+        });
     }
 
     private async void SetCalendar(Card card, Passage passage)

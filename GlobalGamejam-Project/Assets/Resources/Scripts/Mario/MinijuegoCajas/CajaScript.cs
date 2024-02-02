@@ -29,7 +29,7 @@ public class CajaScript : MonoBehaviour
         {
             if (canWin)
             {
-                CardController.instance.EndGame();
+                SceneController.instance.EndGame();
                 win = true;
             }
         }
