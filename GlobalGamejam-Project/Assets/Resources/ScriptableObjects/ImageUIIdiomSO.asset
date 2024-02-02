@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1197ade2c44d7ca0e4fe89d2ea3758, type: 3}
+  m_Name: ImageUIIdiomSO
+  m_EditorClassIdentifier: 
+  images:
+  - id: Play
+    spriteES: {fileID: 21300000, guid: 9ef142156d1cd5144b64c51df0b4d013, type: 3}
+    spriteEN: {fileID: 21300000, guid: 7d10799e49b31524582b8a7e89c8dea9, type: 3}
+  - id: Options
+    spriteES: {fileID: 21300000, guid: c8db9a5798f68fa41846d697f1e50c5e, type: 3}
+    spriteEN: {fileID: 21300000, guid: 3ed9b873fd3d88c41ab3b7ae248af899, type: 3}
+  - id: Exit
+    spriteES: {fileID: 21300000, guid: 8afb271ad6911d045b12b716fe2a02fd, type: 3}
+    spriteEN: {fileID: 21300000, guid: 2d53c614de25a254cb269401c434fee0, type: 3}
+  - id: LanguageImage
+    spriteES: {fileID: 21300000, guid: c234bd0b1b16dc14e813aa4748760aee, type: 3}
+    spriteEN: {fileID: 21300000, guid: a6cb99d1449b5e84594660c193fa695e, type: 3}
+  - id: OptionsTitle
+    spriteES: {fileID: 21300000, guid: d44142c96a75b024aa30d9f10157398b, type: 3}
+    spriteEN: {fileID: 21300000, guid: 8ebd8beb23cd017448765fc72badbeb4, type: 3}
