@@ -84,8 +84,6 @@ public class CardController : MonoBehaviour
 
         story = new Story();
         JsonUtility.FromJsonOverwrite(jsonStory.text, story);
-
-        //Debug.Log(JsonUtility.ToJson(new Card()));
         
         SceneManager.LoadScene("Minigames", LoadSceneMode.Additive);
     }

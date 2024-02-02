@@ -2254,8 +2254,8 @@
       "name": "SalaArrestoSlide",
       "pid": "133",
       "position": {
-        "x": "533",
-        "y": "12513"
+        "x": "532",
+        "y": "12512"
       }
     },
     {
@@ -2403,8 +2403,8 @@
       "name": "EntraPoliciaCasaAnimation",
       "pid": "142",
       "position": {
-        "x": "233",
-        "y": "12362"
+        "x": "229",
+        "y": "12343"
       }
     },
     {
@@ -2679,19 +2679,19 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"EntraPoliciaCasaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[EleccionAbogadoSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"EntraPoliciaCasaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[SalaArrestoSlide]]",
       "links": [
         {
-          "name": "EleccionAbogadoSlide",
-          "link": "EleccionAbogadoSlide",
-          "pid": "158"
+          "name": "SalaArrestoSlide",
+          "link": "SalaArrestoSlide",
+          "pid": "133"
         }
       ],
       "name": "EntraPoliciaCasaSlide",
       "pid": "159",
       "position": {
-        "x": "394",
-        "y": "12370"
+        "x": "384",
+        "y": "12367"
       }
     },
     {
@@ -2879,7 +2879,7 @@
       }
     }
   ],
-  "name": "Game",
+  "name": "Game-EN",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.2.0",

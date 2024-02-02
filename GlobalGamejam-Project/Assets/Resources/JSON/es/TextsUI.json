@@ -2,7 +2,7 @@
   "texts": [
     {
       "id": "Next",
-      "text": "Siguiente"
+      "text": "Next"
     },
     {
       "id": "PlayCaugth",
@@ -27,6 +27,10 @@
     {
       "id": "ClickBox",
       "text": "Haz clic para soltar una caja y apílalas hasta la línea"
+    },
+    {
+      "id": "ClickBirthPrepare",
+      "text": "¡Haz clic tan rápido como puedas!"
     },
     {
       "id": "ClickBirth",
