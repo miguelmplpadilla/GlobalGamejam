@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f828686dd779c40b5c276fb97f97b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: ClickBirth
+  id: ClickBirthPrepare
 --- !u!1 &5443555440975597492
 GameObject:
   m_ObjectHideFlags: 0

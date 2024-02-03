@@ -155,7 +155,7 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"Jugar con pinturas\",\n    \"rightDecisionText\": \"Jugar con fósforos\"\n  },\n  \"textCard\": \"¿Con qué deberías jugar?\",\n  \"tipeCard\": 1\n}\n\n[[Pintar]]\n[[CasaQuemar]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"\",\n    \"leftDecisionText\": \"Jugar con pinturas\",\n    \"rightDecisionText\": \"Jugar con las cerillas\"\n  },\n  \"textCard\": \"¿Con qué deberías jugar?\",\n  \"tipeCard\": 1\n}\n\n[[Pintar]]\n[[CasaQuemar]]",
       "links": [
         {
           "name": "Pintar",
@@ -2679,12 +2679,12 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"EntraPoliciaCasaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[EleccionAbogadoSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"EntraPoliciaCasaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[SalaArrestoSlide]]",
       "links": [
         {
-          "name": "EleccionAbogadoSlide",
-          "link": "EleccionAbogadoSlide",
-          "pid": "158"
+          "name": "SalaArrestoSlide",
+          "link": "SalaArrestoSlide",
+          "pid": "133"
         }
       ],
       "name": "EntraPoliciaCasaSlide",

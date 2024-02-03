@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "289704227583",
+    "project_id": "justanormallife-9c9c1",
+    "storage_bucket": "justanormallife-9c9c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289704227583:android:a3ecf7de74b3a3c5eb92ca",
+        "android_client_info": {
+          "package_name": "com.DotClassGames.JustANormalLife"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc6RRWNEkoF0YBFbbtyhpsV5vDjI9jF3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

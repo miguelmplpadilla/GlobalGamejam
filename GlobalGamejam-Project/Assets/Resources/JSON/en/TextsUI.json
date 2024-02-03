@@ -2,7 +2,7 @@
   "texts": [
     {
       "id": "Next",
-      "text": "Siguiente"
+      "text": "Next"
     },
     {
       "id": "PlayCaugth",
@@ -27,6 +27,10 @@
     {
       "id": "ClickBox",
       "text": "Click to drop a box and stack them up to the line"
+    },
+    {
+      "id": "ClickBirthPrepare",
+      "text": "Click as fast as you can!"
     },
     {
       "id": "ClickBirth",

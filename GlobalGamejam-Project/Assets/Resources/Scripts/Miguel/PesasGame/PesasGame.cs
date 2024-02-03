@@ -32,7 +32,7 @@ public class PesasGame : MonoBehaviour
         if (currentPesas >= maxPesas && !gameEnded)
         {
             StopCoroutine("RestarVariable");
-            CardController.instance.EndGame();
+            SceneController.instance.EndGame();
             gameEnded = true;
         }
 
