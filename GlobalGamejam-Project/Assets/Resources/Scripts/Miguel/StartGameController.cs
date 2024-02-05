@@ -10,6 +10,7 @@ public class StartGameController : MonoBehaviour
 
     private void Start()
     {
+        AudioManagerController.instance.PlaySfx("MenuMusica", true);
         FadeOutForeGround();
     }
 

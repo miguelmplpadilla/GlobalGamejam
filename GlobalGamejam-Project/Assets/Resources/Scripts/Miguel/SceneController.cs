@@ -14,6 +14,8 @@ public class SceneController : MonoBehaviour
 {
     public bool isTesting = false;
     public string startingPassageName = "";
+
+    private string currentHistoria = "";
     
     public static SceneController instance;
 
@@ -71,11 +73,18 @@ public class SceneController : MonoBehaviour
         
         if (PlayerPrefs.HasKey("CurrentIdiom"))
             languageName = PlayerPrefs.GetString("CurrentIdiom");
+
+        if (PlayerPrefs.HasKey("CurrentHistoria"))
+            currentHistoria = PlayerPrefs.GetString("CurrentHistoria");
+        else
+            currentHistoria = "Historia1";
         
-        jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/en/Historia1");
+        jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/" + languageName + "/" + currentHistoria + "/" + currentHistoria);
 
         if (idiomas.Contains(languageName))
-            jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/" + languageName + "/Historia1");
+            jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/" + languageName + "/" + currentHistoria + "/" + currentHistoria);
+        else
+            jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/en/" + currentHistoria + "/" + currentHistoria);
         
         instance = this;
         
@@ -101,6 +110,8 @@ public class SceneController : MonoBehaviour
             startPassage = story.passages[0].name;
         
         SetScene(GetPassage(startPassage));
+        
+        AudioManagerController.instance.PlaySfx(currentHistoria+"Musica", true);
     }
 
     private void Update()
