@@ -32,7 +32,7 @@ public class ChangeTextIdiom : MonoBehaviour
 
         JsonUtility.FromJsonOverwrite(
             UnityEngine.Resources
-                .Load<TextAsset>("JSON/" + idiom + "/" + currentHistoria + "/" + currentHistoria + "/TextsUI").text,
+                .Load<TextAsset>("JSON/" + idiom + "/" + currentHistoria + "/TextsUI").text,
             texts);
 
         foreach (var text in texts.texts)

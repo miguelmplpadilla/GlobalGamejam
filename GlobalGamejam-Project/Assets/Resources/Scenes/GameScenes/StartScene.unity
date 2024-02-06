@@ -300,6 +300,7 @@ RectTransform:
   - {fileID: 1543679737}
   - {fileID: 726127278}
   - {fileID: 1522066567}
+  - {fileID: 768279179}
   - {fileID: 740850349}
   m_Father: {fileID: 1125632478}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1060,10 +1061,10 @@ RectTransform:
   m_GameObject: {fileID: 768279178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3359, y: 1.3359, z: 1.3359}
+  m_LocalScale: {x: 1.3359001, y: 1.3359001, z: 1.3359001}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1125632478}
+  m_Father: {fileID: 117533065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1180,13 +1181,13 @@ MonoBehaviour:
       - m_Target: {fileID: 310037533}
         m_TargetAssemblyTypeName: StartGameController, Assembly-CSharp
         m_MethodName: StartGame
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Historia1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &779256987
@@ -1467,7 +1468,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1492953457}
-  - {fileID: 768279179}
   - {fileID: 1929839993}
   - {fileID: 117533065}
   - {fileID: 1615313643}

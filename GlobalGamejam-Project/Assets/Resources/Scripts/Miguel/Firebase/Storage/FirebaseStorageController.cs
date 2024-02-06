@@ -11,6 +11,8 @@ using SimpleFileBrowser;
 
 public class FirebaseStorageController : MonoBehaviour
 {
+    public static FirebaseStorageController instance;
+    
     private RawImage rawImage;
 
     private FirebaseStorage storage;
@@ -18,6 +20,7 @@ public class FirebaseStorageController : MonoBehaviour
     
     private void Awake()
     {
+        instance = this;
         rawImage = GetComponent<RawImage>();
     }
 
@@ -26,20 +29,20 @@ public class FirebaseStorageController : MonoBehaviour
         storage = FirebaseStorage.DefaultInstance;
         storageReference = storage.GetReferenceFromUrl("gs://justanormallife-9c9c1.appspot.com");
 
-        FileBrowser.SetFilters(true, new FileBrowser.Filter("Images", ".jpg", ".png"),
+        /*FileBrowser.SetFilters(true, new FileBrowser.Filter("Images", ".jpg", ".png"),
             new FileBrowser.Filter("Text Files", ".txt", ".pdf"));
 
         FileBrowser.SetDefaultFilter(".txt");
         
-        FileBrowser.SetExcludedExtensions(".lnk", ".tmp", ".zip", ".rar", ".exe");
+        FileBrowser.SetExcludedExtensions(".lnk", ".tmp", ".zip", ".rar", ".exe");*/
     }
 
-    private void UploadFile(byte[] bytes)
+    public void UploadFile(byte[] bytes, string fileName)
     {
         var metadata = new MetadataChange();
         metadata.ContentType = "text/txt";
         
-        StorageReference uploadRef = storageReference.Child("uploads/newFile.txt");
+        StorageReference uploadRef = storageReference.Child("Partidas/"+fileName+".txt");
 
         Debug.Log("File Upload Started");
         
@@ -70,7 +73,7 @@ public class FirebaseStorageController : MonoBehaviour
         Debug.Log("File Selected");
         byte[] bytes = FileBrowserHelpers.ReadBytesFromFile(FileBrowser.Result[0]);
         
-        UploadFile(bytes);
+        UploadFile(bytes, "PruebaSubida");
     }
 
     public void ExecuteUploadFile()
