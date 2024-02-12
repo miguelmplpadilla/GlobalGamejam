@@ -1,12 +1,10 @@
 using System;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -173,7 +171,8 @@ public class SceneController : MonoBehaviour
     {
         string recorridoTxt = "RecorridoTomado_" + Environment.MachineName + "_" + currentHistoria;
         FirebaseStorageController.instance.UploadFile(
-            Encoding.UTF8.GetBytes(PlayerPrefs.GetString("RecorridoTomado_" + currentHistoria)), recorridoTxt);
+            Encoding.UTF8.GetBytes(PlayerPrefs.GetString("RecorridoTomado_" + currentHistoria + "_" +
+                                                         DateTime.UtcNow.Date.ToString("dd/MM/yyyy"))), recorridoTxt);
                 
         PlayerPrefs.DeleteKey("RecorridoTomado_"+currentHistoria);
         PlayerPrefs.SetString("PassageSaved_"+currentHistoria, story.passages[0].name);
