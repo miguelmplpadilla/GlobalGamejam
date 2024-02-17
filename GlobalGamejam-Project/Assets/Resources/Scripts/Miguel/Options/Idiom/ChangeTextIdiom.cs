@@ -20,13 +20,20 @@ public class ChangeTextIdiom : MonoBehaviour
 
     public void ChangeText()
     {
+        string currentHistoria = "Historia1";
+        if (PlayerPrefs.HasKey("CurrentHistoria"))
+            currentHistoria = PlayerPrefs.GetString("CurrentHistoria");
+        
         string idiom = "es";
         if (PlayerPrefs.HasKey("CurrentIdiom")) 
             idiom = PlayerPrefs.GetString("CurrentIdiom");
 
         TextsUI texts = new TextsUI();
-        
-        JsonUtility.FromJsonOverwrite(UnityEngine.Resources.Load<TextAsset>("JSON/"+idiom+"/TextsUI").text, texts);
+
+        JsonUtility.FromJsonOverwrite(
+            UnityEngine.Resources
+                .Load<TextAsset>("JSON/" + idiom + "/" + currentHistoria + "/TextsUI").text,
+            texts);
 
         foreach (var text in texts.texts)
         {

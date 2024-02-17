@@ -10,11 +10,13 @@ public class StartGameController : MonoBehaviour
 
     private void Start()
     {
+        AudioManagerController.instance.PlaySfx("Musica_Menu", true);
         FadeOutForeGround();
     }
 
-    public void StartGame()
+    public void StartGame(string gameName)
     {
+        PlayerPrefs.SetString("CurrentHistoria", gameName);
         FadeInForeGround(() =>
         {
             SceneManager.LoadScene("GameScene");

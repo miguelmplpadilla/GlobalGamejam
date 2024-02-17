@@ -1,10 +1,10 @@
 using System;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -14,6 +14,8 @@ public class SceneController : MonoBehaviour
 {
     public bool isTesting = false;
     public string startingPassageName = "";
+
+    private string currentHistoria = "";
     
     public static SceneController instance;
 
@@ -71,11 +73,18 @@ public class SceneController : MonoBehaviour
         
         if (PlayerPrefs.HasKey("CurrentIdiom"))
             languageName = PlayerPrefs.GetString("CurrentIdiom");
+
+        if (PlayerPrefs.HasKey("CurrentHistoria"))
+            currentHistoria = PlayerPrefs.GetString("CurrentHistoria");
+        else
+            currentHistoria = "Historia1";
         
-        jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/en/Historia1");
+        jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/" + languageName + "/" + currentHistoria + "/" + currentHistoria);
 
         if (idiomas.Contains(languageName))
-            jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/" + languageName + "/Historia1");
+            jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/" + languageName + "/" + currentHistoria + "/" + currentHistoria);
+        else
+            jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/en/" + currentHistoria + "/" + currentHistoria);
         
         instance = this;
         
@@ -92,15 +101,19 @@ public class SceneController : MonoBehaviour
         camera = GameObject.Find("MainCamera");
         originalPositionPanel = rtParent.anchoredPosition;
         originalColorPanel = imagePanelLeft.color;
+        
+        GPGSManager.instance.DoGrantAchievement("Inicio"+currentHistoria);
 
         string startPassage = startingPassageName;
 
-        if (!isTesting && PlayerPrefs.HasKey("PassageSaved"))
-            startPassage = PlayerPrefs.GetString("PassageSaved");
+        if (!isTesting && PlayerPrefs.HasKey("PassageSaved_"+currentHistoria))
+            startPassage = PlayerPrefs.GetString("PassageSaved_"+currentHistoria);
         else if (!isTesting)
             startPassage = story.passages[0].name;
         
         SetScene(GetPassage(startPassage));
+        
+        AudioManagerController.instance.PlaySfx("Musica_"+currentHistoria, true);
     }
 
     private void Update()
@@ -110,7 +123,7 @@ public class SceneController : MonoBehaviour
 
     public void SetScene(Passage passage)
     {
-        PlayerPrefs.SetString("PassageSaved", passage.name);
+        SaveData(passage);
         
         string[] info = passage.text.Split("\n\n");
 
@@ -130,11 +143,43 @@ public class SceneController : MonoBehaviour
                 break;
             case 5: SetCalendar(card, passage);
                 break;
-            case 6: 
-                PlayerPrefs.SetString("PassageSaved", story.passages[0].name);
+            case 6:
+                EndHistoria();
                 VolverMenuInicio();
                 break;
         }
+    }
+
+    private void SaveData(Passage passage)
+    {
+        string recorrido = "";
+        if (PlayerPrefs.HasKey("RecorridoTomado_" + currentHistoria))
+            recorrido = PlayerPrefs.GetString("RecorridoTomado_" + currentHistoria);
+
+        string[] recorridoSplit = recorrido.Split("\n");
+
+        for (int i = 0; i < recorridoSplit.Length; i++)
+            Debug.Log(recorridoSplit[i]);
+
+        if (recorridoSplit[recorridoSplit.Length - 1].Equals("- " + passage.name)) return;
+
+        recorrido += "- " + passage.name + "\n";
+        
+        PlayerPrefs.SetString("RecorridoTomado_"+currentHistoria, recorrido);
+        PlayerPrefs.SetString("PassageSaved_"+currentHistoria, passage.name);
+    }
+
+    private void EndHistoria()
+    {
+        string recorridoTxt = "RecorridoTomado_" + Environment.MachineName + "_" + currentHistoria;
+        FirebaseStorageController.instance.UploadFile(
+            Encoding.UTF8.GetBytes(PlayerPrefs.GetString("RecorridoTomado_" + currentHistoria + "_" +
+                                                         DateTime.UtcNow.Date.ToString("dd/MM/yyyy"))), recorridoTxt);
+                
+        PlayerPrefs.DeleteKey("RecorridoTomado_"+currentHistoria);
+        PlayerPrefs.SetString("PassageSaved_"+currentHistoria, story.passages[0].name);
+        
+        GPGSManager.instance.DoGrantAchievement("Fin"+currentHistoria);
     }
 
     public void VolverMenuInicio()
