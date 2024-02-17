@@ -101,6 +101,8 @@ public class SceneController : MonoBehaviour
         camera = GameObject.Find("MainCamera");
         originalPositionPanel = rtParent.anchoredPosition;
         originalColorPanel = imagePanelLeft.color;
+        
+        GPGSManager.instance.DoGrantAchievement("Inicio"+currentHistoria);
 
         string startPassage = startingPassageName;
 
@@ -176,6 +178,8 @@ public class SceneController : MonoBehaviour
                 
         PlayerPrefs.DeleteKey("RecorridoTomado_"+currentHistoria);
         PlayerPrefs.SetString("PassageSaved_"+currentHistoria, story.passages[0].name);
+        
+        GPGSManager.instance.DoGrantAchievement("Fin"+currentHistoria);
     }
 
     public void VolverMenuInicio()
