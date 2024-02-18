@@ -16,6 +16,9 @@ public class GPGSManager : MonoBehaviour
     public Logro[] logrosList;
     public Dictionary<string, string> logros = new Dictionary<string, string>();
 
+    private int cantTriesAuthentication = 0;
+    private int cantMaxTriesAuthentication = 10;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -26,8 +29,12 @@ public class GPGSManager : MonoBehaviour
             logros.Add(logrosList[i].nombreLogro, logrosList[i].keyLogro);
     }
 
-    public void Start()
+    public async void Start()
     {
+        await Task.Delay(1000);
+        
+        ConsoleController.instance.ClearConsole();
+        
         ConfigureGPGS();
         SignIntoGPGS(SignInInteractivity.CanPromptOnce, clientConfiguration);
     }
@@ -43,19 +50,27 @@ public class GPGSManager : MonoBehaviour
         PlayGamesPlatform.InitializeInstance(configuration);
         PlayGamesPlatform.Activate();
         
-        PlayGamesPlatform.Instance.Authenticate(interactivity, (code) =>
-        {
-            //statusText.text = "Autentificando...";
+        Debug.Log("Autentificando...");
 
+        cantTriesAuthentication++;
+        
+        PlayGamesPlatform.Instance.Authenticate(interactivity, async (code) =>
+        {
             if (code == SignInStatus.Success)
             {
-                //statusText.text = "Autentificado correctamente";
-                //descriptionText.text = "Hola " + Social.localUser.userName + " tu ID es " + Social.localUser.id;
+                Debug.Log("Autentificado correctamente");
+                Debug.Log("Hola " + Social.localUser.userName + " tu ID es " + Social.localUser.id);
             }
             else
             {
-                //statusText.text = "Fallo en la autentificacion";
-                //descriptionText.text = "Fallo en la autentificacion, la razon del fallo es " + code;
+                Debug.Log("Fallo en la autentificacion");
+                Debug.Log("Fallo en la autentificacion, la razon del fallo es " + code);
+
+                if (cantTriesAuthentication >= cantMaxTriesAuthentication) return;
+                
+                await Task.Delay(1000);
+                
+                SignIntoGPGS(SignInInteractivity.CanPromptOnce, clientConfiguration);
             }
         });
     }
@@ -64,13 +79,18 @@ public class GPGSManager : MonoBehaviour
     {
         Debug.Log("Desbloqueando logro ...");
         
-        PlayGamesPlatform.Instance.ReportProgress(GPGSManager.instance.logros[achievement], 100, (status) =>
+        PlayGamesPlatform.Instance.ReportProgress(logros[achievement], 100, (status) =>
         {
+            if (status)
+                Debug.Log("Logro desbloqueado");
+            else
+                Debug.Log("Fallo en el desbloqueo");
         });
     }
     
     public void ShowAchivementsUI()
     {
+        Debug.Log("Mostrando logros en pantalla ...");
         Social.ShowAchievementsUI();
     }
 
