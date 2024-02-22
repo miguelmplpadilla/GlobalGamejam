@@ -16,9 +16,6 @@ public class GPGSManager : MonoBehaviour
     public Logro[] logrosList;
     public Dictionary<string, string> logros = new Dictionary<string, string>();
 
-    private int cantTriesAuthentication = 0;
-    private int cantMaxTriesAuthentication = 10;
-
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -44,36 +41,40 @@ public class GPGSManager : MonoBehaviour
         clientConfiguration = new PlayGamesClientConfiguration.Builder().Build();
     }
 
-    internal void SignIntoGPGS(SignInInteractivity interactivity, PlayGamesClientConfiguration configuration)
+    internal async void SignIntoGPGS(SignInInteractivity interactivity, PlayGamesClientConfiguration configuration)
     {
+        Debug.Log("Autentificando...");
+        
         configuration = clientConfiguration;
         PlayGamesPlatform.InitializeInstance(configuration);
         PlayGamesPlatform.Activate();
-        
-        Debug.Log("Autentificando...");
 
-        cantTriesAuthentication++;
+        await Task.Delay(1000);
         
-        PlayGamesPlatform.Instance.Authenticate(interactivity, async (code) =>
+        PlayGamesPlatform.Instance.Authenticate(interactivity, (code) =>
         {
             if (code == SignInStatus.Success)
             {
+                GameObject.Find("IniciarSesionBoton").transform.localScale = Vector3.zero;
+                GameObject.Find("MostrarLogrosBoton").transform.localScale = Vector3.one;
+                
                 Debug.Log("Autentificado correctamente");
                 Debug.Log("Hola " + Social.localUser.userName + " tu ID es " + Social.localUser.id);
+                return;
             }
-            else
-            {
-                Debug.Log("Fallo en la autentificacion");
-                Debug.Log("Fallo en la autentificacion, la razon del fallo es " + code);
-
-                if (cantTriesAuthentication >= cantMaxTriesAuthentication) return;
-                
-                await Task.Delay(1000);
-                
-                SignIntoGPGS(SignInInteractivity.CanPromptOnce, clientConfiguration);
-            }
+            
+            GameObject.Find("IniciarSesionBoton").transform.localScale = Vector3.one;
+            
+            Debug.Log("Fallo en la autentificacion");
+            Debug.Log("Fallo en la autentificacion, la razon del fallo es " + code);
         });
     }
+    
+    public void LogIn() 
+    {
+        SignIntoGPGS(SignInInteractivity.CanPromptOnce, clientConfiguration);
+    }
+    
     
     public void DoGrantAchievement(string achievement)
     {
