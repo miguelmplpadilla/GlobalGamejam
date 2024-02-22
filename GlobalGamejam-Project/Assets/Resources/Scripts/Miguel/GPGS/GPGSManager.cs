@@ -18,6 +18,12 @@ public class GPGSManager : MonoBehaviour
 
     private void Awake()
     {
+        if (SystemInfo.deviceType != DeviceType.Handheld)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        
         DontDestroyOnLoad(gameObject);
         
         instance = this;

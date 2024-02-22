@@ -7,8 +7,16 @@ public class ConsoleController : MonoBehaviour
     private TextMeshProUGUI logText;
     public static ConsoleController instance;
 
+    public bool isTesting = true;
+
     private void Awake()
     {
+        if (!isTesting || SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            transform.parent.gameObject.SetActive(false);
+            return;
+        }
+        
         instance = this;
         
         logText = GetComponent<TextMeshProUGUI>();
