@@ -1,12 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
-public class RotateController : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public class RotateDragController : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     private Vector3 mPrevPos = Vector3.zero;
     private Vector3 mPosDelta = Vector3.zero;
@@ -30,30 +28,20 @@ public class RotateController : MonoBehaviour, IDragHandler, IPointerUpHandler, 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         
         hitsDrag = Physics.RaycastAll(ray).ToList();
-        
         hitsDrag.Sort((x, y) => x.distance.CompareTo(y.distance));
 
-        foreach (RaycastHit hit in hitsDrag)
-        {
-            Debug.Log("Objeto impactado: " + hit.collider.gameObject.name+" Distancia: "+hit.distance);
-        }
+        foreach (var hit in hitsDrag) Debug.Log(hit.collider.name);
 
         StartCoroutine("WaitForInteractChild");
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log(hitsDrag.Count);
         if (hitsDrag.Count == 0) return;
         
         if (objectToDrag != null)
         {
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 10;
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(mousePos);
-            
-            objectToDrag.transform.position = new Vector3(mousePosition.x, mousePosition.y,
-                objectToDrag.transform.position.z);
+            objectToDrag.SendMessage("Move");
             return;
         }
         
@@ -75,9 +63,10 @@ public class RotateController : MonoBehaviour, IDragHandler, IPointerUpHandler, 
     public void OnPointerUp(PointerEventData eventData)
     {
         StopCoroutine("WaitForInteractChild");
+        
         if (objectToDrag != null)
         {
-            objectToDrag.transform.SetParent(null);
+            objectToDrag.SendMessage("EndMove");
             objectToDrag = null;
             return;
         }
@@ -89,13 +78,26 @@ public class RotateController : MonoBehaviour, IDragHandler, IPointerUpHandler, 
 
     private IEnumerator WaitForInteractChild()
     {
-        yield return new WaitForSeconds(1.5f);
-        
-        if (hitsDrag.Count < 2) yield break;
+        yield return new WaitForSeconds(0.5f);
+
+        if (hitsDrag.Count < 2)
+        {
+            if (hitsDrag.Count == 1)
+            {
+                if (hitsDrag[0].collider.CompareTag("DisassembleDrag"))
+                {
+                    objectToDrag = hitsDrag[0].collider.gameObject;
+                    objectToDrag.SendMessage("StartMove");
+                    
+                    Debug.Log(objectToDrag);
+                }
+            }
+            
+            yield break;
+        }
 
         objectToDrag = hitsDrag[1].collider.gameObject;
-        objectToDrag.transform.SetParent(null);
         
-        Debug.Log("Drag object: "+objectToDrag);
+        objectToDrag.SendMessage("StartMove");
     }
 }
