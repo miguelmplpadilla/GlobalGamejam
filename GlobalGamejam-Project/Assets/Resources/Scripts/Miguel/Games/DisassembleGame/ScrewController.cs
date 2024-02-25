@@ -1,14 +1,12 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-public class PartController : MonoBehaviour
+public class ScrewController : MonoBehaviour
 {
-    private GameObject parentRotate;
-    public GameObject positionEnd;
+    private GameObject endPosition;
     
     public float distanceMove = 0.2f;
     public float speedMove = 0.4f;
@@ -23,22 +21,7 @@ public class PartController : MonoBehaviour
 
     public Axis axisToSeparate;
 
-    public GameObject parentObjectsToRemove;
-    public List<ObjRemove> objectsToRemove = new List<ObjRemove>();
-
-    [Serializable]
-    public class ObjRemove
-    {
-        public enum ObjType
-        {
-            NORMAL, SCREW
-        }
-
-        public ObjType type;
-        public GameObject obj;
-    }
-
-    public bool isDisassembled = false;
+    public GameObject[] allScrewPositions;
 
     public enum Axis
     {
@@ -47,27 +30,23 @@ public class PartController : MonoBehaviour
 
     private void Awake()
     {
-        parentRotate = transform.parent.gameObject;
-
         originalPosition = transform.localPosition;
         originalRotation = transform.localEulerAngles;
         originalRotationWorld = transform.eulerAngles;
     }
 
+    private void Start()
+    {
+        endPosition = GameObject.Find("PositionEndScrew");
+        allScrewPositions = GameObject.FindGameObjectsWithTag("ScrewPosition");
+    }
+
     public async void StartMove()
     {
-        if (positionEnd == null) return;
-        
         Sequence sequenceInitialMove = DOTween.Sequence();
         sequenceInitialMove.Pause();
 
         await StartAnimationMove(distanceMove);
-
-        if (!CheckCanMove())
-        {
-            await StartAnimationMove(-distanceMove);
-            return;
-        }
         
         transform.SetParent(null);
 
@@ -92,41 +71,49 @@ public class PartController : MonoBehaviour
     {
         canMove = false;
         
-        float distanceEnd = Vector3.Distance(transform.position, positionEnd.transform.position);
-        float distanceStart = Vector3.Distance(transform.position, parentRotate.transform.position);
-
-        GameObject objToMove;
-
-        isDisassembled = !(distanceEnd > distanceStart && !parentRotate.GetComponent<PartController>().isDisassembled);
-
-        if (isDisassembled) objToMove = positionEnd;
-        else objToMove = parentRotate;
+        GameObject objToMove = GetHoleNearest();
         
-        transform.SetParent(objToMove.transform);
+        if (objToMove != null)
+        {
+            transform.SetParent(objToMove.transform);
+            
+            transform.DOLocalRotate(originalRotation, speedMove);
+            await transform.DOLocalMove(Vector3.zero, speedMove)
+                .AsyncWaitForCompletion();
+            
+            canMove = true;
 
-        if (distanceEnd > distanceStart) transform.DOLocalRotate(originalRotation, speedMove);
+            return;
+        }
+        
+        transform.SetParent(endPosition.transform);
         
         Vector3 posZero = Vector3.zero;
         posZero.z = transform.localPosition.z;
-        await transform.DOLocalMove(distanceEnd < distanceStart ? posZero : originalPosition, speedMove)
+        await transform.DOLocalMove(posZero, speedMove)
             .AsyncWaitForCompletion();
 
         canMove = true;
     }
 
-    private bool CheckCanMove()
+    private GameObject GetHoleNearest()
     {
-        foreach (var objRemove in objectsToRemove)
-        {
-            if (objRemove.type == ObjRemove.ObjType.NORMAL &&
-                objRemove.obj.transform.parent.gameObject.Equals(parentObjectsToRemove)) return false;
+        GameObject objToMove = null;
+        float distanceNearest = 10000000;
 
-            if (objRemove.type == ObjRemove.ObjType.SCREW &&
-                objRemove.obj.transform.childCount > 0)
-                return false;
+        foreach (var obj in allScrewPositions)
+        {
+            float distance = Vector3.Distance(obj.transform.position, transform.position);
+            if (distance < distanceNearest && obj.transform.childCount == 0)
+            {
+                objToMove = obj;
+                distanceNearest = distance;
+            }
         }
 
-        return true;
+        if (distanceNearest > 1) return null;
+
+        return objToMove;
     }
 
     private async Task StartAnimationMove(float distance)
@@ -135,7 +122,7 @@ public class PartController : MonoBehaviour
 
         Tween move = null;
         
-        if (originalParent.Equals(parentRotate))
+        if (!originalParent.Equals(endPosition))
             switch (axisToSeparate)
             {
                 case Axis.X:
