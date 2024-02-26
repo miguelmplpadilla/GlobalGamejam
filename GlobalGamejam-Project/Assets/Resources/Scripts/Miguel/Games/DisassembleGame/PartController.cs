@@ -77,23 +77,43 @@ public class PartController : MonoBehaviour
     public void Move()
     {
         if (!canDrag || !canMove) return;
-
-        transform.DORotate(originalRotationWorld, speedMove);
         
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10;
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(mousePos);
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(mousePos);
+        mousePosition.z = -1.5f;
 
-        transform.DOMove(new Vector3(mousePosition.x, mousePosition.y,
-            transform.position.z), speedMove);
+        Debug.Log(mousePosition.z);
+
+        float distanceEnd = Vector3.Distance(mousePosition, positionEnd.transform.position);
+        float distanceStart = Vector3.Distance(mousePosition, parentRotate.transform.position);
+
+        Debug.Log("Distance End: "+distanceEnd+" Distance Start: "+distanceStart);
+
+        if (distanceEnd < 0.4f || distanceStart < 0.4f)
+        {
+            DoMovePoint(mousePosition);
+            return;
+        }
+        
+        DoMoveNormal(mousePosition);
     }
 
-    public async void EndMove()
+    private void DoMoveNormal(Vector2 mousePosition)
     {
-        canMove = false;
+        transform.SetParent(null);
         
-        float distanceEnd = Vector3.Distance(transform.position, positionEnd.transform.position);
-        float distanceStart = Vector3.Distance(transform.position, parentRotate.transform.position);
+        transform.DOKill();
+        
+        transform.DORotate(originalRotationWorld, speedMove);
+        transform.DOMove(new Vector3(mousePosition.x, mousePosition.y,
+            -1.5f), speedMove);
+    }
+
+    private void DoMovePoint(Vector3 mousePosition)
+    {
+        float distanceEnd = Vector3.Distance(mousePosition, positionEnd.transform.position);
+        float distanceStart = Vector3.Distance(mousePosition, parentRotate.transform.position);
 
         GameObject objToMove;
 
@@ -107,9 +127,29 @@ public class PartController : MonoBehaviour
         if (distanceEnd > distanceStart) transform.DOLocalRotate(originalRotation, speedMove);
         
         Vector3 posZero = Vector3.zero;
-        posZero.z = transform.localPosition.z;
-        await transform.DOLocalMove(distanceEnd < distanceStart ? posZero : originalPosition, speedMove)
-            .AsyncWaitForCompletion();
+        
+        transform.DOLocalMove(distanceEnd < distanceStart ? posZero : originalPosition, speedMove);
+    }
+
+    public async void EndMove()
+    {
+        canMove = false;
+        
+        if (transform.parent == null)
+        {
+            transform.SetParent(parentRotate.transform);
+            transform.DOLocalRotate(originalRotation, speedMove);
+            await transform.DOLocalMove(originalPosition, speedMove).AsyncWaitForCompletion();
+            
+            canMove = true;
+            return;
+        }
+
+        if (transform.parent.gameObject == parentRotate)
+        {
+            await transform.DOScale(1.2f, 0.1f).AsyncWaitForCompletion();
+            await transform.DOScale(1, 0.1f).AsyncWaitForCompletion();
+        }
 
         canMove = true;
     }

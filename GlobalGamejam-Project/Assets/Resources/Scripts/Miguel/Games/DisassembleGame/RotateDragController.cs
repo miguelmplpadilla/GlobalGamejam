@@ -30,7 +30,7 @@ public class RotateDragController : MonoBehaviour, IDragHandler, IPointerUpHandl
         hitsDrag = Physics.RaycastAll(ray).ToList();
         hitsDrag.Sort((x, y) => x.distance.CompareTo(y.distance));
 
-        foreach (var hit in hitsDrag) Debug.Log(hit.collider.name);
+        //foreach (var hit in hitsDrag) Debug.Log(hit.collider.name);
 
         StartCoroutine("WaitForInteractChild");
     }

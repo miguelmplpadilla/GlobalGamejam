@@ -37,7 +37,7 @@ public class ScrewController : MonoBehaviour
 
     private void Start()
     {
-        endPosition = GameObject.Find("PositionEndScrew");
+        endPosition = GameObject.Find("ParentPositionScrews");
         allScrewPositions = GameObject.FindGameObjectsWithTag("ScrewPosition");
     }
 
