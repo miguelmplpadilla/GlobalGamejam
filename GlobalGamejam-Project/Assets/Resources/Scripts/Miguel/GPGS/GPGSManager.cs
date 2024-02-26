@@ -18,6 +18,12 @@ public class GPGSManager : MonoBehaviour
 
     private void Awake()
     {
+        if (SystemInfo.deviceType != DeviceType.Handheld)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        
         DontDestroyOnLoad(gameObject);
         
         instance = this;
@@ -26,8 +32,12 @@ public class GPGSManager : MonoBehaviour
             logros.Add(logrosList[i].nombreLogro, logrosList[i].keyLogro);
     }
 
-    public void Start()
+    public async void Start()
     {
+        await Task.Delay(1000);
+        
+        ConsoleController.instance.ClearConsole();
+        
         ConfigureGPGS();
         SignIntoGPGS(SignInInteractivity.CanPromptOnce, clientConfiguration);
     }
@@ -37,40 +47,57 @@ public class GPGSManager : MonoBehaviour
         clientConfiguration = new PlayGamesClientConfiguration.Builder().Build();
     }
 
-    internal void SignIntoGPGS(SignInInteractivity interactivity, PlayGamesClientConfiguration configuration)
+    internal async void SignIntoGPGS(SignInInteractivity interactivity, PlayGamesClientConfiguration configuration)
     {
+        Debug.Log("Autentificando...");
+        
         configuration = clientConfiguration;
         PlayGamesPlatform.InitializeInstance(configuration);
         PlayGamesPlatform.Activate();
+
+        await Task.Delay(1000);
         
         PlayGamesPlatform.Instance.Authenticate(interactivity, (code) =>
         {
-            //statusText.text = "Autentificando...";
-
             if (code == SignInStatus.Success)
             {
-                //statusText.text = "Autentificado correctamente";
-                //descriptionText.text = "Hola " + Social.localUser.userName + " tu ID es " + Social.localUser.id;
+                GameObject.Find("IniciarSesionBoton").transform.localScale = Vector3.zero;
+                GameObject.Find("MostrarLogrosBoton").transform.localScale = Vector3.one;
+                
+                Debug.Log("Autentificado correctamente");
+                Debug.Log("Hola " + Social.localUser.userName + " tu ID es " + Social.localUser.id);
+                return;
             }
-            else
-            {
-                //statusText.text = "Fallo en la autentificacion";
-                //descriptionText.text = "Fallo en la autentificacion, la razon del fallo es " + code;
-            }
+            
+            GameObject.Find("IniciarSesionBoton").transform.localScale = Vector3.one;
+            
+            Debug.Log("Fallo en la autentificacion");
+            Debug.Log("Fallo en la autentificacion, la razon del fallo es " + code);
         });
     }
+    
+    public void LogIn() 
+    {
+        SignIntoGPGS(SignInInteractivity.CanPromptOnce, clientConfiguration);
+    }
+    
     
     public void DoGrantAchievement(string achievement)
     {
         Debug.Log("Desbloqueando logro ...");
         
-        PlayGamesPlatform.Instance.ReportProgress(GPGSManager.instance.logros[achievement], 100, (status) =>
+        PlayGamesPlatform.Instance.ReportProgress(logros[achievement], 100, (status) =>
         {
+            if (status)
+                Debug.Log("Logro desbloqueado");
+            else
+                Debug.Log("Fallo en el desbloqueo");
         });
     }
     
     public void ShowAchivementsUI()
     {
+        Debug.Log("Mostrando logros en pantalla ...");
         Social.ShowAchievementsUI();
     }
 

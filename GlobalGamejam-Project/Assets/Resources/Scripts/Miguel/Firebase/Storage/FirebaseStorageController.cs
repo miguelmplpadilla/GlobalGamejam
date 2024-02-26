@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using Firebase.Storage;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -27,7 +25,7 @@ public class FirebaseStorageController : MonoBehaviour
     private void Start()
     {
         storage = FirebaseStorage.DefaultInstance;
-        storageReference = storage.GetReferenceFromUrl("gs://justanormallife-9c9c1.appspot.com");
+        storageReference = storage.GetReferenceFromUrl("gs://studious-sign-414600.appspot.com");
 
         /*FileBrowser.SetFilters(true, new FileBrowser.Filter("Images", ".jpg", ".png"),
             new FileBrowser.Filter("Text Files", ".txt", ".pdf"));

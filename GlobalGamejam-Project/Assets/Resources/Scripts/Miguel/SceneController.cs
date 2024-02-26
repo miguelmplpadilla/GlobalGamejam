@@ -67,6 +67,8 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("Nombre maquina: "+SystemInfo.deviceName);
+        
         CultureInfo culture = CultureInfo.CurrentCulture;
 
         languageName = culture.TwoLetterISOLanguageName;
@@ -171,10 +173,13 @@ public class SceneController : MonoBehaviour
 
     private void EndHistoria()
     {
-        string recorridoTxt = "RecorridoTomado_" + Environment.MachineName + "_" + currentHistoria;
+        DateTime now = DateTime.Now;
+        
+        string recorridoTxt = "RecorridoTomado_" + SystemInfo.deviceName + "_" + currentHistoria + "_" +
+                              now.ToString("yyyy-MM-dd_HH:mm:ss");
+        
         FirebaseStorageController.instance.UploadFile(
-            Encoding.UTF8.GetBytes(PlayerPrefs.GetString("RecorridoTomado_" + currentHistoria + "_" +
-                                                         DateTime.UtcNow.Date.ToString("dd/MM/yyyy"))), recorridoTxt);
+            Encoding.UTF8.GetBytes(PlayerPrefs.GetString("RecorridoTomado_" + currentHistoria)), recorridoTxt);
                 
         PlayerPrefs.DeleteKey("RecorridoTomado_"+currentHistoria);
         PlayerPrefs.SetString("PassageSaved_"+currentHistoria, story.passages[0].name);
