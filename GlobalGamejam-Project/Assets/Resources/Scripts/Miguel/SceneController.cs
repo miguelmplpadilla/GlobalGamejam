@@ -67,8 +67,6 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("Nombre maquina: "+SystemInfo.deviceName);
-        
         CultureInfo culture = CultureInfo.CurrentCulture;
 
         languageName = culture.TwoLetterISOLanguageName;
@@ -104,7 +102,7 @@ public class SceneController : MonoBehaviour
         originalPositionPanel = rtParent.anchoredPosition;
         originalColorPanel = imagePanelLeft.color;
         
-        GPGSManager.instance.DoGrantAchievement("Inicio"+currentHistoria);
+        //GPGSManager.instance.DoGrantAchievement("Inicio"+currentHistoria);
 
         string startPassage = startingPassageName;
 
@@ -114,8 +112,6 @@ public class SceneController : MonoBehaviour
             startPassage = story.passages[0].name;
         
         SetScene(GetPassage(startPassage));
-        
-        AudioManagerController.instance.PlaySfx("Musica_"+currentHistoria, true);
     }
 
     private void Update()
@@ -148,6 +144,23 @@ public class SceneController : MonoBehaviour
             case 6:
                 EndHistoria();
                 VolverMenuInicio();
+                break;
+        }
+        
+        PlayAudio(card.audio.typeSound, card.audio.soundName, card.audio.loop);
+    }
+
+    private void PlayAudio(int typeAudio, string audioName, bool loop)
+    {
+        if (audioName.Equals("")) return;
+        
+        switch (typeAudio)
+        {
+            case 1:
+                AudioManagerController.instance.PlaySfx(audioName, loop);
+                break;
+            case 2:
+                AudioManagerController.instance.PlayMusic(audioName);
                 break;
         }
     }
@@ -184,7 +197,7 @@ public class SceneController : MonoBehaviour
         PlayerPrefs.DeleteKey("RecorridoTomado_"+currentHistoria);
         PlayerPrefs.SetString("PassageSaved_"+currentHistoria, story.passages[0].name);
         
-        GPGSManager.instance.DoGrantAchievement("Fin"+currentHistoria);
+        //GPGSManager.instance.DoGrantAchievement("Fin"+currentHistoria);
     }
 
     public void VolverMenuInicio()
