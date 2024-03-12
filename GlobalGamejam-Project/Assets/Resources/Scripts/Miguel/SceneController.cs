@@ -51,7 +51,7 @@ public class SceneController : MonoBehaviour
     private Story story;
     private Passage currentPassage;
 
-    public TextAsset jsonStory;
+    private TextAsset jsonStory;
 
     private string leftKey;
     private string rightKey;
@@ -94,6 +94,9 @@ public class SceneController : MonoBehaviour
         JsonUtility.FromJsonOverwrite(jsonStory.text, story);
         
         SceneManager.LoadScene("Minigames", LoadSceneMode.Additive);
+        
+        if (PlayerPrefs.HasKey("MusicPlayed_"+currentHistoria)) 
+            PlayAudio(2, PlayerPrefs.GetString("MusicPlayed_"+currentHistoria), true);
     }
 
     private void Start()
@@ -126,6 +129,8 @@ public class SceneController : MonoBehaviour
         string[] info = passage.text.Split("\n\n");
 
         Card card = new Card();
+
+        Debug.Log(passage.text);
     
         JsonUtility.FromJsonOverwrite(info[0].Replace("\n", "").Replace("\t", ""), card);
 
@@ -146,12 +151,15 @@ public class SceneController : MonoBehaviour
                 VolverMenuInicio();
                 break;
         }
+
+        Debug.Log(card.audio.soundName);
         
         PlayAudio(card.audio.typeSound, card.audio.soundName, card.audio.loop);
     }
 
     private void PlayAudio(int typeAudio, string audioName, bool loop)
     {
+        Debug.Log("Play Audio: "+audioName);
         if (audioName.Equals("")) return;
         
         switch (typeAudio)
@@ -161,6 +169,7 @@ public class SceneController : MonoBehaviour
                 break;
             case 2:
                 AudioManagerController.instance.PlayMusic(audioName);
+                PlayerPrefs.SetString("MusicPlayed_"+currentHistoria, audioName);
                 break;
         }
     }
@@ -196,6 +205,8 @@ public class SceneController : MonoBehaviour
                 
         PlayerPrefs.DeleteKey("RecorridoTomado_"+currentHistoria);
         PlayerPrefs.SetString("PassageSaved_"+currentHistoria, story.passages[0].name);
+        
+        PlayerPrefs.DeleteKey("MusicPlayed_"+currentHistoria);
         
         //GPGSManager.instance.DoGrantAchievement("Fin"+currentHistoria);
     }

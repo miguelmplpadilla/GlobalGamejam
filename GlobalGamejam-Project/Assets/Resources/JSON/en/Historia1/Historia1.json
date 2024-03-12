@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"SpermAnimationStart\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3\n}\n\n[[Fecundation]]\n",
+      "text": "{\n  \"keys\": {\n    \"key\": \"SpermAnimationStart\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 3,\n  \"audio\": {\n    \"typeSound\": 2,\n    \"soundName\": \"Musica_Historia1_1\",\n    \"loop\": true\n  }\n}\n\n[[Fecundation]]\n",
       "links": [
         {
           "name": "Fecundation",

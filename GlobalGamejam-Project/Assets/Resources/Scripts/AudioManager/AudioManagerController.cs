@@ -37,6 +37,8 @@ public class AudioManagerController : MonoBehaviour
         
         audioSourceMusic.clip = GetSfxByName(audioClip);
         audioSourceMusic.loop = true;
+        
+        audioSourceMusic.Play();
 
         return audioSourceMusic.gameObject;
     }
