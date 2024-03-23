@@ -446,6 +446,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610154237}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &697232675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 697232677}
+  - component: {fileID: 697232676}
+  m_Layer: 0
+  m_Name: DisassembleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &697232676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697232675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072d520de5bf53a4a9b493c1a9306cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parts: []
+  screws: []
+--- !u!4 &697232677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697232675}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.541436, y: 0.3858678, z: -1.4306688}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757760835
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +523,138 @@ Transform:
   m_Children:
   - {fileID: 610154238}
   m_Father: {fileID: 2144402747}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &803154314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 803154319}
+  - component: {fileID: 803154318}
+  - component: {fileID: 803154317}
+  - component: {fileID: 803154316}
+  - component: {fileID: 803154315}
+  m_Layer: 0
+  m_Name: BarrelRepared
+  m_TagString: DisassembleDrag
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &803154315
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803154314}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.092389695
+  m_Height: 1.7046468
+  m_Direction: 1
+  m_Center: {x: -0.000000008268983, y: -0.06501038, z: 0.000000008927221}
+--- !u!114 &803154316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803154314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b8096cf84f2234cb8e280a99cfe71d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionEnd: {fileID: 2114461500}
+  distanceMove: 0.1
+  speedMove: 0.4
+  isBroken: 0
+  isDisassembled: 0
+  isObjRepare: 1
+  objRepared: {fileID: 0}
+  axisToSeparate: 2
+  parentObjectsToRemove: {fileID: 803154314}
+  objectsToRemove:
+  - type: 0
+    obj: {fileID: 9153934776873614035}
+--- !u!23 &803154317
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803154314}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 036147b73acde58428cbc8d7d68a4c2d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &803154318
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803154314}
+  m_Mesh: {fileID: 8108563764783910780, guid: 8ce809d5ba6e95749ac73f24b237cea6, type: 3}
+--- !u!4 &803154319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803154314}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5000001, y: 0.5, z: 0.5000001, w: 0.5}
+  m_LocalPosition: {x: 5.42, y: 0.35, z: -1.5000001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &916629880
 GameObject:
@@ -1054,7 +1232,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &1638553013
 RectTransform:
@@ -1292,10 +1470,13 @@ MonoBehaviour:
   positionEnd: {fileID: 1433109233}
   distanceMove: -0.1
   speedMove: 0.4
+  isBroken: 0
+  isDisassembled: 0
+  isObjRepare: 0
+  objRepared: {fileID: 0}
   axisToSeparate: 2
   parentObjectsToRemove: {fileID: 0}
   objectsToRemove: []
-  isDisassembled: 0
 --- !u!23 &1972530673
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1996,6 +2177,10 @@ MonoBehaviour:
   positionEnd: {fileID: 757760835}
   distanceMove: 0.1
   speedMove: 0.4
+  isBroken: 0
+  isDisassembled: 0
+  isObjRepare: 0
+  objRepared: {fileID: 0}
   axisToSeparate: 2
   parentObjectsToRemove: {fileID: 6410473988568575961}
   objectsToRemove:
@@ -2003,7 +2188,6 @@ MonoBehaviour:
     obj: {fileID: 399693304}
   - type: 1
     obj: {fileID: 1560860981}
-  isDisassembled: 0
 --- !u!64 &6410473988568575963
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2077,12 +2261,15 @@ MonoBehaviour:
   positionEnd: {fileID: 2114461500}
   distanceMove: 0.1
   speedMove: 0.4
+  isBroken: 1
+  isDisassembled: 0
+  isObjRepare: 0
+  objRepared: {fileID: 803154314}
   axisToSeparate: 2
   parentObjectsToRemove: {fileID: 916680300899498154}
   objectsToRemove:
   - type: 0
     obj: {fileID: 9153934776873614035}
-  isDisassembled: 0
 --- !u!136 &8023719702092691494
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2214,10 +2401,13 @@ MonoBehaviour:
   positionEnd: {fileID: 0}
   distanceMove: -0.1
   speedMove: 0.4
+  isBroken: 0
+  isDisassembled: 0
+  isObjRepare: 0
+  objRepared: {fileID: 0}
   axisToSeparate: 0
   parentObjectsToRemove: {fileID: 6861628251700616328}
   objectsToRemove: []
-  isDisassembled: 0
 --- !u!64 &8740657803840646047
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2275,12 +2465,15 @@ MonoBehaviour:
   positionEnd: {fileID: 497240327}
   distanceMove: -0.1
   speedMove: 0.4
+  isBroken: 0
+  isDisassembled: 0
+  isObjRepare: 0
+  objRepared: {fileID: 0}
   axisToSeparate: 1
   parentObjectsToRemove: {fileID: 9153934776873614035}
   objectsToRemove:
   - type: 0
     obj: {fileID: 6410473988568575961}
-  isDisassembled: 0
 --- !u!65 &9153934776873614037
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2309,7 +2502,9 @@ SceneRoots:
   - {fileID: 1639039812}
   - {fileID: 916629883}
   - {fileID: 1638553013}
+  - {fileID: 803154319}
   - {fileID: 1263915762}
   - {fileID: 1057615496}
   - {fileID: 2144402747}
   - {fileID: 1005233319}
+  - {fileID: 697232677}

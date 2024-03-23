@@ -18,15 +18,14 @@ public class GPGSManager : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+        
         if (SystemInfo.deviceType != DeviceType.Handheld)
         {
             gameObject.SetActive(false);
             return;
         }
-        
-        DontDestroyOnLoad(gameObject);
-        
-        instance = this;
         
         for (int i = 0; i < logrosList.Length; i++)
             logros.Add(logrosList[i].nombreLogro, logrosList[i].keyLogro);

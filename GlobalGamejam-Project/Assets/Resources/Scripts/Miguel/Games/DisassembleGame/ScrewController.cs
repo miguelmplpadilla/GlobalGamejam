@@ -14,6 +14,8 @@ public class ScrewController : MonoBehaviour
     private bool canDrag = false;
     private bool canMove = true;
 
+    public bool screwed = true;
+
     private Vector3 originalPosition;
     private Vector3 originalRotation;
 
@@ -22,6 +24,8 @@ public class ScrewController : MonoBehaviour
     public Axis axisToSeparate;
 
     public GameObject[] allScrewPositions;
+
+    private DisassembleController _disassembleController;
 
     public enum Axis
     {
@@ -37,6 +41,7 @@ public class ScrewController : MonoBehaviour
 
     private void Start()
     {
+        _disassembleController = GameObject.Find("DisassembleManager").GetComponent<DisassembleController>();
         endPosition = GameObject.Find("ParentPositionScrews");
         allScrewPositions = GameObject.FindGameObjectsWithTag("ScrewPosition");
     }
@@ -73,18 +78,23 @@ public class ScrewController : MonoBehaviour
         
         GameObject objToMove = GetHoleNearest();
         
-        if (objToMove != null)
+        if (objToMove != null && !objToMove.transform.parent.GetComponent<PartController>().isDisassembled)
         {
+            screwed = true;
             transform.SetParent(objToMove.transform);
             
             transform.DOLocalRotate(originalRotation, speedMove);
             await transform.DOLocalMove(Vector3.zero, speedMove)
                 .AsyncWaitForCompletion();
+
+            if (_disassembleController.CheckDisassembled()) return;
             
             canMove = true;
 
             return;
         }
+        
+        screwed = false;
         
         transform.SetParent(endPosition.transform);
         
@@ -92,6 +102,8 @@ public class ScrewController : MonoBehaviour
         posZero.z = transform.localPosition.z;
         await transform.DOLocalMove(posZero, speedMove)
             .AsyncWaitForCompletion();
+        
+        if (_disassembleController.CheckDisassembled()) return;
 
         canMove = true;
     }

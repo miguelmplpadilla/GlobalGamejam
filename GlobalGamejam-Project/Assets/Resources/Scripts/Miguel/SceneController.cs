@@ -51,7 +51,7 @@ public class SceneController : MonoBehaviour
     private Story story;
     private Passage currentPassage;
 
-    public TextAsset jsonStory;
+    private TextAsset jsonStory;
 
     private string leftKey;
     private string rightKey;
@@ -67,8 +67,6 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("Nombre maquina: "+SystemInfo.deviceName);
-        
         CultureInfo culture = CultureInfo.CurrentCulture;
 
         languageName = culture.TwoLetterISOLanguageName;
@@ -96,6 +94,9 @@ public class SceneController : MonoBehaviour
         JsonUtility.FromJsonOverwrite(jsonStory.text, story);
         
         SceneManager.LoadScene("Minigames", LoadSceneMode.Additive);
+        
+        if (PlayerPrefs.HasKey("MusicPlayed_"+currentHistoria)) 
+            PlayAudio(2, PlayerPrefs.GetString("MusicPlayed_"+currentHistoria), true);
     }
 
     private void Start()
@@ -104,7 +105,7 @@ public class SceneController : MonoBehaviour
         originalPositionPanel = rtParent.anchoredPosition;
         originalColorPanel = imagePanelLeft.color;
         
-        GPGSManager.instance.DoGrantAchievement("Inicio"+currentHistoria);
+        //GPGSManager.instance.DoGrantAchievement("Inicio"+currentHistoria);
 
         string startPassage = startingPassageName;
 
@@ -114,8 +115,6 @@ public class SceneController : MonoBehaviour
             startPassage = story.passages[0].name;
         
         SetScene(GetPassage(startPassage));
-        
-        AudioManagerController.instance.PlaySfx("Musica_"+currentHistoria, true);
     }
 
     private void Update()
@@ -130,6 +129,8 @@ public class SceneController : MonoBehaviour
         string[] info = passage.text.Split("\n\n");
 
         Card card = new Card();
+
+        Debug.Log(passage.text);
     
         JsonUtility.FromJsonOverwrite(info[0].Replace("\n", "").Replace("\t", ""), card);
 
@@ -148,6 +149,27 @@ public class SceneController : MonoBehaviour
             case 6:
                 EndHistoria();
                 VolverMenuInicio();
+                break;
+        }
+
+        Debug.Log(card.audio.soundName);
+        
+        PlayAudio(card.audio.typeSound, card.audio.soundName, card.audio.loop);
+    }
+
+    private void PlayAudio(int typeAudio, string audioName, bool loop)
+    {
+        Debug.Log("Play Audio: "+audioName);
+        if (audioName.Equals("")) return;
+        
+        switch (typeAudio)
+        {
+            case 1:
+                AudioManagerController.instance.PlaySfx(audioName, loop);
+                break;
+            case 2:
+                AudioManagerController.instance.PlayMusic(audioName);
+                PlayerPrefs.SetString("MusicPlayed_"+currentHistoria, audioName);
                 break;
         }
     }
@@ -184,7 +206,9 @@ public class SceneController : MonoBehaviour
         PlayerPrefs.DeleteKey("RecorridoTomado_"+currentHistoria);
         PlayerPrefs.SetString("PassageSaved_"+currentHistoria, story.passages[0].name);
         
-        GPGSManager.instance.DoGrantAchievement("Fin"+currentHistoria);
+        PlayerPrefs.DeleteKey("MusicPlayed_"+currentHistoria);
+        
+        //GPGSManager.instance.DoGrantAchievement("Fin"+currentHistoria);
     }
 
     public void VolverMenuInicio()

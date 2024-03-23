@@ -1,4 +1,6 @@
+using System;
 using System.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 
 public class AudioManagerController : MonoBehaviour
@@ -7,19 +9,43 @@ public class AudioManagerController : MonoBehaviour
     
     public GameObject prefabAudioSource;
 
+    public AudioSource audioSourceMusic;
+
     private void Awake()
     {
         instance = this;
     }
 
-    public void PlaySfx(string audioName, bool loop = false, float pitch = 1, float volume = 1)
+    public async Task<GameObject> PlaySfx(string audioName, bool loop = false, float pitch = 1, float volume = 1, Action callback = null)
     {
-        PlayAudio(GetSfxByName(audioName), loop, pitch, volume);
+        return await PlayAudio(GetSfxByName(audioName), loop, pitch, volume, callbackEnd:callback);
     }
 
-    private void PlayAudio(AudioClip audioClip, bool loop, float pitch, float volume)
+    public async Task<GameObject> PlayMusic(string audioClip)
     {
-        if (audioClip == null) return;
+        if (audioSourceMusic != null)
+        {
+            await audioSourceMusic.DOFade(0, 1.5f).AsyncWaitForCompletion();
+            Destroy(audioSourceMusic.gameObject);
+        }
+        
+        audioSourceMusic = Instantiate(prefabAudioSource, transform).GetComponent<AudioSource>();
+
+        audioSourceMusic.volume = 0;
+
+        audioSourceMusic.DOFade(1, 1.5f);
+        
+        audioSourceMusic.clip = GetSfxByName(audioClip);
+        audioSourceMusic.loop = true;
+        
+        audioSourceMusic.Play();
+
+        return audioSourceMusic.gameObject;
+    }
+
+    private async Task<GameObject> PlayAudio(AudioClip audioClip, bool loop, float pitch, float volume, Action callbackEnd = null)
+    {
+        if (audioClip == null) return null;
 
         AudioSource audioSource = Instantiate(prefabAudioSource, transform).GetComponent<AudioSource>();
 
@@ -31,12 +57,19 @@ public class AudioManagerController : MonoBehaviour
         audioSource.pitch = pitch;
         audioSource.volume = volume;
 
-        DestroyAudioSource(audioSource);
+        if (loop == false)
+        {
+            await DestroyAudioSource(audioSource);
+            callbackEnd?.Invoke();
+        }
+        else return audioSource.gameObject;
+
+        return null;
     }
 
     private AudioClip GetSfxByName(string nameAudio)
     {
-        AudioClip[] audios = UnityEngine.Resources.LoadAll<AudioClip>("Audios/SFX");
+        AudioClip[] audios = UnityEngine.Resources.LoadAll<AudioClip>("Audios");
 
         foreach (var currentAudio in audios)
             if (currentAudio.name.Equals(nameAudio)) return currentAudio;
@@ -46,7 +79,7 @@ public class AudioManagerController : MonoBehaviour
         return null;
     }
 
-    private async void DestroyAudioSource(AudioSource audioSource)
+    private async Task DestroyAudioSource(AudioSource audioSource)
     {
         while (true)
         {
