@@ -1303,7 +1303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTesting: 0
-  startingPassageName: ConocerDiabloSlide
+  startingPassageName: DivorceSlide
   cardObj: {fileID: 562009423}
   canvasCard: {fileID: 977449075}
   canvasCalendar: {fileID: 431481294}
@@ -1316,7 +1316,6 @@ MonoBehaviour:
   textCard: {fileID: 1664792921}
   textLeft: {fileID: 707304471}
   textRight: {fileID: 1919710890}
-  jsonStory: {fileID: 4900000, guid: 268634ed503048a44aa3a7d344d418e4, type: 3}
   idiomas:
   - es
   - en

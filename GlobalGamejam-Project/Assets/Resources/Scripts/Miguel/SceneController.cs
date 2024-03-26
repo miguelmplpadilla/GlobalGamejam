@@ -284,8 +284,16 @@ public class SceneController : MonoBehaviour
     {
         Sprite[] sprites = UnityEngine.Resources.LoadAll<Sprite>("Sprites/Diapositivas");
 
+        Debug.Log("Idioma Get Sprite: "+languageName);
+
+        foreach (var sprite in sprites)
+            if (sprite.name.Equals(nameSprite+"_"+languageName.ToUpper())) return sprite;
+        
         foreach (var sprite in sprites)
             if (sprite.name.Equals(nameSprite)) return sprite;
+        
+        foreach (var sprite in sprites)
+            if (sprite.name.Equals(nameSprite+"_EN")) return sprite;
         
         return GetSprite("Kojima_Quieres");
     }
