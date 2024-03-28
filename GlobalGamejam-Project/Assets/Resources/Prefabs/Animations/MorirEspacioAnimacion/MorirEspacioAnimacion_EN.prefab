@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 62966189901318292}
   - component: {fileID: 2594031426956258313}
   m_Layer: 5
-  m_Name: MorirEspacioAnimacion
+  m_Name: MorirEspacioAnimacion_EN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

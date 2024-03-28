@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6614116975776210498}
   m_Layer: 5
-  m_Name: NotaDebajoPuerta2Animation
+  m_Name: NotaDebajoPuerta2Animation_EN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

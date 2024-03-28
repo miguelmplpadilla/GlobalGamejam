@@ -2695,7 +2695,7 @@
       }
     },
     {
-      "text": "{\n  \"keys\": {\n    \"key\": \"CaraDemacradaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2\n}\n\n[[AceptarTrabajoSlide]]",
+      "text": "{\n  \"keys\": {\n    \"key\": \"CaraDemacradaSlide\",\n    \"leftDecisionText\": \"\",\n    \"rightDecisionText\": \"\"\n  },\n  \"textCard\": \"\",\n  \"tipeCard\": 2,\n \"audio\": {\n    \"typeSound\": 1,\n    \"soundName\": \"Diarrea_SFX\",\n    \"loop\": false\n  } }\n\n[[AceptarTrabajoSlide]]",
       "links": [
         {
           "name": "AceptarTrabajoSlide",

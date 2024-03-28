@@ -61,6 +61,7 @@ public class SceneController : MonoBehaviour
     private bool leftRight;
 
     private GameObject camera;
+    private GameObject audioDiapositiva;
 
     public string[] idiomas;
     public string languageName;
@@ -151,13 +152,11 @@ public class SceneController : MonoBehaviour
                 VolverMenuInicio();
                 break;
         }
-
-        Debug.Log(card.audio.soundName);
         
         PlayAudio(card.audio.typeSound, card.audio.soundName, card.audio.loop);
     }
 
-    private void PlayAudio(int typeAudio, string audioName, bool loop)
+    private async void PlayAudio(int typeAudio, string audioName, bool loop)
     {
         Debug.Log("Play Audio: "+audioName);
         if (audioName.Equals("")) return;
@@ -165,7 +164,7 @@ public class SceneController : MonoBehaviour
         switch (typeAudio)
         {
             case 1:
-                AudioManagerController.instance.PlaySfx(audioName, loop);
+                audioDiapositiva = await AudioManagerController.instance.PlaySfx(audioName, loop, isAwaited:false);
                 break;
             case 2:
                 AudioManagerController.instance.PlayMusic(audioName);
@@ -179,6 +178,7 @@ public class SceneController : MonoBehaviour
         string recorrido = "";
         if (PlayerPrefs.HasKey("RecorridoTomado_" + currentHistoria))
             recorrido = PlayerPrefs.GetString("RecorridoTomado_" + currentHistoria);
+        else return;
 
         string[] recorridoSplit = recorrido.Split("\n");
 
@@ -300,9 +300,9 @@ public class SceneController : MonoBehaviour
 
     public void HideDiapositiva()
     {
-        Debug.Log("HideDiapositiva");
         FadeInForeground(() =>
         {
+            if (audioDiapositiva != null) Destroy(audioDiapositiva);
             imageDiapositiva.transform.parent.gameObject.SetActive(false);
             SetNext();
         });
@@ -428,6 +428,14 @@ public class SceneController : MonoBehaviour
 
         foreach (var prefab in prefabs)
             if (prefab.name.Equals(namePrefab))
+                return prefab;
+        
+        foreach (var prefab in prefabs)
+            if (prefab.name.Equals(namePrefab+"_"+languageName.ToUpper()))
+                return prefab;
+        
+        foreach (var prefab in prefabs)
+            if (prefab.name.Equals(namePrefab+"_EN"))
                 return prefab;
 
         return GetPrefab("PitiAnimation");

@@ -16,9 +16,9 @@ public class AudioManagerController : MonoBehaviour
         instance = this;
     }
 
-    public async Task<GameObject> PlaySfx(string audioName, bool loop = false, float pitch = 1, float volume = 1, Action callback = null)
+    public async Task<GameObject> PlaySfx(string audioName, bool loop = false, float pitch = 1, float volume = 1, Action callback = null, bool isAwaited = false)
     {
-        return await PlayAudio(GetSfxByName(audioName), loop, pitch, volume, callbackEnd:callback);
+        return await PlayAudio(GetSfxByName(audioName), loop, pitch, volume, callbackEnd:callback, isAwaited:isAwaited);
     }
 
     public async Task<GameObject> PlayMusic(string audioClip)
@@ -43,7 +43,7 @@ public class AudioManagerController : MonoBehaviour
         return audioSourceMusic.gameObject;
     }
 
-    private async Task<GameObject> PlayAudio(AudioClip audioClip, bool loop, float pitch, float volume, Action callbackEnd = null)
+    private async Task<GameObject> PlayAudio(AudioClip audioClip, bool loop, float pitch, float volume, Action callbackEnd = null, bool isAwaited = true)
     {
         if (audioClip == null) return null;
 
@@ -57,7 +57,7 @@ public class AudioManagerController : MonoBehaviour
         audioSource.pitch = pitch;
         audioSource.volume = volume;
 
-        if (loop == false)
+        if (!loop && isAwaited)
         {
             await DestroyAudioSource(audioSource);
             callbackEnd?.Invoke();
