@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd5ddf61f69bfe47aca9d4d61f85754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTesting: 1
+  isTesting: 0
   startingPassageName: NotaDebajoPuerta1Animation
   cardObj: {fileID: 562009423}
   canvasCard: {fileID: 977449075}

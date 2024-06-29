@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9046768810131788539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3843470676305aa4e8e79d00535f7919, type: 3}
+  m_Name: Story
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -856, y: 136}
+  ports:
+    keys:
+    - startPassage
+    values:
+    - _fieldName: startPassage
+      _node: {fileID: -9046768810131788539}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: passageEntrance
+        node: {fileID: 4372725570304330106}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  name: HistoriaPrueba
+  id: historiaPrueba
+  escritor: Miguel Padilla Lillo
+  startPassage: {fileID: 4372725570304330106}
+--- !u!114 &-661193074859392061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4004e13b96536744ca04b86ef8795551, type: 3}
+  m_Name: Diapositive
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -408.7421, y: 199.84058}
+  ports:
+    keys:
+    - exitPassage2
+    - passageEntrance
+    - exitPassage1
+    values:
+    - _fieldName: exitPassage2
+      _node: {fileID: -661193074859392061}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: passageEntrance
+      _node: {fileID: -661193074859392061}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitPassage1
+      _node: {fileID: -661193074859392061}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  exitPassage1: {fileID: 0}
+  exitPassage2: {fileID: 0}
+  id: 
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
+  exitPassage2: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774e35e7007efee4cab43a5f79d1b799, type: 3}
+  m_Name: HistoriaPrueba
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -9046768810131788539}
+  - {fileID: 4372725570304330106}
+--- !u!114 &4372725570304330106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd09f79a1a772b4d9b73dc8f7f0d12f, type: 3}
+  m_Name: Decision
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -488, y: 168}
+  ports:
+    keys:
+    - exitPassage2
+    - passageEntrance
+    - exitPassage1
+    values:
+    - _fieldName: exitPassage2
+      _node: {fileID: 4372725570304330106}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: passageEntrance
+      _node: {fileID: 4372725570304330106}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: startPassage
+        node: {fileID: -9046768810131788539}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitPassage1
+      _node: {fileID: 4372725570304330106}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  exitPassage1: {fileID: 0}
+  exitPassage2: {fileID: 0}
+  card:
+    decisiones:
+      decisionIzquierda: 
+      decisionDerecha: 
+    textos:
+      textoES: 
+      textoEN: 
+    audio:
+      typeSound: 0
+      soundName: 
+      loop: 0

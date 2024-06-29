@@ -10,7 +10,6 @@ public class StartGameController : MonoBehaviour
 
     private void Start()
     {
-
         Card card = new Card();
         
         Debug.Log(JsonUtility.ToJson(card));

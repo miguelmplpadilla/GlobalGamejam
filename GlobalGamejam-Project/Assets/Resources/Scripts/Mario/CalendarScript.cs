@@ -20,11 +20,17 @@ public class CalendarScript : MonoBehaviour
         txtEdadSiguiente = GameObject.Find("TXT_Calendar_Bot").GetComponent<TextMeshProUGUI>();
         animator = GetComponent<Animator>();
     }
-
+    
     public void SetTextCalendar(string edadAnterior, string edadSiguiente)
     {
         txtEdadAnterior.text = "" + edadAnterior;
         txtEdadSiguiente.text = "" + edadSiguiente;
+    }
+
+    public void SetTextCalendar(CalendarNode calendarNode)
+    {
+        txtEdadAnterior.text = "" + calendarNode.edadAnterior;
+        txtEdadSiguiente.text = "" + calendarNode.edadSiguiente;
     }
 
     public void StartCalendar()
