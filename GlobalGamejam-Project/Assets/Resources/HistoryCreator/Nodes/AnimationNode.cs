@@ -4,10 +4,12 @@ using XNode;
 
 public class AnimationNode : PassageNode
 {
-	public string id;
+	public GameObject prefabAnimacion;
 	
 	protected override void Init() {
 		base.Init();
+
+		name = "ANIMACION ID " + idNode;
 	}
 	
 	public override void OnCreateConnection(NodePort from, NodePort to) {
@@ -16,7 +18,7 @@ public class AnimationNode : PassageNode
 
 		if (from.node != this) return;
 		
-		if (from.fieldName.Equals("exitPassage2"))
+		if (from.fieldName.Equals("decisionDerecha"))
 		{
 			for (int i = 0; i < from.GetConnections().Count; i++)
 				from.Disconnect(i);
@@ -30,7 +32,9 @@ public class AnimationNode : PassageNode
 
 	private void UpdateNodeName()
 	{
-		string finalName = !string.IsNullOrEmpty(id) ? id + " DIAPOSITIVA" : "DIAPOSITIVA";
+		string finalName = prefabAnimacion != null
+			? prefabAnimacion.name + " ANIMACION ID " + idNode
+			: "ANIMACION ID " + idNode;
 		name = finalName;
 	}
 }

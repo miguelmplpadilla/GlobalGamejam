@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using UnityEngine;
-using XNode;
+﻿using XNode;
 
 [NodeWidth(304)]
 public class StoryNode : Node
@@ -11,6 +7,8 @@ public class StoryNode : Node
 	public string id;
 
 	public string escritor;
+
+	public Categorys categoria;
 
 	[Output] public PassageNode startPassage;
 
@@ -40,5 +38,10 @@ public class StoryNode : Node
 
 		if (to.fieldName == "passageEntrance" && from.fieldName == "startPassage")
 			fromNode.startPassage = toNode;
+	}
+
+	public enum Categorys
+	{
+		NONE, THRILLER, HISTORICA, ROMANCE, CIENCIAFICCION, DISTOPIA, AVENTURAS, FANTASIA, CONTEMPORANEO
 	}
 }

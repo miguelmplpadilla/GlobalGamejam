@@ -26,7 +26,7 @@ public class MinijuegoAnimales : MonoBehaviour
         if (indice+1 < animales.Length)indice++;
         else
         {
-            SceneController.instance.EndGame();
+            NewSceneController.instance.EndGame();
             CancelInvoke(nameof(EncenderLuz));
             return;
         }

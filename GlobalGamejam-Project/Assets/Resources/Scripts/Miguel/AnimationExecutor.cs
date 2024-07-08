@@ -8,6 +8,6 @@ public class AnimationExecutor : MonoBehaviour
     }
     
     public void ExecuteEndAnimation() {
-        SceneController.instance.EndAnimation();
+        NewSceneController.instance.EndAnimation();
     }
 }

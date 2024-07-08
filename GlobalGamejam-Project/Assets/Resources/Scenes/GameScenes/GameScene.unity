@@ -1106,8 +1106,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 563691956}
-        m_TargetAssemblyTypeName: CardController, Assembly-CSharp
+      - m_Target: {fileID: 563691958}
+        m_TargetAssemblyTypeName: NewSceneController, Assembly-CSharp
         m_MethodName: HideDiapositiva
         m_Mode: 1
         m_Arguments:
@@ -1282,7 +1282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 563691957}
-  - component: {fileID: 563691956}
+  - component: {fileID: 563691958}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1290,36 +1290,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &563691956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563691955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd5ddf61f69bfe47aca9d4d61f85754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTesting: 0
-  startingPassageName: NotaDebajoPuerta1Animation
-  cardObj: {fileID: 562009423}
-  canvasCard: {fileID: 977449075}
-  canvasCalendar: {fileID: 431481294}
-  imagePanelLeft: {fileID: 2007015924}
-  imagePanelRight: {fileID: 1991908069}
-  imageCard: {fileID: 945262760}
-  imageDiapositiva: {fileID: 619942943}
-  imageForeground: {fileID: 2013301576}
-  animationPanel: {fileID: 3540655404117390170}
-  textCard: {fileID: 1664792921}
-  textLeft: {fileID: 707304471}
-  textRight: {fileID: 1919710890}
-  idiomas:
-  - es
-  - en
-  languageName: es
 --- !u!4 &563691957
 Transform:
   m_ObjectHideFlags: 0
@@ -1335,6 +1305,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &563691958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563691955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e94a4d826244f69247168588b915e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTesting: 0
+  idPassageStart: 0
+  cardObj: {fileID: 562009423}
+  canvasCard: {fileID: 977449075}
+  canvasCalendar: {fileID: 431481294}
+  imagePanelLeft: {fileID: 2007015924}
+  imagePanelRight: {fileID: 1991908069}
+  imageCard: {fileID: 945262760}
+  imageDiapositiva: {fileID: 619942943}
+  imageForeground: {fileID: 2013301576}
+  animationPanel: {fileID: 3540655404117390170}
+  textCard: {fileID: 1664792921}
+  textLeft: {fileID: 707304471}
+  textRight: {fileID: 1919710890}
+  idiomas:
+  - es
+  - en
+  languageName: 
+  historyCreator: {fileID: 11400000, guid: c4b41f765bb23f64796819e001f72bcd, type: 2}
 --- !u!1 &583503785
 GameObject:
   m_ObjectHideFlags: 0
@@ -2479,8 +2480,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 563691956}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+      - m_Target: {fileID: 563691958}
+        m_TargetAssemblyTypeName: NewSceneController, Assembly-CSharp
         m_MethodName: CerrarJuegoMenuInicio
         m_Mode: 1
         m_Arguments:

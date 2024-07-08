@@ -1,6 +1,5 @@
 using System;
 using System.Globalization;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DG.Tweening;
@@ -13,7 +12,7 @@ using UnityEngine.UI;
 public class NewSceneController : MonoBehaviour
 {
     public bool isTesting = false;
-    public string startingPassageName = "";
+    public int idPassageStart = 0;
 
     private string currentHistoria = "";
     
@@ -48,10 +47,7 @@ public class NewSceneController : MonoBehaviour
 
     private bool returningCenter = false;
 
-    private Story story;
     private Passage currentPassage;
-
-    private TextAsset jsonStory;
 
     private PassageNode leftKey;
     private PassageNode rightKey;
@@ -83,19 +79,11 @@ public class NewSceneController : MonoBehaviour
         else
             currentHistoria = "Historia1";
         
-        jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/" + languageName + "/" + currentHistoria + "/" + currentHistoria);
-
-        if (idiomas.Contains(languageName))
-            jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/" + languageName + "/" + currentHistoria + "/" + currentHistoria);
-        else
-            jsonStory = UnityEngine.Resources.Load<TextAsset>("JSON/en/" + currentHistoria + "/" + currentHistoria);
+        historyCreator = UnityEngine.Resources.Load<HistoryCreator>("HistoryCreator/Historias/" + currentHistoria);
         
         instance = this;
         
         rtParent = cardObj.transform.parent.GetComponent<RectTransform>();
-
-        story = new Story();
-        JsonUtility.FromJsonOverwrite(jsonStory.text, story);
         
         SceneManager.LoadScene("Minigames", LoadSceneMode.Additive);
         
@@ -125,14 +113,29 @@ public class NewSceneController : MonoBehaviour
         
         //GPGSManager.instance.DoGrantAchievement("Inicio"+currentHistoria);
 
-        string startPassage = startingPassageName;
+        int startPassage = idPassageStart;
+        PassageNode passageNodeStart = firstPassageNode;
 
         if (!isTesting && PlayerPrefs.HasKey("PassageSaved_"+currentHistoria))
-            startPassage = PlayerPrefs.GetString("PassageSaved_"+currentHistoria);
+            startPassage = PlayerPrefs.GetInt("PassageSaved_"+currentHistoria);
         else if (!isTesting)
-            startPassage = story.passages[0].name;
+            startPassage = -1;
+
+        Debug.Log(startPassage);
+
+        if (startPassage != -1)
+        {
+            for (int i = 0; i < historyCreator.nodes.Count; i++)
+            {
+                PassageNode node = historyCreator.nodes[i] as PassageNode;
+                Debug.Log(node != null ? node.idNode : null);
+                if (node != null && node.idNode == startPassage) passageNodeStart = node;
+            }
+        }
+
+        Debug.Log(passageNodeStart.name);
         
-        SetScene(firstPassageNode);
+        SetScene(passageNodeStart);
     }
 
     private void Update()
@@ -142,37 +145,36 @@ public class NewSceneController : MonoBehaviour
 
     public void SetScene(PassageNode passage)
     {
-        //SaveData(passage);
+        SaveData(passage);
         
-        if (firstPassageNode is DecisionNode)
+        if (passage is DecisionNode)
         {
             SetCard(passage as DecisionNode);
-        } else if (firstPassageNode is CalendarNode)
+        } else if (passage is CalendarNode)
         {
             SetCalendar(passage as CalendarNode);
-        } else if (firstPassageNode is AnimationNode)
+        } else if (passage is AnimationNode)
         {
             SetAnimation(passage as AnimationNode);
-        } else if (firstPassageNode is DiapositiveNode)
+        } else if (passage is DiapositiveNode)
         {
             SetDiapositiva(passage as DiapositiveNode);
-        } else if (firstPassageNode is GameNode)
+        } else if (passage is GameNode)
         {
             SetGame(passage as GameNode);
-        } else if (firstPassageNode is EndStoryNode)
+        } else if (passage is EndStoryNode)
         {
             EndHistoria();
             VolverMenuInicio();
-        } else if (firstPassageNode is PlayAudioNode)
+        } else if (passage is PlayAudioNode)
         {
             PlayAudioNode playAudioNode = passage as PlayAudioNode;
-            PlayAudio(playAudioNode.audio, playAudioNode.exitPassage1);
+            PlayAudio(playAudioNode.audio, playAudioNode.decisionIzquierda);
         }
     }
 
     private async void PlayAudio(DecisionNode.PlayAudio audio, PassageNode nexPassage = null)
     {
-        Debug.Log("Play Audio: "+audio.soundName);
         if (audio.soundName.Equals("")) return;
         
         switch (audio.typeSound)
@@ -194,8 +196,10 @@ public class NewSceneController : MonoBehaviour
         }
     }
 
-    private void SaveData(Passage passage)
+    private void SaveData(PassageNode passage)
     {
+        PlayerPrefs.SetInt("PassageSaved_"+currentHistoria, passage.idNode);
+        
         string recorrido = "";
         if (PlayerPrefs.HasKey("RecorridoTomado_" + currentHistoria))
             recorrido = PlayerPrefs.GetString("RecorridoTomado_" + currentHistoria);
@@ -206,12 +210,11 @@ public class NewSceneController : MonoBehaviour
         for (int i = 0; i < recorridoSplit.Length; i++)
             Debug.Log(recorridoSplit[i]);
 
-        if (recorridoSplit[recorridoSplit.Length - 1].Equals("- " + passage.name)) return;
+        if (recorridoSplit[recorridoSplit.Length - 1].Equals("- " + passage.idNode)) return;
 
         recorrido += "- " + passage.name + "\n";
         
         PlayerPrefs.SetString("RecorridoTomado_"+currentHistoria, recorrido);
-        PlayerPrefs.SetString("PassageSaved_"+currentHistoria, passage.name);
     }
 
     private void EndHistoria()
@@ -225,8 +228,7 @@ public class NewSceneController : MonoBehaviour
             Encoding.UTF8.GetBytes(PlayerPrefs.GetString("RecorridoTomado_" + currentHistoria)), recorridoTxt);
                 
         PlayerPrefs.DeleteKey("RecorridoTomado_"+currentHistoria);
-        PlayerPrefs.SetString("PassageSaved_"+currentHistoria, story.passages[0].name);
-        
+        PlayerPrefs.DeleteKey("PassageSaved_"+currentHistoria);
         PlayerPrefs.DeleteKey("MusicPlayed_"+currentHistoria);
         
         //GPGSManager.instance.DoGrantAchievement("Fin"+currentHistoria);
@@ -247,7 +249,7 @@ public class NewSceneController : MonoBehaviour
 
     private async void SetCalendar(CalendarNode calendarNode)
     {
-        nextPassageKey = calendarNode.exitPassage1 != null ? calendarNode.exitPassage1 : firstPassageNode;
+        nextPassageKey = calendarNode.decisionIzquierda != null ? calendarNode.decisionIzquierda : firstPassageNode;
         
         canvasCalendar.SetActive(true);
         CalendarScript.instance.SetTextCalendar(calendarNode);
@@ -268,16 +270,48 @@ public class NewSceneController : MonoBehaviour
     {
         //imageCard.sprite = GetSprite(card.keys.key);
         
-        textCard.text = decisionNode.card.textos.textoES;
-        textLeft.text = decisionNode.card.decisiones.decisionIzquierda;
-        textRight.text = decisionNode.card.decisiones.decisionDerecha;
+        textCard.text = GetText(decisionNode);
+        textLeft.text = GetDecision(decisionNode, false);
+        textRight.text = GetDecision(decisionNode, true);;
         
-        leftKey = decisionNode.exitPassage1;
-        rightKey = decisionNode.exitPassage2;
+        leftKey = decisionNode.decisionIzquierda;
+        rightKey = decisionNode.decisionDerecha;
         
         FadeOutForeground();
         
         cardObj.transform.parent.parent.localScale = Vector3.one;
+    }
+
+    private string GetDecision(DecisionNode decisionNode, bool direction)
+    {
+        switch (languageName)
+        {
+            case "es":
+                return direction
+                    ? decisionNode.card.decisionesEs.decisionDerecha
+                    : decisionNode.card.decisionesEs.decisionIzquierda;
+            
+            case "en":
+                return direction
+                    ? decisionNode.card.decisionesEn.decisionDerecha
+                    : decisionNode.card.decisionesEn.decisionIzquierda;
+        }
+
+        return "";
+    }
+
+    private string GetText(DecisionNode decisionNode)
+    {
+        switch (languageName)
+        {
+            case "es":
+                return decisionNode.card.textos.textoES;
+            
+            case "en":
+                return decisionNode.card.textos.textoEN;
+        }
+
+        return null;
     }
 
     private void SetDiapositiva(DiapositiveNode diapositiveNode)
@@ -285,11 +319,12 @@ public class NewSceneController : MonoBehaviour
         FadeOutForeground();
         
         imageDiapositiva.transform.parent.gameObject.SetActive(true);
-        
-        Sprite spriteDiapositiva = GetSprite(diapositiveNode.id);
-        imageDiapositiva.sprite = spriteDiapositiva;
 
-        nextPassageKey = diapositiveNode.exitPassage1 != null ? diapositiveNode.exitPassage1 : firstPassageNode;
+        imageDiapositiva.sprite = diapositiveNode.spriteDiapositiva != null
+            ? diapositiveNode.spriteDiapositiva
+            : GetSprite("Kojima_Quieres");
+
+        nextPassageKey = diapositiveNode.decisionIzquierda != null ? diapositiveNode.decisionIzquierda : firstPassageNode;
     }
 
     private Sprite GetSprite(string nameSprite)
@@ -422,11 +457,12 @@ public class NewSceneController : MonoBehaviour
 
     private void SetAnimation(AnimationNode animationNode)
     {
-        nextPassageKey = animationNode.exitPassage1 != null ? animationNode.exitPassage1 : firstPassageNode;
+        nextPassageKey = animationNode.decisionIzquierda != null ? animationNode.decisionIzquierda : firstPassageNode;
         
         animationPanel.transform.parent.gameObject.SetActive(true);
 
-        Instantiate(GetPrefab(animationNode.id), animationPanel.transform).transform.localPosition = Vector3.zero;
+        Instantiate(animationNode.prefabAnimacion != null ? animationNode.prefabAnimacion : GetPrefab("PitiAnimation"),
+            animationPanel.transform).transform.localPosition = Vector3.zero;
         
         FadeOutForeground();
     }
@@ -452,14 +488,14 @@ public class NewSceneController : MonoBehaviour
 
     private void SetGame(GameNode gameNode)
     {
-        if (gameNode.exitPassage1 != null || gameNode.exitPassage2 != null)
+        if (gameNode.decisionIzquierda != null || gameNode.decisionDerecha != null)
         {
-            nextPassageKey = gameNode.exitPassage1;
+            nextPassageKey = gameNode.decisionIzquierda;
 
-            if (gameNode.exitPassage1 != null && gameNode.exitPassage2 != null)
+            if (gameNode.decisionIzquierda != null && gameNode.decisionDerecha != null)
             {
-                leftKey = gameNode.exitPassage1;
-                rightKey = gameNode.exitPassage2;
+                leftKey = gameNode.decisionIzquierda;
+                rightKey = gameNode.decisionDerecha;
             }
         }
         else
@@ -471,7 +507,7 @@ public class NewSceneController : MonoBehaviour
         
         FadeOutForeground(() =>
         {
-            if (gameNode.exitPassage1 == null && gameNode.exitPassage2 == null)
+            if (gameNode.decisionIzquierda == null && gameNode.decisionDerecha == null)
                 EndGame();
         });
     }

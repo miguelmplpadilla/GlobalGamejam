@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-[NodeWidth(160)]
+[NodeWidth(250)]
 public class PlayAudioNode : PassageNode
 {
 	public DecisionNode.PlayAudio audio;

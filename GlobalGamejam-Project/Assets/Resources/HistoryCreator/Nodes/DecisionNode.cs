@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
-using XNode;
 
 public class DecisionNode : PassageTwoConnectionsNode
 {
 	public Card card;
 	
-	// Use this for initialization
 	protected override void Init() {
 		base.Init();
+		
+		name = "DECISION ID "+idNode;
 	}
 	
 	[Serializable]
 	public class Card
 	{
-		public Decisions decisiones;
+		public Decisions decisionesEs;
+		public Decisions decisionesEn;
 		public Texts textos;
-		public PlayAudio audio;
 	}
 
 	[Serializable]

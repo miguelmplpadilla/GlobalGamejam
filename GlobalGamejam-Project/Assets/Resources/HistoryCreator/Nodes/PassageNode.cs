@@ -1,24 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using Unity.Collections;
 using UnityEngine;
-using UnityEngine.Timeline;
 using XNode;
 
 [NodeWidth(304)]
-public class PassageNode : Node {
+public class PassageNode : Node
+{
+	[NonSerialized] public int idNode = -1;
 
 	[Input] public PassageNode passageEntrance;
 	
-	[Output] public PassageNode exitPassage1;
+	[Output] public PassageNode decisionIzquierda;
 	
 	protected override void Init() 
 	{
 		base.Init();
-	}
 
-	public override object GetValue(NodePort port)
-	{
-		return null;
+		if (idNode != -1) return;
+
+		if (graph != null)
+		{
+			HistoryCreator historyCreator = graph as HistoryCreator;
+			if (historyCreator == null)
+			{
+				Debug.Log("Graph is not HistoryCreator");
+			}
+			historyCreator.cantNodeCreated++;
+			idNode = historyCreator.cantNodeCreated;
+			return;
+		}
+		
+		Debug.Log("Graph no asignado");
 	}
 	
 	public override void OnCreateConnection(NodePort from, NodePort to) {
@@ -34,8 +46,8 @@ public class PassageNode : Node {
 			for (int i = 0; i < from.GetConnections().Count; i++)
 				from.Disconnect(i);
 
-		if (to.fieldName == "passageEntrance" && from.fieldName == "exitPassage1")
-			fromNode.exitPassage1 = toNode;
+		if (to.fieldName == "passageEntrance" && from.fieldName == "decisionIzquierda")
+			fromNode.decisionIzquierda = toNode;
 	}
 
 	public override void OnRemoveConnection(NodePort port)
@@ -43,6 +55,6 @@ public class PassageNode : Node {
 		base.OnRemoveConnection(port);
 
 		if (port.fieldName.Equals("passageEntrance")) passageEntrance = null;
-		if (port.fieldName.Equals("exitPassage1")) exitPassage1 = null;
+		if (port.fieldName.Equals("decisionIzquierda")) decisionIzquierda = null;
 	}
 }

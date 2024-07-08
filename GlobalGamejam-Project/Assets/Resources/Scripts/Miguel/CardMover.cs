@@ -8,16 +8,16 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 {
     public void OnPointerDown(PointerEventData eventData)
     {
-        SceneController.instance.OnPointerDown(eventData);
+        NewSceneController.instance.OnPointerDown(eventData);
     }
     
     public void OnDrag(PointerEventData eventData)
     {
-        SceneController.instance.OnDrag(eventData);
+        NewSceneController.instance.OnDrag(eventData);
     }
     
     public void OnPointerUp(PointerEventData eventData)
     {
-        SceneController.instance.OnPointerUp(eventData);
+        NewSceneController.instance.OnPointerUp(eventData);
     }
 }

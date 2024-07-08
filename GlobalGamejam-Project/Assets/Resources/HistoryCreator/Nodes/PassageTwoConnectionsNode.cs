@@ -7,7 +7,7 @@ using XNode;
 [NodeWidth(304)]
 public class PassageTwoConnectionsNode : PassageNode 
 {
-	[Output] public PassageNode exitPassage2;
+	[Output] public PassageNode decisionDerecha;
 	
 	protected override void Init() 
 	{
@@ -32,14 +32,14 @@ public class PassageTwoConnectionsNode : PassageNode
 			for (int i = 0; i < from.GetConnections().Count; i++)
 				from.Disconnect(i);
 
-		if (to.fieldName == "passageEntrance" && from.fieldName == "exitPassage2")
-			fromNode.exitPassage2 = toNode;
+		if (to.fieldName == "passageEntrance" && from.fieldName == "decisionDerecha")
+			fromNode.decisionDerecha = toNode;
 	}
 
 	public override void OnRemoveConnection(NodePort port)
 	{
 		base.OnRemoveConnection(port);
 
-		if (port.fieldName.Equals("exitPassage2")) exitPassage2 = null;
+		if (port.fieldName.Equals("decisionDerecha")) decisionDerecha = null;
 	}
 }
