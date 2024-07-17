@@ -1,12 +1,10 @@
 ﻿using System;
-using Unity.Collections;
-using UnityEngine;
 using XNode;
 
 [NodeWidth(304)]
 public class PassageNode : Node
 {
-	[NonSerialized] public int idNode = -1;
+	[NonSerialized] public int idNode;
 
 	[Input] public PassageNode passageEntrance;
 	
@@ -15,22 +13,6 @@ public class PassageNode : Node
 	protected override void Init() 
 	{
 		base.Init();
-
-		if (idNode != -1) return;
-
-		if (graph != null)
-		{
-			HistoryCreator historyCreator = graph as HistoryCreator;
-			if (historyCreator == null)
-			{
-				Debug.Log("Graph is not HistoryCreator");
-			}
-			historyCreator.cantNodeCreated++;
-			idNode = historyCreator.cantNodeCreated;
-			return;
-		}
-		
-		Debug.Log("Graph no asignado");
 	}
 	
 	public override void OnCreateConnection(NodePort from, NodePort to) {

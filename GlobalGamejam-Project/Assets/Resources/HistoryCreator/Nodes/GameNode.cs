@@ -14,7 +14,7 @@
 
 	private void UpdateNodeName()
 	{
-		string finalName = !string.IsNullOrEmpty(id) ? id + " GAME ID " + idNode : "GAME ID " + idNode;
+		string finalName = !string.IsNullOrEmpty(id) ? id + " GAME" : "GAME";
 		name = finalName;
 	}
 }

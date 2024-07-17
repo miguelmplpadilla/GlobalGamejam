@@ -1318,7 +1318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTesting: 0
-  idPassageStart: 0
+  passageStart: {fileID: -9102385149308892734, guid: c4b41f765bb23f64796819e001f72bcd, type: 2}
   cardObj: {fileID: 562009423}
   canvasCard: {fileID: 977449075}
   canvasCalendar: {fileID: 431481294}

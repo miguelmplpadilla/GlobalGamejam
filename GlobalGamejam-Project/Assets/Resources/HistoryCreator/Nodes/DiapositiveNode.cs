@@ -8,8 +8,6 @@ public class DiapositiveNode : PassageNode
 	
 	protected override void Init() {
 		base.Init();
-
-		name = "DIAPOSITIVA ID " + idNode;
 	}
 	
 	public override void OnCreateConnection(NodePort from, NodePort to) {
@@ -32,7 +30,7 @@ public class DiapositiveNode : PassageNode
 
 	private void UpdateNodeName()
 	{
-		string finalName = spriteDiapositiva != null ? spriteDiapositiva.name + " DIAPOSITIVA ID " + idNode : "DIAPOSITIVA ID " + idNode;
+		string finalName = spriteDiapositiva != null ? spriteDiapositiva.name + " DIAPOSITIVA" : "DIAPOSITIVA";
 		name = finalName;
 	}
 }

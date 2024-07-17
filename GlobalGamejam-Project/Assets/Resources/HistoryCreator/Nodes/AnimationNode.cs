@@ -8,8 +8,6 @@ public class AnimationNode : PassageNode
 	
 	protected override void Init() {
 		base.Init();
-
-		name = "ANIMACION ID " + idNode;
 	}
 	
 	public override void OnCreateConnection(NodePort from, NodePort to) {
@@ -24,8 +22,8 @@ public class AnimationNode : PassageNode
 				from.Disconnect(i);
 		}
 	}
-	
-	public void OnValidate()
+
+	private void OnValidate()
 	{
 		UpdateNodeName();
 	}
@@ -33,8 +31,8 @@ public class AnimationNode : PassageNode
 	private void UpdateNodeName()
 	{
 		string finalName = prefabAnimacion != null
-			? prefabAnimacion.name + " ANIMACION ID " + idNode
-			: "ANIMACION ID " + idNode;
+			? prefabAnimacion.name + " ANIMACION"
+			: "ANIMACION";
 		name = finalName;
 	}
 }

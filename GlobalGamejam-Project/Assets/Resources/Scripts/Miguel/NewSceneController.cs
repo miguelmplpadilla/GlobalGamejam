@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class NewSceneController : MonoBehaviour
 {
     public bool isTesting = false;
-    public int idPassageStart = 0;
+    public PassageNode passageStart;
 
     private string currentHistoria = "";
     
@@ -113,23 +113,26 @@ public class NewSceneController : MonoBehaviour
         
         //GPGSManager.instance.DoGrantAchievement("Inicio"+currentHistoria);
 
-        int startPassage = idPassageStart;
-        PassageNode passageNodeStart = firstPassageNode;
+        int idStartPassage = -1;
+        PassageNode passageNodeStart = passageStart;
 
-        if (!isTesting && PlayerPrefs.HasKey("PassageSaved_"+currentHistoria))
-            startPassage = PlayerPrefs.GetInt("PassageSaved_"+currentHistoria);
+        if (!isTesting && PlayerPrefs.HasKey("PassageSaved_" + currentHistoria))
+        {
+            idStartPassage = PlayerPrefs.GetInt("PassageSaved_"+currentHistoria);
+        }
         else if (!isTesting)
-            startPassage = -1;
+        {
+            idStartPassage = -1;
+            passageNodeStart = firstPassageNode;
+        }
 
-        Debug.Log(startPassage);
-
-        if (startPassage != -1)
+        if (idStartPassage != -1)
         {
             for (int i = 0; i < historyCreator.nodes.Count; i++)
             {
                 PassageNode node = historyCreator.nodes[i] as PassageNode;
                 Debug.Log(node != null ? node.idNode : null);
-                if (node != null && node.idNode == startPassage) passageNodeStart = node;
+                if (node != null && node.idNode == idStartPassage) passageNodeStart = node;
             }
         }
 

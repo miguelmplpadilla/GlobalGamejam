@@ -19,4 +19,15 @@ public class PlayAudioNode : PassageNode
 
 		if (from.node != this) return;
 	}
+	
+	public void OnValidate()
+	{
+		UpdateNodeName();
+	}
+
+	private void UpdateNodeName()
+	{
+		string finalName = !string.IsNullOrEmpty(audio.soundName) ? audio.soundName + " AUDIO" : "AUDIO";
+		name = finalName;
+	}
 }
