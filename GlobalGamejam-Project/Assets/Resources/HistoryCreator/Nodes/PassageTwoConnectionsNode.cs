@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Timeline;
-using XNode;
+﻿using XNode;
 
+[CreateNodeMenu("")]
 [NodeWidth(304)]
 public class PassageTwoConnectionsNode : PassageNode 
 {

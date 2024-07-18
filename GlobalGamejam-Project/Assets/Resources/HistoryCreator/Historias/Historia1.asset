@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9138316186946831850
+--- !u!114 &-7432516724013035349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,47 +9,170 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14901545d9b64623a8a0f51f689e472f, type: 3}
-  m_Name: Musica_Historia1_1 AUDIO
+  m_Script: {fileID: 11500000, guid: 4dd09f79a1a772b4d9b73dc8f7f0d12f, type: 3}
+  m_Name: Decision
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -328, y: 184}
+  position: {x: 264, y: 424}
   ports:
     keys:
+    - decisionDerecha
     - passageEntrance
     - decisionIzquierda
     values:
-    - _fieldName: passageEntrance
-      _node: {fileID: -9138316186946831850}
+    - _fieldName: decisionDerecha
+      _node: {fileID: -7432516724013035349}
       _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
-      - fieldName: startPassage
-        node: {fileID: -8720516636906241359}
+      - fieldName: passageEntrance
+        node: {fileID: -897122895619190658}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: passageEntrance
+      _node: {fileID: -7432516724013035349}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: decisionIzquierda
+        node: {fileID: 6630452384710250283}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: decisionIzquierda
-      _node: {fileID: -9138316186946831850}
+      _node: {fileID: -7432516724013035349}
       _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
       - fieldName: passageEntrance
-        node: {fileID: 2563545048734035790}
+        node: {fileID: -5815555422429062464}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   passageEntrance: {fileID: 0}
-  decisionIzquierda: {fileID: 2563545048734035790}
+  decisionIzquierda: {fileID: -5815555422429062464}
   audio:
-    typeSound: 2
-    soundName: Musica_Historia1_1
-    loop: 1
---- !u!114 &-9102385149308892734
+    typeSound: 0
+    soundName: 
+    loop: 0
+  decisionDerecha: {fileID: -897122895619190658}
+  card:
+    decisionesEs:
+      decisionIzquierda: Izquierda
+      decisionDerecha: Derecha
+    decisionesEn:
+      decisionIzquierda: 
+      decisionDerecha: 
+    textos:
+      textoES: Hacia que direccion quieres ir?
+      textoEN: 
+--- !u!114 &-5815555422429062464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29304baed1e04e0495c0760c06c3e0a5, type: 3}
+  m_Name: SpermAnimationLeft ANIMACION
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 680, y: 376}
+  ports:
+    keys:
+    - passageEntrance
+    - decisionIzquierda
+    values:
+    - _fieldName: passageEntrance
+      _node: {fileID: -5815555422429062464}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: decisionIzquierda
+        node: {fileID: -7432516724013035349}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisionIzquierda
+      _node: {fileID: -5815555422429062464}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: passageEntrance
+        node: {fileID: -2059749069503135727}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  decisionIzquierda: {fileID: -2059749069503135727}
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
+  prefabAnimacion: {fileID: 1827331134248223412, guid: 75c7c8ea0a0bad7448e867f689078bce, type: 3}
+--- !u!114 &-2059749069503135727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b224fc260e3c464985fd809e042f86e1, type: 3}
+  m_Name: End Story
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1103.878, y: 472.5109}
+  ports:
+    keys:
+    - passageEntrance
+    - decisionIzquierda
+    values:
+    - _fieldName: passageEntrance
+      _node: {fileID: -2059749069503135727}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: decisionIzquierda
+        node: {fileID: -5815555422429062464}
+        reroutePoints: []
+      - fieldName: decisionIzquierda
+        node: {fileID: -897122895619190658}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisionIzquierda
+      _node: {fileID: -2059749069503135727}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  decisionIzquierda: {fileID: 0}
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
+--- !u!114 &-897122895619190658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,74 +185,43 @@ MonoBehaviour:
   m_Name: SpermAnimationRight ANIMACION
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 735.06696, y: 142.5239}
+  position: {x: 680, y: 536}
   ports:
     keys:
     - passageEntrance
     - decisionIzquierda
     values:
     - _fieldName: passageEntrance
-      _node: {fileID: -9102385149308892734}
+      _node: {fileID: -897122895619190658}
       _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
-      - fieldName: decisionIzquierda
-        node: {fileID: 7655790817039242344}
+      - fieldName: decisionDerecha
+        node: {fileID: -7432516724013035349}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: decisionIzquierda
-      _node: {fileID: -9102385149308892734}
+      _node: {fileID: -897122895619190658}
       _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
       - fieldName: passageEntrance
-        node: {fileID: 1456398970608258631}
+        node: {fileID: -2059749069503135727}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   passageEntrance: {fileID: 0}
-  decisionIzquierda: {fileID: 1456398970608258631}
+  decisionIzquierda: {fileID: -2059749069503135727}
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
   prefabAnimacion: {fileID: 8881879974927388247, guid: e6f1b0515b7ad864b9dce4e0feb36f31, type: 3}
---- !u!114 &-8720516636906241359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3843470676305aa4e8e79d00535f7919, type: 3}
-  m_Name: Story
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -680, y: 120}
-  ports:
-    keys:
-    - startPassage
-    values:
-    - _fieldName: startPassage
-      _node: {fileID: -8720516636906241359}
-      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: passageEntrance
-        node: {fileID: -9138316186946831850}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  name: Historia1
-  id: historia1
-  escritor: Mario Marin Teran
-  categoria: 8
-  startPassage: {fileID: -9138316186946831850}
 --- !u!114 &-661193074859392061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,15 +291,20 @@ MonoBehaviour:
   m_Name: Historia1
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: -8720516636906241359}
-  - {fileID: 2563545048734035790}
-  - {fileID: 7655790817039242344}
-  - {fileID: -9102385149308892734}
-  - {fileID: 4178634323764464891}
-  - {fileID: 1456398970608258631}
-  - {fileID: -9138316186946831850}
-  cantNodeCreated: 84
---- !u!114 &1456398970608258631
+  - {fileID: 201112367712775437}
+  - {fileID: 6630452384710250283}
+  - {fileID: -7432516724013035349}
+  - {fileID: -5815555422429062464}
+  - {fileID: -897122895619190658}
+  - {fileID: -2059749069503135727}
+  nodesCreated:
+  - {fileID: 201112367712775437}
+  - {fileID: 6630452384710250283}
+  - {fileID: -7432516724013035349}
+  - {fileID: -5815555422429062464}
+  - {fileID: -897122895619190658}
+  - {fileID: -2059749069503135727}
+--- !u!114 &201112367712775437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,43 +313,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b224fc260e3c464985fd809e042f86e1, type: 3}
-  m_Name: End Story
+  m_Script: {fileID: 11500000, guid: 3843470676305aa4e8e79d00535f7919, type: 3}
+  m_Name: Story
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1163.194, y: 224.91258}
+  position: {x: -488, y: 360}
   ports:
     keys:
-    - passageEntrance
-    - decisionIzquierda
+    - startPassage
     values:
-    - _fieldName: passageEntrance
-      _node: {fileID: 1456398970608258631}
+    - _fieldName: startPassage
+      _node: {fileID: 201112367712775437}
       _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
-      - fieldName: decisionIzquierda
-        node: {fileID: -9102385149308892734}
+      - fieldName: passageEntrance
+        node: {fileID: 6630452384710250283}
         reroutePoints: []
-      - fieldName: decisionIzquierda
-        node: {fileID: 4178634323764464891}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: decisionIzquierda
-      _node: {fileID: 1456398970608258631}
-      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  passageEntrance: {fileID: 0}
-  decisionIzquierda: {fileID: 0}
---- !u!114 &2563545048734035790
+  name: Historia1
+  id: historia1
+  escritor: Mario Marin Teran
+  categoria: 8
+  nodeTest: {fileID: 0}
+  startPassage: {fileID: 6630452384710250283}
+--- !u!114 &6630452384710250283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,151 +353,40 @@ MonoBehaviour:
   m_Name: SpermAnimationStart ANIMACION
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -24, y: 184}
+  position: {x: -104, y: 424}
   ports:
     keys:
     - passageEntrance
     - decisionIzquierda
     values:
     - _fieldName: passageEntrance
-      _node: {fileID: 2563545048734035790}
+      _node: {fileID: 6630452384710250283}
       _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
-      - fieldName: decisionIzquierda
-        node: {fileID: -9138316186946831850}
+      - fieldName: startPassage
+        node: {fileID: 201112367712775437}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: decisionIzquierda
-      _node: {fileID: 2563545048734035790}
+      _node: {fileID: 6630452384710250283}
       _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
       - fieldName: passageEntrance
-        node: {fileID: 7655790817039242344}
+        node: {fileID: -7432516724013035349}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   passageEntrance: {fileID: 0}
-  decisionIzquierda: {fileID: 7655790817039242344}
+  decisionIzquierda: {fileID: -7432516724013035349}
+  audio:
+    typeSound: 2
+    soundName: Musica_Historia1_1
+    loop: 1
   prefabAnimacion: {fileID: 8684619233511615954, guid: 5da66ddc94e59e840b45cba3fee0dcfc, type: 3}
---- !u!114 &4178634323764464891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29304baed1e04e0495c0760c06c3e0a5, type: 3}
-  m_Name: SpermAnimationRight ANIMACION
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 728, y: 328}
-  ports:
-    keys:
-    - passageEntrance
-    - decisionIzquierda
-    values:
-    - _fieldName: passageEntrance
-      _node: {fileID: 4178634323764464891}
-      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: decisionDerecha
-        node: {fileID: 7655790817039242344}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: decisionIzquierda
-      _node: {fileID: 4178634323764464891}
-      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: passageEntrance
-        node: {fileID: 1456398970608258631}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  passageEntrance: {fileID: 0}
-  decisionIzquierda: {fileID: 1456398970608258631}
-  prefabAnimacion: {fileID: 8881879974927388247, guid: e6f1b0515b7ad864b9dce4e0feb36f31, type: 3}
---- !u!114 &7655790817039242344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dd09f79a1a772b4d9b73dc8f7f0d12f, type: 3}
-  m_Name: DECISION
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 344, y: 184}
-  ports:
-    keys:
-    - decisionDerecha
-    - passageEntrance
-    - decisionIzquierda
-    values:
-    - _fieldName: decisionDerecha
-      _node: {fileID: 7655790817039242344}
-      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: passageEntrance
-        node: {fileID: 4178634323764464891}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: passageEntrance
-      _node: {fileID: 7655790817039242344}
-      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: decisionIzquierda
-        node: {fileID: 2563545048734035790}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: decisionIzquierda
-      _node: {fileID: 7655790817039242344}
-      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: passageEntrance
-        node: {fileID: -9102385149308892734}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  passageEntrance: {fileID: 0}
-  decisionIzquierda: {fileID: -9102385149308892734}
-  decisionDerecha: {fileID: 4178634323764464891}
-  card:
-    decisionesEs:
-      decisionIzquierda: Izquierda
-      decisionDerecha: Derecha
-    decisionesEn:
-      decisionIzquierda: 
-      decisionDerecha: 
-    textos:
-      textoES: Hacia que direccion quieres ir?
-      textoEN: 

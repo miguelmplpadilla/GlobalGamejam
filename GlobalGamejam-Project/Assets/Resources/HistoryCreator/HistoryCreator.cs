@@ -1,33 +1,29 @@
 ﻿using System;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 using XNode;
-using Task = System.Threading.Tasks.Task;
 
 [CreateAssetMenu]
 public class HistoryCreator : NodeGraph
 {
-    public int cantNodeCreated = 0;
+    public List<Node> nodesCreated = new List<Node>();
 
     public override Node AddNode(Type type)
     {
         Node node = base.AddNode(type);
-        OnNodeCreated(node);
+        nodesCreated.Add(node);
+
+        Debug.Log("Node Added");
+        
         return node;
     }
 
-    private void OnNodeCreated(Node node)
+    public override void RemoveNode(Node node)
     {
-        if (node is PassageNode)
-        {
-            PassageNode passageNode = node as PassageNode;
-            if (passageNode == null) return;
+        base.RemoveNode(node);
 
-            cantNodeCreated++;
+        Debug.Log("Node Removed");
 
-            passageNode.idNode = cantNodeCreated;
-
-            Debug.Log("Node Created whit id "+passageNode.idNode);
-        }
+        nodesCreated.Remove(node);
     }
 }

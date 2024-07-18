@@ -1,19 +1,14 @@
-﻿using System;
-using XNode;
+﻿using XNode;
 
+[CreateNodeMenu("")]
 [NodeWidth(304)]
 public class PassageNode : Node
 {
-	[NonSerialized] public int idNode;
-
 	[Input] public PassageNode passageEntrance;
 	
 	[Output] public PassageNode decisionIzquierda;
-	
-	protected override void Init() 
-	{
-		base.Init();
-	}
+
+	public DecisionNode.PlayAudio audio;
 	
 	public override void OnCreateConnection(NodePort from, NodePort to) {
 		

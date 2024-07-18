@@ -10,6 +10,8 @@ public class StoryNode : Node
 
 	public Categorys categoria;
 
+	public PassageNode nodeTest;
+
 	[Output] public PassageNode startPassage;
 
 	// Use this for initialization

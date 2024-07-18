@@ -8,11 +8,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using XNode;
 
 public class NewSceneController : MonoBehaviour
 {
-    public bool isTesting = false;
-    public PassageNode passageStart;
 
     private string currentHistoria = "";
     
@@ -30,7 +29,6 @@ public class NewSceneController : MonoBehaviour
     public Image imagePanelLeft;
     public Image imagePanelRight;
 
-    public Image imageCard;
     public Image imageDiapositiva;
     
     public Image imageForeground;
@@ -113,14 +111,25 @@ public class NewSceneController : MonoBehaviour
         
         //GPGSManager.instance.DoGrantAchievement("Inicio"+currentHistoria);
 
-        int idStartPassage = -1;
-        PassageNode passageNodeStart = passageStart;
+        StoryNode storyNode = null;
+        
+        for (int i = 0; i < historyCreator.nodes.Count; i++)
+        {
+            if (historyCreator.nodes[i].name.Equals("Story"))
+            {
+                storyNode = historyCreator.nodes[i] as StoryNode;
+                break;
+            }
+        }
 
-        if (!isTesting && PlayerPrefs.HasKey("PassageSaved_" + currentHistoria))
+        int idStartPassage = -1;
+        PassageNode passageNodeStart = storyNode.nodeTest;
+
+        if (passageNodeStart == null && PlayerPrefs.HasKey("PassageSaved_" + currentHistoria))
         {
             idStartPassage = PlayerPrefs.GetInt("PassageSaved_"+currentHistoria);
         }
-        else if (!isTesting)
+        else if (passageNodeStart == null)
         {
             idStartPassage = -1;
             passageNodeStart = firstPassageNode;
@@ -131,14 +140,28 @@ public class NewSceneController : MonoBehaviour
             for (int i = 0; i < historyCreator.nodes.Count; i++)
             {
                 PassageNode node = historyCreator.nodes[i] as PassageNode;
-                Debug.Log(node != null ? node.idNode : null);
-                if (node != null && node.idNode == idStartPassage) passageNodeStart = node;
+                
+                if (node == null) continue;
+                
+                int idNode = GetNodeId(historyCreator.nodes[i]);
+                
+                Debug.Log(idNode);
+                
+                if (idNode == idStartPassage) passageNodeStart = node;
             }
         }
 
         Debug.Log(passageNodeStart.name);
         
         SetScene(passageNodeStart);
+    }
+
+    private int GetNodeId(Node node)
+    {
+        for (int i = 0; i < historyCreator.nodesCreated.Count; i++)
+            if (historyCreator.nodesCreated[i].Equals(node)) return i;
+
+        return -1;
     }
 
     private void Update()
@@ -201,7 +224,9 @@ public class NewSceneController : MonoBehaviour
 
     private void SaveData(PassageNode passage)
     {
-        PlayerPrefs.SetInt("PassageSaved_"+currentHistoria, passage.idNode);
+        int idNode = GetNodeId(passage);
+        
+        PlayerPrefs.SetInt("PassageSaved_"+currentHistoria, idNode);
         
         string recorrido = "";
         if (PlayerPrefs.HasKey("RecorridoTomado_" + currentHistoria))
@@ -213,7 +238,7 @@ public class NewSceneController : MonoBehaviour
         for (int i = 0; i < recorridoSplit.Length; i++)
             Debug.Log(recorridoSplit[i]);
 
-        if (recorridoSplit[recorridoSplit.Length - 1].Equals("- " + passage.idNode)) return;
+        if (recorridoSplit[recorridoSplit.Length - 1].Equals("- " + idNode)) return;
 
         recorrido += "- " + passage.name + "\n";
         
