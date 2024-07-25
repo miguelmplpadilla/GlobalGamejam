@@ -157,8 +157,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 4
-    functionName: ExecuteFunction
-    data: EndAnimation
+    functionName: ExecuteEndAnimation
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

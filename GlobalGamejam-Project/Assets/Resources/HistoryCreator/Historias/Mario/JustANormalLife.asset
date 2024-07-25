@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 774e35e7007efee4cab43a5f79d1b799, type: 3}
-  m_Name: Historia1
+  m_Name: JustANormalLife
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: 201112367712775437}
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29304baed1e04e0495c0760c06c3e0a5, type: 3}
-  m_Name: SpermAnimationStart ANIMACION
+  m_Name: ANIMACION
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: -104, y: 424}
@@ -389,4 +389,4 @@ MonoBehaviour:
     typeSound: 2
     soundName: Musica_Historia1_1
     loop: 1
-  prefabAnimacion: {fileID: 8684619233511615954, guid: 5da66ddc94e59e840b45cba3fee0dcfc, type: 3}
+  prefabAnimacion: {fileID: 0}

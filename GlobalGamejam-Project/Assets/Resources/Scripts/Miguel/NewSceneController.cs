@@ -12,7 +12,6 @@ using XNode;
 
 public class NewSceneController : MonoBehaviour
 {
-
     private string currentHistoria = "";
     
     public static NewSceneController instance;
@@ -60,7 +59,7 @@ public class NewSceneController : MonoBehaviour
     public string[] idiomas;
     public string languageName;
     
-    public HistoryCreator historyCreator;
+    private HistoryCreator historyCreator;
     private PassageNode firstPassageNode;
 
     private void Awake()
@@ -71,13 +70,11 @@ public class NewSceneController : MonoBehaviour
         
         if (PlayerPrefs.HasKey("CurrentIdiom"))
             languageName = PlayerPrefs.GetString("CurrentIdiom");
-
-        if (PlayerPrefs.HasKey("CurrentHistoria"))
-            currentHistoria = PlayerPrefs.GetString("CurrentHistoria");
-        else
-            currentHistoria = "Historia1";
         
-        historyCreator = UnityEngine.Resources.Load<HistoryCreator>("HistoryCreator/Historias/" + currentHistoria);
+        //historyCreator = UnityEngine.Resources.Load<HistoryCreator>("HistoryCreator/Historias/" + currentHistoria);
+        
+        currentHistoria = CurrentHistoryController.instance.currectHistory.name;
+        historyCreator = CurrentHistoryController.instance.currectHistory;
         
         instance = this;
         
