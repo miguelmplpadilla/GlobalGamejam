@@ -345,8 +345,13 @@ public class NewSceneController : MonoBehaviour
         
         imageDiapositiva.transform.parent.gameObject.SetActive(true);
 
-        imageDiapositiva.sprite = diapositiveNode.spriteDiapositiva != null
-            ? diapositiveNode.spriteDiapositiva
+        Sprite diapositiva = diapositiveNode.diapositivaEN;
+
+        if (languageName.Equals("es") && diapositiveNode.diapositivaES != null)
+            diapositiva = diapositiveNode.diapositivaES;
+
+        imageDiapositiva.sprite = diapositiva != null
+            ? diapositiva
             : GetSprite("Kojima_Quieres");
 
         nextPassageKey = diapositiveNode.decisionIzquierda != null ? diapositiveNode.decisionIzquierda : firstPassageNode;
@@ -485,8 +490,13 @@ public class NewSceneController : MonoBehaviour
         nextPassageKey = animationNode.decisionIzquierda != null ? animationNode.decisionIzquierda : firstPassageNode;
         
         animationPanel.transform.parent.gameObject.SetActive(true);
+        
+        GameObject animation = animationNode.animacionEN;
 
-        Instantiate(animationNode.prefabAnimacion != null ? animationNode.prefabAnimacion : GetPrefab("PitiAnimation"),
+        if (languageName.Equals("es") && animationNode.animacionES != null)
+            animation = animationNode.animacionES;
+
+        Instantiate(animation != null ? animation : GetPrefab("PitiAnimation"),
             animationPanel.transform).transform.localPosition = Vector3.zero;
         
         FadeOutForeground();

@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: SpermAnimationLeft ANIMACION
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 680, y: 376}
+  position: {x: 680, y: 344}
   ports:
     keys:
     - passageEntrance
@@ -110,6 +110,60 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: passageEntrance
+        node: {fileID: -2131481658222496571}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  decisionIzquierda: {fileID: -2131481658222496571}
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
+  animacionEN: {fileID: 1827331134248223412, guid: 75c7c8ea0a0bad7448e867f689078bce, type: 3}
+  animacionES: {fileID: 0}
+--- !u!114 &-2131481658222496571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309fe091bdea4b444a75075aa8bbcd3f, type: 3}
+  m_Name: FatherNoteSlide_EN DIAPOSITIVA
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1048, y: 456}
+  ports:
+    keys:
+    - passageEntrance
+    - decisionIzquierda
+    values:
+    - _fieldName: passageEntrance
+      _node: {fileID: -2131481658222496571}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: decisionIzquierda
+        node: {fileID: -5815555422429062464}
+        reroutePoints: []
+      - fieldName: decisionIzquierda
+        node: {fileID: -897122895619190658}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisionIzquierda
+      _node: {fileID: -2131481658222496571}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: passageEntrance
         node: {fileID: -2059749069503135727}
         reroutePoints: []
       _direction: 1
@@ -122,7 +176,8 @@ MonoBehaviour:
     typeSound: 0
     soundName: 
     loop: 0
-  prefabAnimacion: {fileID: 1827331134248223412, guid: 75c7c8ea0a0bad7448e867f689078bce, type: 3}
+  diapositivaEN: {fileID: 21300000, guid: 1a5ceba6c231dca48b13bf993d8fa6ff, type: 3}
+  diapositivaES: {fileID: 21300000, guid: bec7b02c570cf99489b6ecb94b792fe9, type: 3}
 --- !u!114 &-2059749069503135727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +191,7 @@ MonoBehaviour:
   m_Name: End Story
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1103.878, y: 472.5109}
+  position: {x: 1496, y: 472}
   ports:
     keys:
     - passageEntrance
@@ -148,10 +203,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: decisionIzquierda
-        node: {fileID: -5815555422429062464}
-        reroutePoints: []
-      - fieldName: decisionIzquierda
-        node: {fileID: -897122895619190658}
+        node: {fileID: -2131481658222496571}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -185,7 +237,7 @@ MonoBehaviour:
   m_Name: SpermAnimationRight ANIMACION
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 680, y: 536}
+  position: {x: 680, y: 552}
   ports:
     keys:
     - passageEntrance
@@ -209,19 +261,20 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: passageEntrance
-        node: {fileID: -2059749069503135727}
+        node: {fileID: -2131481658222496571}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   passageEntrance: {fileID: 0}
-  decisionIzquierda: {fileID: -2059749069503135727}
+  decisionIzquierda: {fileID: -2131481658222496571}
   audio:
     typeSound: 0
     soundName: 
     loop: 0
-  prefabAnimacion: {fileID: 8881879974927388247, guid: e6f1b0515b7ad864b9dce4e0feb36f31, type: 3}
+  animacionEN: {fileID: 8881879974927388247, guid: e6f1b0515b7ad864b9dce4e0feb36f31, type: 3}
+  animacionES: {fileID: 0}
 --- !u!114 &-661193074859392061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +350,7 @@ MonoBehaviour:
   - {fileID: -5815555422429062464}
   - {fileID: -897122895619190658}
   - {fileID: -2059749069503135727}
+  - {fileID: -2131481658222496571}
   nodesCreated:
   - {fileID: 201112367712775437}
   - {fileID: 6630452384710250283}
@@ -304,6 +358,7 @@ MonoBehaviour:
   - {fileID: -5815555422429062464}
   - {fileID: -897122895619190658}
   - {fileID: -2059749069503135727}
+  - {fileID: -2131481658222496571}
 --- !u!114 &201112367712775437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +405,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29304baed1e04e0495c0760c06c3e0a5, type: 3}
-  m_Name: ANIMACION
+  m_Name: SpermAnimationStart ANIMACION
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: -104, y: 424}
@@ -389,4 +444,5 @@ MonoBehaviour:
     typeSound: 2
     soundName: Musica_Historia1_1
     loop: 1
-  prefabAnimacion: {fileID: 0}
+  animacionEN: {fileID: 8684619233511615954, guid: 5da66ddc94e59e840b45cba3fee0dcfc, type: 3}
+  animacionES: {fileID: 0}

@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 using XNode;
 
 
 public class AnimationNode : PassageNode
 {
-	public GameObject prefabAnimacion;
+	public GameObject animacionEN;
+	public GameObject animacionES;
 	
 	protected override void Init() {
 		base.Init();
@@ -30,8 +32,8 @@ public class AnimationNode : PassageNode
 
 	private void UpdateNodeName()
 	{
-		string finalName = prefabAnimacion != null
-			? prefabAnimacion.name + " ANIMACION"
+		string finalName = animacionEN != null
+			? animacionEN.name + " ANIMACION"
 			: "ANIMACION";
 		name = finalName;
 	}
