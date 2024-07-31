@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 using XNode;
 
 
 public class DiapositiveNode : PassageNode
 {
-	public Sprite spriteDiapositiva;
+	public Sprite diapositivaEN;
+	public Sprite diapositivaES;
 	
 	protected override void Init() {
 		base.Init();
@@ -30,7 +32,7 @@ public class DiapositiveNode : PassageNode
 
 	private void UpdateNodeName()
 	{
-		string finalName = spriteDiapositiva != null ? spriteDiapositiva.name + " DIAPOSITIVA" : "DIAPOSITIVA";
+		string finalName = diapositivaEN != null ? diapositivaEN.name + " DIAPOSITIVA" : "DIAPOSITIVA";
 		name = finalName;
 	}
 }

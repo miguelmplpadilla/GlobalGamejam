@@ -49,7 +49,8 @@ MonoBehaviour:
     typeSound: 0
     soundName: 
     loop: 0
-  spriteDiapositiva: {fileID: 0}
+  diapositivaEN: {fileID: 0}
+  diapositivaES: {fileID: 0}
 --- !u!114 &-3348740922060698825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +248,8 @@ MonoBehaviour:
     typeSound: 0
     soundName: 
     loop: 0
-  prefabAnimacion: {fileID: 0}
+  animacionEN: {fileID: 0}
+  animacionES: {fileID: 0}
 --- !u!114 &3193280705698236658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +299,8 @@ MonoBehaviour:
     typeSound: 0
     soundName: 
     loop: 0
-  prefabAnimacion: {fileID: 0}
+  animacionEN: {fileID: 0}
+  animacionES: {fileID: 0}
 --- !u!114 &6228519032322216352
 MonoBehaviour:
   m_ObjectHideFlags: 0
