@@ -9,6 +9,8 @@ public class RocketController : MonoBehaviour, IBeginDragHandler, IDragHandler
     private float clickOffset;
     private float originalPos;
 
+    public GameObject prefabParticle;
+    public GameObject explosionPosition;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -36,6 +38,12 @@ public class RocketController : MonoBehaviour, IBeginDragHandler, IDragHandler
         SpaceGame.instance.carVel = 0f;
         SpaceGame.instance.roadVel = 0f;
         gameEnded = true;
+
+        transform.GetChild(0).gameObject.SetActive(false);
+        
+        GameObject explosionInstantiated = Instantiate(prefabParticle, transform.parent);
+        explosionInstantiated.transform.position = explosionPosition.transform.position;
+        
         SpaceGame.instance.Crash();
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class StudyGame : MonoBehaviour
@@ -12,23 +13,34 @@ public class StudyGame : MonoBehaviour
     private bool gameEnded;
     private float progress;
     public float velCarrega = 0.05f;
+
+    public bool canPlay = false;
+    
     void Awake()
     {
         instance = this;
     }
-    void Start()
+    public async void Start()
     {
         progress = 0.01f;
         barraCarrega.transform.localScale = new Vector3(progress, 1, 1);
         gameEnded = false;
         isPantallaOn = false;
+        canPlay = false;
         pantalla.SetActive(false);
+
+        await Task.Delay(1000);
+
+        canPlay = true;
+        
         Door.instance.CloseDoorFirst(6.500f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!canPlay) return;
+        
         if (Input.GetKeyDown(KeyCode.Mouse0)) Click();
         if(!gameEnded && isPantallaOn && Door.instance.isChecking)
         {
