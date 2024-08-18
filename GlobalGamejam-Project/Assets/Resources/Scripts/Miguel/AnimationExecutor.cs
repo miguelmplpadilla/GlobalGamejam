@@ -10,4 +10,9 @@ public class AnimationExecutor : MonoBehaviour
     public void ExecuteEndAnimation() {
         NewSceneController.instance.EndAnimation();
     }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
 }

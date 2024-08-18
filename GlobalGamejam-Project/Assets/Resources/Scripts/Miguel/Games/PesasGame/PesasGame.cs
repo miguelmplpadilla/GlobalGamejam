@@ -42,7 +42,7 @@ public class PesasGame : MonoBehaviour
         {
             imagePlayerPesas.sprite = currentAnimation ? spriteLevantar : spriteAgachar;
             currentAnimation = !currentAnimation;
-            currentPesas += currentPesas > maxPesas / 2 ? 0.5f : 1;
+            currentPesas += currentPesas > maxPesas / 2 ? 1f : 2;
             StopCoroutine("RestarVariable");
             StartCoroutine("RestarVariable");
         }

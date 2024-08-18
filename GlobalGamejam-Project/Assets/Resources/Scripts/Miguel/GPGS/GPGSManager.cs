@@ -1,14 +1,12 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
-using GooglePlayGames;
 using GooglePlayGames.BasicApi;
-using TMPro;
 
 public class GPGSManager : MonoBehaviour
 {
+#if UNITY_ANDROID
     public static GPGSManager instance;
     
     private PlayGamesClientConfiguration clientConfiguration;
@@ -106,4 +104,5 @@ public class GPGSManager : MonoBehaviour
         public string nombreLogro;
         public string keyLogro;
     }
+#endif
 }

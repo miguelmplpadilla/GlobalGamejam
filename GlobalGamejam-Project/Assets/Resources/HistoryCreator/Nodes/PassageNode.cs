@@ -1,11 +1,13 @@
-﻿using XNode;
+﻿using UnityEngine;
+using XNode;
 
 [CreateNodeMenu("")]
 [NodeWidth(304)]
 public class PassageNode : Node
 {
 	[Input] public PassageNode passageEntrance;
-	
+	[Space(15)]
+	[Output] public DescriptionNode description;
 	[Output] public PassageNode decisionIzquierda;
 
 	public DecisionNode.PlayAudio audio;

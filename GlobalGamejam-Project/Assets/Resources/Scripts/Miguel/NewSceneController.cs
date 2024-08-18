@@ -170,6 +170,8 @@ public class NewSceneController : MonoBehaviour
     {
         SaveData(passage);
         
+        PlayAudio(passage.audio);
+        
         if (passage is DecisionNode)
         {
             SetCard(passage as DecisionNode);
@@ -189,14 +191,10 @@ public class NewSceneController : MonoBehaviour
         {
             EndHistoria();
             VolverMenuInicio();
-        } else if (passage is PlayAudioNode)
-        {
-            PlayAudioNode playAudioNode = passage as PlayAudioNode;
-            PlayAudio(playAudioNode.audio, playAudioNode.decisionIzquierda);
         }
     }
 
-    private async void PlayAudio(DecisionNode.PlayAudio audio, PassageNode nexPassage = null)
+    private async void PlayAudio(DecisionNode.PlayAudio audio)
     {
         if (audio.soundName.Equals("")) return;
         
@@ -210,12 +208,6 @@ public class NewSceneController : MonoBehaviour
                 AudioManagerController.instance.PlayMusic(audio.soundName);
                 PlayerPrefs.SetString("MusicPlayed_"+currentHistoria, audio.soundName);
                 break;
-        }
-
-        if (nexPassage != null)
-        {
-            nextPassageKey = nexPassage;
-            SetNext();
         }
     }
 

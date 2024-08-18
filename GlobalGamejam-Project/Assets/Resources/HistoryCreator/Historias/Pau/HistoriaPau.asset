@@ -18,6 +18,7 @@ MonoBehaviour:
     keys:
     - passageEntrance
     - decisionIzquierda
+    - description
     values:
     - _fieldName: passageEntrance
       _node: {fileID: -5739421293803963663}
@@ -43,7 +44,17 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: -5739421293803963663}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   passageEntrance: {fileID: 0}
+  description: {fileID: 0}
   decisionIzquierda: {fileID: -3348740922060698825}
   audio:
     typeSound: 0
@@ -69,6 +80,7 @@ MonoBehaviour:
     keys:
     - passageEntrance
     - decisionIzquierda
+    - description
     values:
     - _fieldName: passageEntrance
       _node: {fileID: -3348740922060698825}
@@ -94,7 +106,17 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: -3348740922060698825}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   passageEntrance: {fileID: 0}
+  description: {fileID: 0}
   decisionIzquierda: {fileID: 0}
   audio:
     typeSound: 0
@@ -145,6 +167,7 @@ MonoBehaviour:
     - decisionDerecha
     - passageEntrance
     - decisionIzquierda
+    - description
     values:
     - _fieldName: decisionDerecha
       _node: {fileID: 2979352099309118798}
@@ -182,7 +205,17 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: 2979352099309118798}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   passageEntrance: {fileID: 0}
+  description: {fileID: 0}
   decisionIzquierda: {fileID: -5739421293803963663}
   audio:
     typeSound: 0
@@ -217,6 +250,7 @@ MonoBehaviour:
     keys:
     - passageEntrance
     - decisionIzquierda
+    - description
     values:
     - _fieldName: passageEntrance
       _node: {fileID: 3135814693477498957}
@@ -242,7 +276,17 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: 3135814693477498957}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   passageEntrance: {fileID: 0}
+  description: {fileID: 0}
   decisionIzquierda: {fileID: 2979352099309118798}
   audio:
     typeSound: 0
@@ -268,6 +312,7 @@ MonoBehaviour:
     keys:
     - passageEntrance
     - decisionIzquierda
+    - description
     values:
     - _fieldName: passageEntrance
       _node: {fileID: 3193280705698236658}
@@ -293,7 +338,17 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: 3193280705698236658}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   passageEntrance: {fileID: 0}
+  description: {fileID: 0}
   decisionIzquierda: {fileID: -3348740922060698825}
   audio:
     typeSound: 0
