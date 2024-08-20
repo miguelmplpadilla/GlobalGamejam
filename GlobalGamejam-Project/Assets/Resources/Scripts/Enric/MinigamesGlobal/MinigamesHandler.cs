@@ -6,8 +6,8 @@ public class MinigamesHandler : MonoBehaviour
 {
     public static MinigamesHandler instance;
 
-    public GameObject[] minigames;
-    public GameObject currentGame;
+    public GameObject defaultGame;
+    private GameObject currentGame;
 
     public Transform minigameParent;
     private void Awake()
@@ -15,21 +15,10 @@ public class MinigamesHandler : MonoBehaviour
         instance = this;
     }
 
-    public void StartMinigame(string levelName)
+    public void StartMinigame(GameObject gameToSpawn)
     {
-        GameObject gameToSpawn = null;
-        foreach(GameObject game in minigames)
-        {
-            if(game.name == levelName)
-            {
-                gameToSpawn = game;
-            }
-        }
-        if (!gameToSpawn)
-        {
-            Debug.LogError("Level not found");
-            return;
-        }
+        if (gameToSpawn == null) gameToSpawn = defaultGame;
+        
         currentGame = Instantiate(gameToSpawn, minigameParent);
     }
 

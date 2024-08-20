@@ -1,11 +1,8 @@
-﻿public class GameNode : PassageTwoConnectionsNode
+﻿using UnityEngine;
+
+public class GameNode : PassageTwoConnectionsNode
 {
-	public string id;
-	
-	// Use this for initialization
-	protected override void Init() {
-		base.Init();
-	}
+	public GameObject prefabGame;
 	
 	public void OnValidate()
 	{
@@ -14,7 +11,7 @@
 
 	private void UpdateNodeName()
 	{
-		string finalName = !string.IsNullOrEmpty(id) ? id + " GAME" : "GAME";
+		string finalName = prefabGame != null ? prefabGame.name + " GAME" : "GAME";
 		name = finalName;
 	}
 }

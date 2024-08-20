@@ -517,18 +517,26 @@ public class NewSceneController : MonoBehaviour
     {
         if (gameNode.decisionIzquierda != null || gameNode.decisionDerecha != null)
         {
-            nextPassageKey = gameNode.decisionIzquierda;
-
             if (gameNode.decisionIzquierda != null && gameNode.decisionDerecha != null)
             {
                 leftKey = gameNode.decisionIzquierda;
                 rightKey = gameNode.decisionDerecha;
             }
+            else
+            {
+                nextPassageKey = gameNode.decisionIzquierda;
+
+                if (gameNode.prefabGame == null)
+                {
+                    EndGame();
+                    return;
+                }
+            }
         }
         else
             nextPassageKey = firstPassageNode;
 
-        MinigamesHandler.instance.StartMinigame(gameNode.id);
+        MinigamesHandler.instance.StartMinigame(gameNode.prefabGame);
         canvasCard.SetActive(false);
         camera.SetActive(false);
         

@@ -1,0 +1,523 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8076583387051178328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3278ba8a3301f4bb9d72ab8be5819f, type: 3}
+  m_Name: 1 - 2 CALENDARIO
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1768, y: 328}
+  ports:
+    keys:
+    - passageEntrance
+    - description
+    - decisionIzquierda
+    values:
+    - _fieldName: passageEntrance
+      _node: {fileID: -8076583387051178328}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: decisionIzquierda
+        node: {fileID: -67629245209897101}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: -8076583387051178328}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisionIzquierda
+      _node: {fileID: -8076583387051178328}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: passageEntrance
+        node: {fileID: 6995586865418753092}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  description: {fileID: 0}
+  decisionIzquierda: {fileID: 6995586865418753092}
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
+  edadAnterior: 1
+  edadSiguiente: 2
+--- !u!114 &-7542396265067493453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b224fc260e3c464985fd809e042f86e1, type: 3}
+  m_Name: End Story
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2824, y: 408}
+  ports:
+    keys:
+    - passageEntrance
+    - description
+    - decisionIzquierda
+    values:
+    - _fieldName: passageEntrance
+      _node: {fileID: -7542396265067493453}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: decisionIzquierda
+        node: {fileID: 3484961579905893279}
+        reroutePoints: []
+      - fieldName: decisionIzquierda
+        node: {fileID: 6555344965469458583}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: -7542396265067493453}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisionIzquierda
+      _node: {fileID: -7542396265067493453}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  description: {fileID: 0}
+  decisionIzquierda: {fileID: 0}
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
+--- !u!114 &-67629245209897101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de84db118aac4704ba6daa4a17da9dcb, type: 3}
+  m_Name: GAME
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1416, y: 328}
+  ports:
+    keys:
+    - decisionDerecha
+    - passageEntrance
+    - description
+    - decisionIzquierda
+    values:
+    - _fieldName: decisionDerecha
+      _node: {fileID: -67629245209897101}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: passageEntrance
+      _node: {fileID: -67629245209897101}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: decisionIzquierda
+        node: {fileID: 64819939849067126}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: -67629245209897101}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisionIzquierda
+      _node: {fileID: -67629245209897101}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: passageEntrance
+        node: {fileID: -8076583387051178328}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  description: {fileID: 0}
+  decisionIzquierda: {fileID: -8076583387051178328}
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
+  decisionDerecha: {fileID: 0}
+  prefabGame: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774e35e7007efee4cab43a5f79d1b799, type: 3}
+  m_Name: HistoriaPruebaMiguel
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 2416411628456148331}
+  - {fileID: 64819939849067126}
+  - {fileID: -67629245209897101}
+  - {fileID: -8076583387051178328}
+  - {fileID: 6995586865418753092}
+  - {fileID: 3484961579905893279}
+  - {fileID: 6555344965469458583}
+  - {fileID: -7542396265067493453}
+  nodesCreated:
+  - {fileID: 2416411628456148331}
+  - {fileID: 64819939849067126}
+  - {fileID: -67629245209897101}
+  - {fileID: -8076583387051178328}
+  - {fileID: 6995586865418753092}
+  - {fileID: 3484961579905893279}
+  - {fileID: 6555344965469458583}
+  - {fileID: -7542396265067493453}
+--- !u!114 &64819939849067126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309fe091bdea4b444a75075aa8bbcd3f, type: 3}
+  m_Name: DIAPOSITIVA
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1064, y: 328}
+  ports:
+    keys:
+    - passageEntrance
+    - description
+    - decisionIzquierda
+    values:
+    - _fieldName: passageEntrance
+      _node: {fileID: 64819939849067126}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: startPassage
+        node: {fileID: 2416411628456148331}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: 64819939849067126}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisionIzquierda
+      _node: {fileID: 64819939849067126}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: passageEntrance
+        node: {fileID: -67629245209897101}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  description: {fileID: 0}
+  decisionIzquierda: {fileID: -67629245209897101}
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
+  diapositivaEN: {fileID: 0}
+  diapositivaES: {fileID: 0}
+--- !u!114 &2416411628456148331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3843470676305aa4e8e79d00535f7919, type: 3}
+  m_Name: Story
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 698.57684, y: 345.3694}
+  ports:
+    keys:
+    - startPassage
+    values:
+    - _fieldName: startPassage
+      _node: {fileID: 2416411628456148331}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: passageEntrance
+        node: {fileID: 64819939849067126}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  name: HistoriaPrueba
+  id: historiaPrueba
+  escritor: Miguel Padilla Lillo
+  categoria: 8
+  nodeTest: {fileID: 0}
+  startPassage: {fileID: 64819939849067126}
+--- !u!114 &3484961579905893279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309fe091bdea4b444a75075aa8bbcd3f, type: 3}
+  m_Name: DIAPOSITIVA
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2456, y: 232}
+  ports:
+    keys:
+    - passageEntrance
+    - description
+    - decisionIzquierda
+    values:
+    - _fieldName: passageEntrance
+      _node: {fileID: 3484961579905893279}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: decisionIzquierda
+        node: {fileID: 6995586865418753092}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: 3484961579905893279}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisionIzquierda
+      _node: {fileID: 3484961579905893279}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: passageEntrance
+        node: {fileID: -7542396265067493453}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  description: {fileID: 0}
+  decisionIzquierda: {fileID: -7542396265067493453}
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
+  diapositivaEN: {fileID: 0}
+  diapositivaES: {fileID: 0}
+--- !u!114 &6555344965469458583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29304baed1e04e0495c0760c06c3e0a5, type: 3}
+  m_Name: ANIMACION
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2456, y: 472}
+  ports:
+    keys:
+    - passageEntrance
+    - description
+    - decisionIzquierda
+    values:
+    - _fieldName: passageEntrance
+      _node: {fileID: 6555344965469458583}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: decisionDerecha
+        node: {fileID: 6995586865418753092}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: 6555344965469458583}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisionIzquierda
+      _node: {fileID: 6555344965469458583}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: passageEntrance
+        node: {fileID: -7542396265067493453}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  description: {fileID: 0}
+  decisionIzquierda: {fileID: -7542396265067493453}
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
+  animacionEN: {fileID: 0}
+  animacionES: {fileID: 0}
+--- !u!114 &6995586865418753092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de84db118aac4704ba6daa4a17da9dcb, type: 3}
+  m_Name: GAME
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2104, y: 328}
+  ports:
+    keys:
+    - decisionDerecha
+    - passageEntrance
+    - description
+    - decisionIzquierda
+    values:
+    - _fieldName: decisionDerecha
+      _node: {fileID: 6995586865418753092}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: passageEntrance
+        node: {fileID: 6555344965469458583}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: passageEntrance
+      _node: {fileID: 6995586865418753092}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: decisionIzquierda
+        node: {fileID: -8076583387051178328}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: description
+      _node: {fileID: 6995586865418753092}
+      _typeQualifiedName: DescriptionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisionIzquierda
+      _node: {fileID: 6995586865418753092}
+      _typeQualifiedName: PassageNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: passageEntrance
+        node: {fileID: 3484961579905893279}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  passageEntrance: {fileID: 0}
+  description: {fileID: 0}
+  decisionIzquierda: {fileID: 3484961579905893279}
+  audio:
+    typeSound: 0
+    soundName: 
+    loop: 0
+  decisionDerecha: {fileID: 6555344965469458583}
+  prefabGame: {fileID: 0}

@@ -458,7 +458,7 @@ public class SceneController : MonoBehaviour
 
         if (!card.keys.key.Equals(""))
         {
-            MinigamesHandler.instance.StartMinigame(card.keys.key);
+            //MinigamesHandler.instance.StartMinigame(card.keys.key);
             canvasCard.SetActive(false);
             camera.SetActive(false);
         }
