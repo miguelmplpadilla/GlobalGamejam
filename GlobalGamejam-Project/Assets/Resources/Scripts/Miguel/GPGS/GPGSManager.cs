@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using GooglePlayGames;
 using UnityEngine;
 using GooglePlayGames.BasicApi;
 
